@@ -106,3 +106,12 @@ deploy:
   type: git
   repo: https://github.com/GoldArowana/GoldArowana.github.io
   branch: gh-pages
+
+search:
+  path: search.xml
+  field: post
+
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
+
