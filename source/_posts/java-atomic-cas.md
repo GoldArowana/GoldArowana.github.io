@@ -15,3 +15,8 @@ img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/1c.jpg
 ### 场景2
 
 ## 原理
+```java
+public static void main(){
+
+}
+```
