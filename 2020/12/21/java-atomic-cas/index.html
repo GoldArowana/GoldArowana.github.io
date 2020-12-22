@@ -483,14 +483,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-12-21
+                    2020-12-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    12
+                    176
                 </div>
                 
 
@@ -520,9 +520,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><h3 id="场景1"><a href="#场景1" class="headerlink" title="场景1"></a>场景1</h3><h3 id="场景2"><a href="#场景2" class="headerlink" title="场景2"></a>场景2</h3><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <h2 id="cas简介"><a href="#cas简介" class="headerlink" title="cas简介"></a>cas简介</h2><h3 id="cas是什么"><a href="#cas是什么" class="headerlink" title="cas是什么"></a>cas是什么</h3><h3 id="cas能干什么"><a href="#cas能干什么" class="headerlink" title="cas能干什么"></a>cas能干什么</h3><h3 id="cas的一个小demo"><a href="#cas的一个小demo" class="headerlink" title="cas的一个小demo"></a>cas的一个小demo</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestAtomicBoolean</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">AtomicBoolean</span> flag <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AtomicBoolean</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+        <span class="token keyword">long</span> start <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">4000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            flag<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">.</span><span class="token function">compareAndSet</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"inner loop OK!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="cas的优点"><a href="#cas的优点" class="headerlink" title="cas的优点"></a>cas的优点</h3><h3 id="cas的缺点"><a href="#cas的缺点" class="headerlink" title="cas的缺点"></a>cas的缺点</h3><h2 id="getAndIncrement-的实现原理"><a href="#getAndIncrement-的实现原理" class="headerlink" title="getAndIncrement()的实现原理"></a>getAndIncrement()的实现原理</h2><p>在 <code>java.util.concurrent.atomic.AtomicInteger</code> 里getAndIncrement()方法实现如下:</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Unsafe</span> <span class="token class-name">U</span> <span class="token operator">=</span> <span class="token class-name">Unsafe</span><span class="token punctuation">.</span><span class="token function">getUnsafe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">/**
+ * Atomically increments the current value,
+ * with memory effects as specified by {@link VarHandle#getAndAdd}.
+ *
+ * &lt;p&gt;Equivalent to {@code getAndAdd(1)}.
+ *
+ * @return the previous value
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token function">getAndIncrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name">U</span><span class="token punctuation">.</span><span class="token function">getAndAddInt</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> VALUE<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>发现是调用了Unsafe类的getAndAddInt()方法实现的, 其内部实现如下:</p>
+<h2 id="cas-的实现原理"><a href="#cas-的实现原理" class="headerlink" title="cas 的实现原理"></a>cas 的实现原理</h2><h2 id="cas的源码探索之旅-java-gt-c-gt-汇编"><a href="#cas的源码探索之旅-java-gt-c-gt-汇编" class="headerlink" title="cas的源码探索之旅(java -> c++ -> 汇编)"></a>cas的源码探索之旅(java -&gt; c++ -&gt; 汇编)</h2>
                 
             </div>
             <hr/>
@@ -698,16 +735,15 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/20/post-title-with-whitespace-v2/">
+                <a href="/2020/12/21/java-atomic-cas/">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/1c.jpg" class="responsive-img" alt="java原子类cas的实现原理">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages//medias/featureimages/3.jpg" class="responsive-img" alt="post title with whitespace v2">
-                        
-                        <span class="card-title">post title with whitespace v2</span>
+                        <span class="card-title">java原子类cas的实现原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -718,25 +754,34 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-21
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            龙小喵的博客
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category">
+                                    java
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/test1/">
-                        <span class="chip bg-color">test1</span>
+                    <a href="/tags/%E5%B9%B6%E5%8F%91/">
+                        <span class="chip bg-color">并发</span>
                     </a>
                     
-                    <a href="/tags/test2/">
-                        <span class="chip bg-color">test2</span>
+                    <a href="/tags/atomic/">
+                        <span class="chip bg-color">atomic</span>
+                    </a>
+                    
+                    <a href="/tags/cas/">
+                        <span class="chip bg-color">cas</span>
                     </a>
                     
                 </div>
@@ -922,7 +967,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">85</span>&nbsp;字
+                class="white-color">176</span>&nbsp;字
             
             
             
