@@ -1,13 +1,15 @@
 ---
 title: java原子类cas的实现原理 
-date: 2020-12-21 13:26:15
+date: 2021-01-19 13:26:15
+summary: java并发必学-原子操作cas
 categories: 
     - java
 tags:
     - 并发
     - atomic
     - cas
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/1c.jpg
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co5.jpg
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co5.jpg
 ---
 
 ## cas简介
@@ -168,3 +170,22 @@ getAndAddInt()方法内部实现如下:
 ## cas 的实现原理
 
 ## cas的源码探索之旅(java -> c++ -> 汇编)
+
+
+
+## 参考文章
+1. [【并发编程】CAS与FAA](https://blog.csdn.net/zhoufanyang_china/article/details/89488959)
+2. [Double compare-and-swap](https://en.wikipedia.org/wiki/Double_compare-and-swap)
+3. [x86系统cache locking的原理](https://cloud.tencent.com/developer/article/1634000)
+
+https://coolshell.cn/articles/11454.html
+
+https://blog.csdn.net/qq_35642036/article/details/82801708
+
+https://albk.tech/%E8%81%8A%E8%81%8ACPU%E7%9A%84LOCK%E6%8C%87%E4%BB%A4.html
+
+https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-3a-part-1-manual.pdf
+
+https://www.zhihu.com/question/65372648
+
+https://hjlarry.github.io/docs/go/lock/

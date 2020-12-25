@@ -25,8 +25,8 @@ var featureImages = theme.featureImages;
             <div class="card">
                 <a href="<%- url_for(page.prev.path) %>">
                     <div class="card-image">
-                        <% if (page.prev.img) { %>
-                        <img src="<%- url_for(page.prev.img) %>" class="responsive-img" alt="<%= page.prev.title %>">
+                        <% if (page.prev.tinyImg) { %>
+                        <img src="<%- url_for(page.prev.tinyImg) %>" class="responsive-img" alt="<%= page.prev.title %>">
                         <% } else { %>
                         <%
                             var len = featureImages.length;
@@ -87,8 +87,8 @@ var featureImages = theme.featureImages;
             <div class="card">
                 <a href="<%- url_for(page.path) %>">
                     <div class="card-image">
-                        <% if (page.img) { %>
-                        <img src="<%- url_for(page.img) %>" class="responsive-img" alt="<%= page.title %>">
+                        <% if (page.tinyImg) { %>
+                        <img src="<%- url_for(page.tinyImg) %>" class="responsive-img" alt="<%= page.title %>">
                         <% } else { %>
                         <%
                             featureimg = featureImages[Math.abs(hashCode(page.title) % featureImages.length)];
@@ -149,8 +149,8 @@ var featureImages = theme.featureImages;
             <div class="card">
                 <a href="<%- url_for(page.next.path) %>">
                     <div class="card-image">
-                        <% if (page.next.img) { %>
-                        <img src="<%- url_for(page.next.img) %>" class="responsive-img" alt="<%= page.next.title %>">
+                        <% if (page.next.tinyImg) { %>
+                        <img src="<%- url_for(page.next.tinyImg) %>" class="responsive-img" alt="<%= page.next.title %>">
                         <% } else { %>
                         <%
                             featureimg = featureImages[Math.abs(hashCode(page.next.title) % featureImages.length)];
@@ -209,8 +209,8 @@ var featureImages = theme.featureImages;
             <div class="card">
                 <a href="<%- url_for(page.path) %>">
                     <div class="card-image">
-                        <% if (page.img) { %>
-                        <img src="<%- url_for(page.img) %>" class="responsive-img" alt="<%= page.title %>">
+                        <% if (page.tinyImg) { %>
+                        <img src="<%- url_for(page.tinyImg) %>" class="responsive-img" alt="<%= page.title %>">
                         <% } else { %>
                         <%
                             featureimg = featureImages[Math.abs(hashCode(page.title) % featureImages.length)];

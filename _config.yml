@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 龙小喵的博客
+title: 金龙的博客
 subtitle: 'Hello World !'
 description: ''
-keywords: java,golang
-author: 龙小喵的博客
+keywords: java,golang,database,mq,algorithm
+author: 金龙
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
@@ -15,7 +15,7 @@ timezone: 'Asia/Shanghai'
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
 url: https://goldarowana.github.io/
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -63,7 +63,7 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 10000
   order_by: -date
 
 # Category & Tag
@@ -100,13 +100,6 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: hexo-theme-matery
 
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: https://github.com/GoldArowana/GoldArowana.github.io
-  branch: gh-pages
-
 search:
   path: search.xml
   field: post
@@ -115,3 +108,38 @@ permalink_pinyin:
   enable: true
   separator: '-' # default: '-'
 
+lazyload:
+  enable: true
+  onlypost: false  # 是否只对文章的图片做懒加载
+  loadingImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/common/loading2.gif # eg ./images/loading.gif
+
+flowchart:
+  # raphael:   # optional, the source url of raphael.js
+  # flowchart: # optional, the source url of flowchart.js
+  options: # options used for `drawSVG`
+
+live2d:
+  enable: true
+  scriptFrom: jsdelivr
+  #  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  debug: false
+  model:
+    use: https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@main/live2d_models/live2d-widget-model-shizuku/assets/shizuku.model.json
+  display:
+    position: left
+    width: 200
+    height: 400
+  mobile:
+    show: true
+
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  repo: https://github.com/GoldArowana/GoldArowana.github.io
+  branch: gh-pages
