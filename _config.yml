@@ -115,3 +115,8 @@ permalink_pinyin:
   enable: true
   separator: '-' # default: '-'
 
+lazyload:
+  enable: true
+  onlypost: false  # 是否只对文章的图片做懒加载
+  loadingImg: # eg ./images/loading.gif
+
