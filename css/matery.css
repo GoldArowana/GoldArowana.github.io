@@ -549,7 +549,7 @@ header .go-back i {
 }
 
 .post-cover {
-    height: 40vh !important;
+    height: 100vh !important;
 }
 
 .bg-cover:after {
