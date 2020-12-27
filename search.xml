@@ -4,7 +4,32 @@
   
     
     <entry>
-      <title>what happens when browse google.com</title>
+      <title>redis基本知识</title>
+      <link href="2020/12/27/redis-elementary-knowledge/"/>
+      <url>2020/12/27/redis-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[<h2 id="高性能IO模型"><a href="#高性能IO模型" class="headerlink" title="高性能IO模型"></a>高性能IO模型</h2><h2 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h2><h3 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> redis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>访问google.com的时候都发生了什么</title>
       <link href="2020/12/26/what-happens-when-browse-google-com/"/>
       <url>2020/12/26/what-happens-when-browse-google-com/</url>
       
@@ -29,7 +54,7 @@
     
     
     <entry>
-      <title>leaning plan for 2021</title>
+      <title>2021年学习计划</title>
       <link href="2020/12/25/leaning-plan-for-2021/"/>
       <url>2020/12/25/leaning-plan-for-2021/</url>
       
