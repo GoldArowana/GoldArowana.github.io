@@ -118,5 +118,5 @@ permalink_pinyin:
 lazyload:
   enable: true
   onlypost: false  # 是否只对文章的图片做懒加载
-  loadingImg: /pj2.jpg # eg ./images/loading.gif
+  loadingImg: /favicon2.png # eg ./images/loading.gif
 

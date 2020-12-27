@@ -7,7 +7,7 @@ tags:
     - 并发
     - atomic
     - cas
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/1c.jpg
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co5.jpg
 ---
 
 ## cas简介

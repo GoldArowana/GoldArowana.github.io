@@ -5,7 +5,7 @@ categories:
     - internet
 tags:
     - internet
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co2.jpg
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co2.jpg
 ---
 
 ## 键盘

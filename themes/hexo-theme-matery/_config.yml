@@ -116,8 +116,8 @@ recommend:
 
 # Configure website favicon and LOGO
 # 配置网站favicon和网站LOGO
-favicon: /pj2.jpg
-logo: /pj2.jpg
+favicon: /favicon2.png
+logo: /favicon2.png
 
 # The configuration of the second button in the home banner,
 # including the display name of the button, the font awesome icon, and the hyperlink to the button.
@@ -604,7 +604,10 @@ jsDelivr:
 # 网站背景图
 background:
   enable: true
-  url: "https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg"
+  url: "https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/bg/bg1.jpg"
+#  url: "https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/bg/bg1.jpg"
+#  url: "https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/bg/bg31.jpg"
+#  url: "https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg"
 
 # 说说 https://artitalk.js.org/
 artitalk:

@@ -36,7 +36,8 @@
     // 每天切换 banner 图.  Switch banner image every day.
 //     var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/banner/') %>" + new Date().getDay() + '.jpg';
 //     var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/banner/') %>" + new Date().getMinutes()%5 + 'd.jpg';
-    var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/banner/') %>" + '1d.jpg';
+//     var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/banner/') %>" + '.jpg';
+    var bannerUrl = "https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/common/main1.jpg";
     $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 <% } else { %>
