@@ -1,5 +1,5 @@
 ---
-title: leaning plan for 2021
+title: 2021年学习计划
 date: 2020-12-25 14:00:00
 categories: 
     - leaning-plan
