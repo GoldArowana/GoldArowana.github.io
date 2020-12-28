@@ -4,6 +4,282 @@
   
     
     <entry>
+      <title>dns elementary knowledge</title>
+      <link href="2020/12/28/dns-elementary-knowledge/"/>
+      <url>2020/12/28/dns-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> internet </category>
+          
+          <category> udp </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> internet </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>udp elementary knowledge</title>
+      <link href="2020/12/28/udp-elementary-knowledge/"/>
+      <url>2020/12/28/udp-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> internet </category>
+          
+          <category> udp </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> internet </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>http3 elementary knowledge</title>
+      <link href="2020/12/28/http3-elementary-knowledge/"/>
+      <url>2020/12/28/http3-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> internet </category>
+          
+          <category> http </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> internet </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>http2 elementary knowledge</title>
+      <link href="2020/12/28/http2-elementary-knowledge/"/>
+      <url>2020/12/28/http2-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> internet </category>
+          
+          <category> http </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> internet </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>https elementary knowledge</title>
+      <link href="2020/12/28/https-elementary-knowledge/"/>
+      <url>2020/12/28/https-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> internet </category>
+          
+          <category> http </category>
+          
+          <category> ssl/tls </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> internet </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>http elementary knowledge</title>
+      <link href="2020/12/28/http-elementary-knowledge/"/>
+      <url>2020/12/28/http-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> internet </category>
+          
+          <category> http </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> internet </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tcp elementary knowledge</title>
+      <link href="2020/12/28/tcp-elementary-knowledge/"/>
+      <url>2020/12/28/tcp-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> internet </category>
+          
+          <category> tcp </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> internet </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>thrift elementary knowledge</title>
+      <link href="2020/12/28/thrift-elementary-knowledge/"/>
+      <url>2020/12/28/thrift-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> rpc </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> rpc </tag>
+            
+            <tag> thrift </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>grpc基础知识</title>
+      <link href="2020/12/28/grpc-elementary-knowledge/"/>
+      <url>2020/12/28/grpc-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> rpc </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> protobuf </tag>
+            
+            <tag> rpc </tag>
+            
+            <tag> grpc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>protobuf基本知识</title>
+      <link href="2020/12/28/protobuf-elementary-knowledge/"/>
+      <url>2020/12/28/protobuf-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> rpc </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> protobuf </tag>
+            
+            <tag> rpc </tag>
+            
+            <tag> grpc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>redis基本知识</title>
       <link href="2020/12/27/redis-elementary-knowledge/"/>
       <url>2020/12/27/redis-elementary-knowledge/</url>
