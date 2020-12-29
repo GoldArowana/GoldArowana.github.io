@@ -1,5 +1,5 @@
 ---
-title: dns elementary knowledge
+title: dns基础知识
 date: 2020-12-28 19:11:34
 categories:
     - internet

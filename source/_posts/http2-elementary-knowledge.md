@@ -1,5 +1,5 @@
 ---
-title: http2 elementary knowledge
+title: http2基础知识
 date: 2020-12-28 18:40:25
 categories:
     - internet
