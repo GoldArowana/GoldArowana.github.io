@@ -4,7 +4,144 @@
   
     
     <entry>
-      <title>dns elementary knowledge</title>
+      <title>ip协议基础知识</title>
+      <link href="2020/12/29/ip-elementary-knowledge/"/>
+      <url>2020/12/29/ip-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> internet </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> internet </tag>
+            
+            <tag> tcp </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>consistent hashing</title>
+      <link href="2020/12/29/consistent-hashing/"/>
+      <url>2020/12/29/consistent-hashing/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> LB </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cache </tag>
+            
+            <tag> LB </tag>
+            
+            <tag> consistent hashing </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>zab</title>
+      <link href="2020/12/29/zab/"/>
+      <url>2020/12/29/zab/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> consistency </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> consistency </tag>
+            
+            <tag> zab </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>paxos</title>
+      <link href="2020/12/29/paxos/"/>
+      <url>2020/12/29/paxos/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> consistency </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> paxos </tag>
+            
+            <tag> consistency </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>raft协议</title>
+      <link href="2020/12/29/raft/"/>
+      <url>2020/12/29/raft/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> consistency </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> consistency </tag>
+            
+            <tag> raft </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>dns基础知识</title>
       <link href="2020/12/28/dns-elementary-knowledge/"/>
       <url>2020/12/28/dns-elementary-knowledge/</url>
       
@@ -31,7 +168,7 @@
     
     
     <entry>
-      <title>udp elementary knowledge</title>
+      <title>udp基础知识</title>
       <link href="2020/12/28/udp-elementary-knowledge/"/>
       <url>2020/12/28/udp-elementary-knowledge/</url>
       
@@ -58,7 +195,7 @@
     
     
     <entry>
-      <title>http3 elementary knowledge</title>
+      <title>http3基础知识</title>
       <link href="2020/12/28/http3-elementary-knowledge/"/>
       <url>2020/12/28/http3-elementary-knowledge/</url>
       
@@ -85,7 +222,7 @@
     
     
     <entry>
-      <title>http2 elementary knowledge</title>
+      <title>http2基础知识</title>
       <link href="2020/12/28/http2-elementary-knowledge/"/>
       <url>2020/12/28/http2-elementary-knowledge/</url>
       
@@ -112,7 +249,7 @@
     
     
     <entry>
-      <title>https elementary knowledge</title>
+      <title>https基础知识</title>
       <link href="2020/12/28/https-elementary-knowledge/"/>
       <url>2020/12/28/https-elementary-knowledge/</url>
       
@@ -141,7 +278,7 @@
     
     
     <entry>
-      <title>http elementary knowledge</title>
+      <title>http基础知识</title>
       <link href="2020/12/28/http-elementary-knowledge/"/>
       <url>2020/12/28/http-elementary-knowledge/</url>
       
@@ -168,7 +305,7 @@
     
     
     <entry>
-      <title>tcp elementary knowledge</title>
+      <title>tcp基础知识</title>
       <link href="2020/12/28/tcp-elementary-knowledge/"/>
       <url>2020/12/28/tcp-elementary-knowledge/</url>
       
@@ -195,7 +332,7 @@
     
     
     <entry>
-      <title>thrift elementary knowledge</title>
+      <title>thrift基础知识</title>
       <link href="2020/12/28/thrift-elementary-knowledge/"/>
       <url>2020/12/28/thrift-elementary-knowledge/</url>
       
@@ -251,7 +388,7 @@
     
     
     <entry>
-      <title>protobuf基本知识</title>
+      <title>protobuf基础知识</title>
       <link href="2020/12/28/protobuf-elementary-knowledge/"/>
       <url>2020/12/28/protobuf-elementary-knowledge/</url>
       
@@ -280,7 +417,7 @@
     
     
     <entry>
-      <title>redis基本知识</title>
+      <title>redis基础知识</title>
       <link href="2020/12/27/redis-elementary-knowledge/"/>
       <url>2020/12/27/redis-elementary-knowledge/</url>
       
@@ -295,6 +432,8 @@
       
       
         <tags>
+            
+            <tag> cache </tag>
             
             <tag> redis </tag>
             
