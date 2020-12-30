@@ -4,25 +4,56 @@
   
     
     <entry>
-      <title>ip协议基础知识</title>
-      <link href="2020/12/29/ip-elementary-knowledge/"/>
-      <url>2020/12/29/ip-elementary-knowledge/</url>
+      <title>b+树</title>
+      <link href="2021/04/12/b-plus-tree/"/>
+      <url>2021/04/12/b-plus-tree/</url>
       
         <content type="html"><![CDATA[]]></content>
       
       
       <categories>
           
-          <category> internet </category>
+          <category> data structure </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> internet </tag>
+            <tag> algorithm </tag>
             
-            <tag> tcp </tag>
+            <tag> data structure </tag>
+            
+            <tag> database </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>b树</title>
+      <link href="2021/04/11/b-tree/"/>
+      <url>2021/04/11/b-tree/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> data structure </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> algorithm </tag>
+            
+            <tag> data structure </tag>
+            
+            <tag> database </tag>
             
         </tags>
       
@@ -32,8 +63,8 @@
     
     <entry>
       <title>consistent hashing</title>
-      <link href="2020/12/29/consistent-hashing/"/>
-      <url>2020/12/29/consistent-hashing/</url>
+      <link href="2021/04/02/consistent-hashing/"/>
+      <url>2021/04/02/consistent-hashing/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -60,25 +91,106 @@
     
     
     <entry>
-      <title>zab</title>
-      <link href="2020/12/29/zab/"/>
-      <url>2020/12/29/zab/</url>
+      <title>http3基础知识</title>
+      <link href="2021/03/08/http3-elementary-knowledge/"/>
+      <url>2021/03/08/http3-elementary-knowledge/</url>
       
         <content type="html"><![CDATA[]]></content>
       
       
       <categories>
           
-          <category> consistency </category>
+          <category> internet </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> consistency </tag>
+            <tag> internet </tag>
             
-            <tag> zab </tag>
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>redis基础知识</title>
+      <link href="2021/03/04/redis-elementary-knowledge/"/>
+      <url>2021/03/04/redis-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[<h2 id="高性能IO模型"><a href="#高性能IO模型" class="headerlink" title="高性能IO模型"></a>高性能IO模型</h2><h2 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h2><h3 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> redis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cache </tag>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>http2基础知识</title>
+      <link href="2021/02/28/http2-elementary-knowledge/"/>
+      <url>2021/02/28/http2-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> internet </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> internet </tag>
+            
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tcp基础知识</title>
+      <link href="2021/02/12/tcp-elementary-knowledge/"/>
+      <url>2021/02/12/tcp-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> internet </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> internet </tag>
+            
+            <tag> tcp </tag>
             
         </tags>
       
@@ -88,8 +200,8 @@
     
     <entry>
       <title>paxos</title>
-      <link href="2020/12/29/paxos/"/>
-      <url>2020/12/29/paxos/</url>
+      <link href="2021/01/19/paxos/"/>
+      <url>2021/01/19/paxos/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -114,9 +226,38 @@
     
     
     <entry>
+      <title>https基础知识</title>
+      <link href="2021/01/17/https-elementary-knowledge/"/>
+      <url>2021/01/17/https-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> internet </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> internet </tag>
+            
+            <tag> http </tag>
+            
+            <tag> ssl/tls </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>raft协议</title>
-      <link href="2020/12/29/raft/"/>
-      <url>2020/12/29/raft/</url>
+      <link href="2021/01/15/raft/"/>
+      <url>2021/01/15/raft/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -141,25 +282,25 @@
     
     
     <entry>
-      <title>dns基础知识</title>
-      <link href="2020/12/28/dns-elementary-knowledge/"/>
-      <url>2020/12/28/dns-elementary-knowledge/</url>
+      <title>zab</title>
+      <link href="2021/01/10/zab/"/>
+      <url>2021/01/10/zab/</url>
       
         <content type="html"><![CDATA[]]></content>
       
       
       <categories>
           
-          <category> internet </category>
-          
-          <category> udp </category>
+          <category> consistency </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> internet </tag>
+            <tag> consistency </tag>
+            
+            <tag> zab </tag>
             
         </tags>
       
@@ -168,9 +309,9 @@
     
     
     <entry>
-      <title>udp基础知识</title>
-      <link href="2020/12/28/udp-elementary-knowledge/"/>
-      <url>2020/12/28/udp-elementary-knowledge/</url>
+      <title>ip协议基础知识</title>
+      <link href="2021/01/05/ip-elementary-knowledge/"/>
+      <url>2021/01/05/ip-elementary-knowledge/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -179,8 +320,6 @@
           
           <category> internet </category>
           
-          <category> udp </category>
-          
       </categories>
       
       
@@ -188,142 +327,7 @@
             
             <tag> internet </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>http3基础知识</title>
-      <link href="2020/12/28/http3-elementary-knowledge/"/>
-      <url>2020/12/28/http3-elementary-knowledge/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> internet </category>
-          
-          <category> http </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> internet </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>http2基础知识</title>
-      <link href="2020/12/28/http2-elementary-knowledge/"/>
-      <url>2020/12/28/http2-elementary-knowledge/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> internet </category>
-          
-          <category> http </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> internet </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>https基础知识</title>
-      <link href="2020/12/28/https-elementary-knowledge/"/>
-      <url>2020/12/28/https-elementary-knowledge/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> internet </category>
-          
-          <category> http </category>
-          
-          <category> ssl/tls </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> internet </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>http基础知识</title>
-      <link href="2020/12/28/http-elementary-knowledge/"/>
-      <url>2020/12/28/http-elementary-knowledge/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> internet </category>
-          
-          <category> http </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> internet </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>tcp基础知识</title>
-      <link href="2020/12/28/tcp-elementary-knowledge/"/>
-      <url>2020/12/28/tcp-elementary-knowledge/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> internet </category>
-          
-          <category> tcp </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> internet </tag>
+            <tag> tcp </tag>
             
         </tags>
       
@@ -333,8 +337,8 @@
     
     <entry>
       <title>thrift基础知识</title>
-      <link href="2020/12/28/thrift-elementary-knowledge/"/>
-      <url>2020/12/28/thrift-elementary-knowledge/</url>
+      <link href="2021/01/02/thrift-elementary-knowledge/"/>
+      <url>2021/01/02/thrift-elementary-knowledge/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -359,9 +363,34 @@
     
     
     <entry>
+      <title>2021年学习计划</title>
+      <link href="2021/01/01/leaning-plan-for-2021/"/>
+      <url>2021/01/01/leaning-plan-for-2021/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><ol><li>JMM</li><li>G1</li><li>ZGC</li><li>JVM</li></ol><h2 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h2><ol><li>内存管理</li><li>GMP</li><li>并发</li></ol><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><ol><li>阅读网络是怎样连接的, 下半本书, 并整理出笔记</li></ol><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>1。 刷20道leetcode</p><h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><ol><li>集群</li><li>源码</li></ol><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ol><li>b树、b+树</li><li>事务</li><li>MVCC</li><li>newSQL, TiDB, TiKV</li></ol><h2 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h2><ol><li>基本原理</li></ol><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><ol><li>面向对象</li><li>架构设计原则</li><li>设计模式</li><li>DDD</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> leaning-plan </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leaning-plan </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>grpc基础知识</title>
-      <link href="2020/12/28/grpc-elementary-knowledge/"/>
-      <url>2020/12/28/grpc-elementary-knowledge/</url>
+      <link href="2020/12/30/grpc-elementary-knowledge/"/>
+      <url>2020/12/30/grpc-elementary-knowledge/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -388,27 +417,25 @@
     
     
     <entry>
-      <title>protobuf基础知识</title>
-      <link href="2020/12/28/protobuf-elementary-knowledge/"/>
-      <url>2020/12/28/protobuf-elementary-knowledge/</url>
+      <title>udp基础知识</title>
+      <link href="2020/12/28/udp-elementary-knowledge/"/>
+      <url>2020/12/28/udp-elementary-knowledge/</url>
       
         <content type="html"><![CDATA[]]></content>
       
       
       <categories>
           
-          <category> rpc </category>
+          <category> internet </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> protobuf </tag>
+            <tag> internet </tag>
             
-            <tag> rpc </tag>
-            
-            <tag> grpc </tag>
+            <tag> udp </tag>
             
         </tags>
       
@@ -417,25 +444,25 @@
     
     
     <entry>
-      <title>redis基础知识</title>
-      <link href="2020/12/27/redis-elementary-knowledge/"/>
-      <url>2020/12/27/redis-elementary-knowledge/</url>
+      <title>http基础知识</title>
+      <link href="2020/12/27/http-elementary-knowledge/"/>
+      <url>2020/12/27/http-elementary-knowledge/</url>
       
-        <content type="html"><![CDATA[<h2 id="高性能IO模型"><a href="#高性能IO模型" class="headerlink" title="高性能IO模型"></a>高性能IO模型</h2><h2 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h2><h3 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h3>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
       
       <categories>
           
-          <category> redis </category>
+          <category> internet </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> cache </tag>
+            <tag> internet </tag>
             
-            <tag> redis </tag>
+            <tag> http </tag>
             
         </tags>
       
@@ -469,23 +496,56 @@
     
     
     <entry>
-      <title>2021年学习计划</title>
-      <link href="2020/12/25/leaning-plan-for-2021/"/>
-      <url>2020/12/25/leaning-plan-for-2021/</url>
+      <title>protobuf基础知识</title>
+      <link href="2020/12/25/protobuf-elementary-knowledge/"/>
+      <url>2020/12/25/protobuf-elementary-knowledge/</url>
       
-        <content type="html"><![CDATA[<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><ol><li>JMM</li><li>G1</li><li>ZGC</li><li>JVM</li></ol><h2 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h2><ol><li>内存管理</li><li>GMP</li><li>并发</li></ol><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><ol><li>阅读网络是怎样连接的, 下半本书, 并整理出笔记</li></ol><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>1。 刷20道leetcode</p><h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><ol><li>集群</li><li>源码</li></ol><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ol><li>b树、b+树</li><li>事务</li><li>MVCC</li><li>newSQL, TiDB, TiKV</li></ol><h2 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h2><ol><li>基本原理</li></ol><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><ol><li>面向对象</li><li>架构设计原则</li><li>设计模式</li><li>DDD</li></ol>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
       
       <categories>
           
-          <category> leaning-plan </category>
+          <category> rpc </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> leaning-plan </tag>
+            <tag> protobuf </tag>
+            
+            <tag> rpc </tag>
+            
+            <tag> grpc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>dns基础知识</title>
+      <link href="2020/12/24/dns-elementary-knowledge/"/>
+      <url>2020/12/24/dns-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> internet </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> internet </tag>
+            
+            <tag> udp </tag>
+            
+            <tag> dns </tag>
             
         </tags>
       

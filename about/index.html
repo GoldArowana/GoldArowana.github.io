@@ -122,17 +122,6 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
@@ -219,17 +208,6 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -381,21 +359,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">19</a></span>
+    <span class="count"><a href="/">21</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">11</a></span>
+    <span class="count"><a href="/categories">8</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">18</a></span>
+    <span class="count"><a href="/tags">25</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -411,21 +389,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">19</a></span>
+    <span class="count"><a href="/">21</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">11</a></span>
+    <span class="count"><a href="/categories">8</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">18</a></span>
+    <span class="count"><a href="/tags">25</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -561,7 +539,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,19],
+                data: [0,0,0,0,0,0,0,0,0,0,0,0,7],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -603,7 +581,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"LB","value":1},{"name":"rpc","value":3},{"name":"internet","value":9},{"name":"udp","value":2},{"name":"java","value":1},{"name":"leaning-plan","value":1},{"name":"http","value":4},{"name":"consistency","value":3},{"name":"redis","value":1},{"name":"tcp","value":1},{"name":"ssl/tls","value":1}],
+                data: [{"name":"data structure","value":2},{"name":"LB","value":1},{"name":"internet","value":9},{"name":"rpc","value":3},{"name":"java","value":1},{"name":"leaning-plan","value":1},{"name":"consistency","value":3},{"name":"redis","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -627,7 +605,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["internet","rpc","consistency","cache","protobuf","grpc","LB","consistent hashing","tcp","并发"]
+                data: ["internet","http","rpc","consistency","algorithm","data structure","database","cache","udp","protobuf"]
             }
         ],
         yAxis: [
@@ -640,7 +618,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [9,3,3,2,2,2,1,1,1,1],
+                data: [9,4,3,3,2,2,2,2,2,2],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -758,6 +736,24 @@
         <div class="tag-chips center-align">
             
             
+            <a href="/tags/algorithm/">
+                <span class="chip center-align waves-effect waves-light chip-default">algorithm</span>
+            </a>
+            
+            
+            
+            <a href="/tags/data-structure/">
+                <span class="chip center-align waves-effect waves-light chip-default">data structure</span>
+            </a>
+            
+            
+            
+            <a href="/tags/database/">
+                <span class="chip center-align waves-effect waves-light chip-default">database</span>
+            </a>
+            
+            
+            
             <a href="/tags/cache/">
                 <span class="chip center-align waves-effect waves-light chip-default">cache</span>
             </a>
@@ -772,6 +768,24 @@
             
             <a href="/tags/consistent-hashing/">
                 <span class="chip center-align waves-effect waves-light chip-default">consistent hashing</span>
+            </a>
+            
+            
+            
+            <a href="/tags/internet/">
+                <span class="chip center-align waves-effect waves-light chip-default">internet</span>
+            </a>
+            
+            
+            
+            <a href="/tags/udp/">
+                <span class="chip center-align waves-effect waves-light chip-default">udp</span>
+            </a>
+            
+            
+            
+            <a href="/tags/dns/">
+                <span class="chip center-align waves-effect waves-light chip-default">dns</span>
             </a>
             
             
@@ -794,8 +808,14 @@
             
             
             
-            <a href="/tags/internet/">
-                <span class="chip center-align waves-effect waves-light chip-default">internet</span>
+            <a href="/tags/http/">
+                <span class="chip center-align waves-effect waves-light chip-default">http</span>
+            </a>
+            
+            
+            
+            <a href="/tags/ssl-tls/">
+                <span class="chip center-align waves-effect waves-light chip-default">ssl/tls</span>
             </a>
             
             
