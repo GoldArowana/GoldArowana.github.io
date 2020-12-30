@@ -5,7 +5,8 @@ tags:
     - protobuf
     - rpc
     - grpc
+    - distribute
 categories:
-    - rpc
+    - distribute
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co6.jpg
 ---

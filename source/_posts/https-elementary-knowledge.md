@@ -6,6 +6,7 @@ categories:
 tags:
     - internet
     - http
+    - https
     - ssl/tls
 img:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co14.png
 ---

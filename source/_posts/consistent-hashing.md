@@ -5,7 +5,8 @@ tags:
     - cache
     - LB
     - consistent hashing
+    - distribute
 categories:
-    - LB
+    - distribute
 img:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co20.jpg
 ---
