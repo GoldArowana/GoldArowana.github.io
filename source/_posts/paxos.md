@@ -1,6 +1,6 @@
 ---
 title: paxos
-date: 2020-12-29 12:10:55
+date: 2021-01-19 12:10:55
 tags:
     - paxos
     - consistency

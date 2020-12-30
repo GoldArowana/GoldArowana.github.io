@@ -1,6 +1,6 @@
 ---
 title: raft协议
-date: 2020-12-29 12:09:44
+date: 2021-01-15 12:09:44
 tags:
     - raft
     - consistency
