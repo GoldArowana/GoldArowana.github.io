@@ -4,6 +4,367 @@
   
     
     <entry>
+      <title>snowflake</title>
+      <link href="2021/07/02/snowflake/"/>
+      <url>2021/07/02/snowflake/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> distribute </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> distribute </tag>
+            
+            <tag> snowflake </tag>
+            
+            <tag> id generator </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>jvm zgc</title>
+      <link href="2021/06/25/jvm-zgc/"/>
+      <url>2021/06/25/jvm-zgc/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> gc </tag>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>jvm g1 gc</title>
+      <link href="2021/06/18/jvm-g1-gc/"/>
+      <url>2021/06/18/jvm-g1-gc/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> gc </tag>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>jmm(java 内存管理)</title>
+      <link href="2021/06/08/jmm/"/>
+      <url>2021/06/08/jmm/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java synchronized 实现原理</title>
+      <link href="2021/06/01/java-synchronized/"/>
+      <url>2021/06/01/java-synchronized/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> concurrent </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java AQS 原理</title>
+      <link href="2021/05/27/java-aqs/"/>
+      <url>2021/05/27/java-aqs/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> concurrent </tag>
+            
+            <tag> aqs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java concurrent hashmap 实现</title>
+      <link href="2021/05/20/java-concurrent-hashmap/"/>
+      <url>2021/05/20/java-concurrent-hashmap/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+          <category> map </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> map </tag>
+            
+            <tag> java </tag>
+            
+            <tag> concurrent </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java hashmap实现</title>
+      <link href="2021/05/10/java-hashmap/"/>
+      <url>2021/05/10/java-hashmap/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+          <category> map </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> map </tag>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>golang map实现</title>
+      <link href="2021/05/01/golang-map/"/>
+      <url>2021/05/01/golang-map/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> golang </category>
+          
+          <category> map </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> golang </tag>
+            
+            <tag> map </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>golang 垃圾回收</title>
+      <link href="2021/04/25/golang-gc/"/>
+      <url>2021/04/25/golang-gc/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> golang </category>
+          
+          <category> gc </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> golang </tag>
+            
+            <tag> gc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>golang内存管理</title>
+      <link href="2021/04/20/gmm/"/>
+      <url>2021/04/20/gmm/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> golang </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> golang </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>布隆过滤器</title>
+      <link href="2021/04/18/bloom-filter/"/>
+      <url>2021/04/18/bloom-filter/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> big data </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> big data </tag>
+            
+            <tag> bloom filter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>位图 bit map</title>
+      <link href="2021/04/16/bit-map/"/>
+      <url>2021/04/16/bit-map/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> big data </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bit map </tag>
+            
+            <tag> big data </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>b+树</title>
       <link href="2021/04/12/b-plus-tree/"/>
       <url>2021/04/12/b-plus-tree/</url>
@@ -71,7 +432,7 @@
       
       <categories>
           
-          <category> LB </category>
+          <category> distribute </category>
           
       </categories>
       
@@ -83,6 +444,8 @@
             <tag> LB </tag>
             
             <tag> consistent hashing </tag>
+            
+            <tag> distribute </tag>
             
         </tags>
       
@@ -208,12 +571,14 @@
       
       <categories>
           
-          <category> consistency </category>
+          <category> distribute </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> distribute </tag>
             
             <tag> paxos </tag>
             
@@ -246,6 +611,8 @@
             
             <tag> http </tag>
             
+            <tag> https </tag>
+            
             <tag> ssl/tls </tag>
             
         </tags>
@@ -264,12 +631,14 @@
       
       <categories>
           
-          <category> consistency </category>
+          <category> distribute </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> distribute </tag>
             
             <tag> consistency </tag>
             
@@ -282,7 +651,7 @@
     
     
     <entry>
-      <title>zab</title>
+      <title>zab 协议</title>
       <link href="2021/01/10/zab/"/>
       <url>2021/01/10/zab/</url>
       
@@ -291,7 +660,7 @@
       
       <categories>
           
-          <category> consistency </category>
+          <category> distribute </category>
           
       </categories>
       
@@ -345,12 +714,14 @@
       
       <categories>
           
-          <category> rpc </category>
+          <category> distribute </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> distribute </tag>
             
             <tag> rpc </tag>
             
@@ -505,12 +876,14 @@
       
       <categories>
           
-          <category> rpc </category>
+          <category> distribute </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> distribute </tag>
             
             <tag> protobuf </tag>
             
