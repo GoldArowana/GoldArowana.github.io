@@ -266,8 +266,6 @@
           
           <category> java </category>
           
-          <category> map </category>
-          
       </categories>
       
       
@@ -294,8 +292,6 @@
       <categories>
           
           <category> golang </category>
-          
-          <category> map </category>
           
       </categories>
       
@@ -410,9 +406,9 @@
       
         <tags>
             
-            <tag> bit map </tag>
-            
             <tag> big data </tag>
+            
+            <tag> bit map </tag>
             
         </tags>
       
@@ -479,7 +475,7 @@
     
     
     <entry>
-      <title>consistent hashing</title>
+      <title>一致性哈希</title>
       <link href="2021/04/02/consistent-hashing/"/>
       <url>2021/04/02/consistent-hashing/</url>
       
