@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>高性能网络模型</title>
+      <link href="2021/07/13/high-performance-network-model/"/>
+      <url>2021/07/13/high-performance-network-model/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> design patterns </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> design patterns </tag>
+            
+            <tag> internet </tag>
+            
+            <tag> os </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>权限管理设计</title>
+      <link href="2021/07/09/authority-management-design/"/>
+      <url>2021/07/09/authority-management-design/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> design patterns </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> authority </tag>
+            
+            <tag> design patterns </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>snowflake</title>
       <link href="2021/07/02/snowflake/"/>
       <url>2021/07/02/snowflake/</url>
