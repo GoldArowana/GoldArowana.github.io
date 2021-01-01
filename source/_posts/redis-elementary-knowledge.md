@@ -10,7 +10,158 @@ img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cove
 ---
 
 ## 高性能IO模型
+请参考我的另一篇文章:[高性能网络模型](/high-performance-network-model/)
+
 
 ## 持久化
-
 ### AOF
+#### AOF基本概念
+相比于数据库的写前日志(Write Ahead Log, WAL), AOF是在执行完命令后, 写入的日志。
+
+传统的数据库日志如redo log(重做日志), 记录的是修改后的数据, 而AOF里记录的是Redis服务器收到的每一条redis通信协议格式的命令。
+
+为了避免开销, 写AOF之前并不会进行语法校验。所以先记日志再执行的话，可能会记录错误的指令。
+而如果先执行命令, 成功后再记录AOF的话，就不会存在这样的问题。
+
+#### AOF三种写回策略
+可以选择appendfsync配置的三个可选值, 来选择对应的写回策略
+- always, 每个写命令都立即将日志写回磁盘
+- everysec, 每秒写回
+- no, redis不主动写回磁盘, 只是先把日志写到AOF文件的内存缓冲区中, 由操作系统决定何时写回磁盘。
+
+#### AOF重写机制
+在重写时, 创建一个新的AOF文件, 扫描当前数据库中的所有键值对, 并写入到这个新的AOF文件中。
+这样就可以减少AOF文件里key的无用历史记录。
+
+重写是由后台线程bgrewriteof来完成的，被主线程fork出来的时候会有主线程的一份内存拷贝, 这里就包含了数据库的最新数据。
+bgrewriteof子进程就可以在不影响主线程的情况下, 写入重写日志。
+如果redis在这期间内有新的写入, 在写入AOF缓冲的时候, 还会往AOF重写缓冲里写一份数据。等重写日志完成后, 这些新的操作记录也会写入到新的AOF文件中。
+之后就可以用新的AOF文件替代旧文件了。
+
+> fork子进程时，子进程是会拷贝父进程的页表，即虚实映射关系，而不会拷贝物理内存。子进程复制了父进程页表，也能共享访问父进程的内存数据了，此时，类似于有了父进程的所有内存数据。我的描述不太严谨了，非常感谢指出！
+
+> Kaito同学还提到了Huge page。这个特性大家在使用Redis也要注意。Huge page对提升TLB命中率比较友好，因为在相同的内存容量下，使用huge page可以减少页表项，TLB就可以缓存更多的页表项，能减少TLB miss的开销。
+
+> 但是，这个机制对于Redis这种喜欢用fork的系统来说，的确不太友好，尤其是在Redis的写入请求比较多的情况下。因为fork后，父进程修改数据采用写时复制，复制的粒度为一个内存页。如果只是修改一个256B的数据，父进程需要读原来的内存页，然后再映射到新的物理地址写入。一读一写会造成读写放大。如果内存页越大（例如2MB的大页），那么读写放大也就越严重，对Redis性能造成影响。
+
+> Huge page在实际使用Redis时是建议关掉的。
+
+### RDB
+可以使用save命令让主进程执行全量快照备份, 也可以使用bgsave命令fork出子进程进行快照备份。
+在快照过程中如果有写操作, 那么会触发fork的copy on write机制。
+
+### 混合快照
+混合RDB和AOF
+
+## 主从
+可以通过replicaof命令(Redis5.0之前是slaveof), 设置主从关系。
+比如在B实例上执行如下命令：
+```shell
+replicaof <A实例的IP地址> <A实例的Redis端口>
+```
+就可以让B作为A的从库, 并从A上复制数据。
+
+### 主从间同步数据
+#### 第一阶段: 建立连接, 协商同步
+从实例会给主实例发送 psync {runID} {offset} 。
+第一次建立主从关系的话, 从实例是不知道主实例的runID的, 所以runID部分会是'?'。
+之前没有同步过数据, 所以offset部分是-1。
+
+主实例收到建立的请求后, 会向从实例发送`FULLRESYNC` {runID} {offset}。
+`FULLRESYNC` 表示第一次复制采用的全量复制, 也就是说, 主库会把当前所有的数据都复制给从库。
+
+#### 第二阶段: 主库同步数据给从库
+主库执行bgsave命令, 生成RDB文件传输给从库。
+从库收到RDB文件后, 会先清空当前数据库, 在本地完成RDB加载。
+在同步期间如果有新的数据产生, 主库会在内存中用专门的replication buffer 记录RDB文件生成后收到的所有写操作。
+
+#### 第三阶段: 主库发送新写命令给从库
+主库把replication buffer发送给从库。
+
+#### 主从级联模式
+`主-从`模式下, 如果从库数量很多, 那么会给主库带来压力。所以可以考虑`主-从-从`模式。
+
+### 主从库间网络断了怎么办？
+在Redis2.8之前, 在网络断了后, 主从会重新进行一次全量复制。
+
+在Redis2.8开始, 网络断了后, 会先采用增量复制的方式继续同步。
+
+repl_backlog_buffer是一个环形缓冲区, 主库会记录自己写到的位置, 从库则会记录自己已经读到的位置。
+大小一般设置为：`(主库写入命令速度*操作大小 - 主从库间网络传输命令速度*操作大小) * 2`
+
+### 哨兵机制
+哨兵主要负责三个任务: 监控、选主、通知。
+- 监控: 哨兵进程在运行时, 周期性地给所有的主从库发送PING命令, 检测他们是否仍然在线运行。
+  如果再规定的时间内没有响应PING命令, 那么会标记为"下线状态"。如果主库下线的话, 就会开始自动切换主库的流程。
+- 选主: 主库挂了后, 哨兵就需要从很多歌从库里, 选择一个新主库。选主的过程, 又分为 `筛选` 和 `打分`两个阶段。
+    - 筛选。不在线的从库需要筛选出去。网络总是段连的从库需要筛选出去。(根据配置项down-after-milliseconds * 10判定。
+      down-after-milliseconds是主从库锻炼的最大连接超时时间。如果断连次数超过10次, 那么说明这个从库的网络状况不好)
+    - 打分。打分会经过多轮, 如果某一轮出现了得分最高的从库, 那么那么它就是主库了, 选主过程到此结束。否则继续下一轮选举。
+        - 第一轮: 优先级最高的从库的最高分。
+        - 第二轮: 和旧主库同步程度最接近的从库得最高分。
+        - 第三轮: ID号小的从库得高分。
+- 通知: 选好新的主库后, 哨兵会把新主库的链接信息发送给其他从库, 让他们执行eplicaof命令, 
+  和新主库建立连接, 并进行数据复制。同时, 哨兵会把新主库的链接信息通知给客户端, 让他们把请求操作发送到新主库上。
+
+
+在redis哨兵集群中, 有N/2 + 1 个哨兵认为主库下线了(这个值由redis管理员设定), 才能最终判定为"客观下线", 进行新主库的选举。
+
+在redis主库中, 有一个名为"__sentinel__:hello"的`pub/sub`频道, 哨兵把自己的IP和端口发布到
+"__sentinel__:hello"频道上, 其他哨兵订阅了这个频道后就可以获取到该哨兵的IP和端口, 以此来建立连接, 组成哨兵集群。
+
+哨兵除了彼此之间建立连接形成集群意外, 还需要和从库建立连接, 对主从库都进行心跳判断。
+
+哨兵通过给主库发送INFO命令来获取从库的信息。
+
+本质上说, 哨兵就是一个运行在特定模式下的Redis实例, 只不过它并不服务其他请求操作, 只是完成监控、选主和通知的任务。
+每个哨兵实例也提供pub/sub机制, 客户端可以从哨兵订阅消息。哨兵提供的消息大致有一下几个：
+
+|  事件   | 相关频道  |
+|  ----  | ----  |
+| 实例进入"主观下线"装填  | +sdown |
+| 实例退出"主观下线"装填  | -sdown |
+| 实例进入"客观下线"装填  | +odown |
+| 实例退出"客观下线"装填  | -0down |
+| 哨兵发送SLAVEOF命令重新配置从库   | +slave-reconf-sent |
+| 从库配置了新主库, 但尚未进行同步   | +slave-reconf-inprog |
+| 从库配置了新主库, 且和新主库完成同步   | +slave-reconf-done |
+| 新主库切换   | +switch-master  |
+
+客户端可以订阅这些消息来获取相信的信息。比如订阅所有所实例的客观下线状态的事件：
+```shell
+SUBSCRIBE +odown
+```
+
+或者订阅所有的事件：
+```shell
+PSUBSCRIBE *
+```
+
+当哨兵把新主库选择出来后, 客户端就会看到下面的switch-master事件, 这样就会知道新主库的地址和端口了。
+```shell
+switch-master <master name> <oldip> <oldport> <newip> <newport>
+```
+
+leader哨兵才可以执行主从切换的过程。哨兵leader选举需要满足2个条件：
+    1. 拿到半数以上的票
+    1. 拿到的票数大于等于哨兵配置文件中的quorum值
+
+
+
+## 参考文章
+极客时间, 《Redis核心技术与实战》
+《Redis 5 设计与源码分析》
+《Redis设计与实现》
+[解析Redis网络模型的源码](https://blog.csdn.net/qingyangcc123/article/details/107644885)
+[Redis源码剖析（十一）--AOF持久化](https://www.cnblogs.com/lizhimin123/p/10197431.html)
+[redis aof持久化源码分析](https://blog.csdn.net/bruce128/article/details/104579288)
+[redis aof持久化的源码分析](https://blog.csdn.net/hangbo216/article/details/68925644)
+[kqueue的用法](https://blog.csdn.net/Namcodream521/article/details/83032615)
+[Redis 中的事件驱动模型](https://my.oschina.net/xilidou/blog/4381183)
+[Redis时间事件源码解析](https://blog.csdn.net/qq_35181209/article/details/80353299)
+[Redis事件](https://redisbook.readthedocs.io/en/latest/internal/ae.html)
+[Redis 客户端与服务器连接流程实例](https://www.dazhuanlan.com/2019/12/16/5df6dec38a0fa/)
+[深入浅出 Redis client/server交互流程](https://blog.csdn.net/fishmai/article/details/78515355)
+[Linux -- fork() 写时拷贝（copy-on-write）](https://blog.csdn.net/qq_32095699/article/details/99689830)
+[Redis的RDB持久化](https://vlambda.com/wz_5hpcZyGM8O2.html)
+[Java NIO(7): Epoll版的Selector](https://zhuanlan.zhihu.com/p/27441342)

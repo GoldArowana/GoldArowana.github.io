@@ -66,8 +66,8 @@ cover:
 dream:
   enable: true
   showTitle: true
-  title: 随想
-  text: 沉淀、沉淀、沉淀。
+  title: 为什么会焦虑？
+  text: 因为你的实力配不上你的野心。
 
 # Whether to display the musics.
 # 是否在首页显示音乐.
@@ -414,7 +414,7 @@ baiduAnalytics:
   id:
 
 # 百度搜索资源平台提交链接
-baiduPush: true
+baiduPush: false
 
 # The used front-end library can be replaced with the corresponding CDN address as needed,
 # If the specific version is not specified below, you can use the latest version.
@@ -466,27 +466,6 @@ featureImages:
   - /medias/featureimages/0.jpg
   - /medias/featureimages/1.jpg
   - /medias/featureimages/2.jpg
-  - /medias/featureimages/3.jpg
-  - /medias/featureimages/4.jpg
-  - /medias/featureimages/5.jpg
-  - /medias/featureimages/6.jpg
-  - /medias/featureimages/7.jpg
-  - /medias/featureimages/8.jpg
-  - /medias/featureimages/9.jpg
-  - /medias/featureimages/10.jpg
-  - /medias/featureimages/11.jpg
-  - /medias/featureimages/12.jpg
-  - /medias/featureimages/13.jpg
-  - /medias/featureimages/14.jpg
-  - /medias/featureimages/15.jpg
-  - /medias/featureimages/16.jpg
-  - /medias/featureimages/17.jpg
-  - /medias/featureimages/18.jpg
-  - /medias/featureimages/19.jpg
-  - /medias/featureimages/20.jpg
-  - /medias/featureimages/21.jpg
-  - /medias/featureimages/22.jpg
-  - /medias/featureimages/23.jpg
 
 # default configs that the default policy for every articles/posts
 # default 配置文章的默认转载规则
@@ -509,7 +488,7 @@ featureImages:
 # pay（付费转载 pay for reprinting）
 reprint:
   enable: true # whether enable reprint section 是否启用“转载规则限定模块”
-  default: cc_by
+  default: cc_by_nc_sa
 
 # DaoVoice online contact
 daovoice:

@@ -9,3 +9,6 @@ categories:
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co32.jpg
 ---
 
+
+
+[Java Language and Virtual Machine Specifications](https://docs.oracle.com/javase/specs/index.html)
