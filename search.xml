@@ -4,11 +4,151 @@
   
     
     <entry>
+      <title>REST</title>
+      <link href="rest/"/>
+      <url>rest/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://martinfowler.com/articles/enterpriseREST.html">https://martinfowler.com/articles/enterpriseREST.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> -arch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -arch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>micro-frontends (微前端)</title>
+      <link href="micro-frontends/"/>
+      <url>micro-frontends/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://martinfowler.com/articles/micro-frontends.html">https://martinfowler.com/articles/micro-frontends.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> -arch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -arch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>serverless</title>
+      <link href="serverless/"/>
+      <url>serverless/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://martinfowler.com/articles/serverless.html">https://martinfowler.com/articles/serverless.html</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Microservices vs SOA</title>
+      <link href="microservices-vs-soa/"/>
+      <url>microservices-vs-soa/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://insights.daffodilsw.com/blog/microservices-vs-service-oriented-architecture-soa-fundamental-differences">https://insights.daffodilsw.com/blog/microservices-vs-service-oriented-architecture-soa-fundamental-differences</a></p><p><a href="https://martinfowler.com/bliki/ServiceOrientedAmbiguity.html">https://martinfowler.com/bliki/ServiceOrientedAmbiguity.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> -arch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -arch -microservices </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Microservices (微服务)</title>
+      <link href="microservices/"/>
+      <url>microservices/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://martinfowler.com/articles/microservices.html">https://martinfowler.com/articles/microservices.html</a></p><p><a href="https://martinfowler.com/microservices/">https://martinfowler.com/microservices/</a></p><p><a href="https://martinfowler.com/bliki/PresentationDomainDataLayering.html">https://martinfowler.com/bliki/PresentationDomainDataLayering.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> arch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> arch </tag>
+            
+            <tag> microservices </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Service-oriented architecture (SOA)</title>
+      <link href="service-oriented-architecture/"/>
+      <url>service-oriented-architecture/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Service-oriented_architecture">https://en.wikipedia.org/wiki/Service-oriented_architecture</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> -arch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -arch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>golang 并发</title>
       <link href="golang-concurrency/"/>
       <url>golang-concurrency/</url>
       
-        <content type="html"><![CDATA[<h2 id="互斥锁Mutex"><a href="#互斥锁Mutex" class="headerlink" title="互斥锁Mutex"></a>互斥锁Mutex</h2><h3 id="不用锁会怎么样"><a href="#不用锁会怎么样" class="headerlink" title="不用锁会怎么样"></a>不用锁会怎么样</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">import</span> <span class="token punctuation">(</span><span class="token string">"fmt"</span><span class="token string">"sync"</span><span class="token punctuation">)</span><span class="token comment">// go run -race main.go</span><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">for</span> j <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">100000</span><span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">{</span>count<span class="token operator">++</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="用mutex解决并发计数问题"><a href="#用mutex解决并发计数问题" class="headerlink" title="用mutex解决并发计数问题"></a>用mutex解决并发计数问题</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">import</span> <span class="token punctuation">(</span><span class="token string">"fmt"</span><span class="token string">"sync"</span><span class="token punctuation">)</span><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token keyword">var</span> mu sync<span class="token punctuation">.</span>Mutex<span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">for</span> j <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">100000</span><span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">{</span>mu<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>count<span class="token operator">++</span>mu<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="count和mutex可以封装到一起-而且一般mutex会定义在要锁的字段的上面："><a href="#count和mutex可以封装到一起-而且一般mutex会定义在要锁的字段的上面：" class="headerlink" title="count和mutex可以封装到一起, 而且一般mutex会定义在要锁的字段的上面："></a>count和mutex可以封装到一起, 而且一般mutex会定义在要锁的字段的上面：</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">import</span> <span class="token punctuation">(</span><span class="token string">"fmt"</span><span class="token string">"sync"</span><span class="token punctuation">)</span><span class="token keyword">type</span> Counter <span class="token keyword">struct</span> <span class="token punctuation">{</span>sync<span class="token punctuation">.</span>MutexCount <span class="token builtin">int64</span><span class="token punctuation">}</span><span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>Counter<span class="token punctuation">)</span> <span class="token function">Incr</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>c<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>c<span class="token punctuation">.</span>Count<span class="token operator">++</span>c<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token keyword">var</span> Incr10k <span class="token operator">=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>counter <span class="token operator">*</span>Counter<span class="token punctuation">,</span> wg <span class="token operator">*</span>sync<span class="token punctuation">.</span>WaitGroup<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">for</span> j <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">100000</span><span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">{</span>counter<span class="token punctuation">.</span><span class="token function">Incr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">var</span> counter Counter<span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">go</span> <span class="token function">Incr10k</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>counter<span class="token punctuation">,</span> <span class="token operator">&amp;</span>wg<span class="token punctuation">)</span><span class="token punctuation">}</span>wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>counter<span class="token punctuation">.</span>Count<span class="token punctuation">)</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://colobu.com/2018/12/18/dive-into-sync-mutex/">sync.mutex 源代码分析</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="互斥锁Mutex功能"><a href="#互斥锁Mutex功能" class="headerlink" title="互斥锁Mutex功能"></a>互斥锁Mutex功能</h2><h3 id="不用锁会怎么样"><a href="#不用锁会怎么样" class="headerlink" title="不用锁会怎么样"></a>不用锁会怎么样</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">import</span> <span class="token punctuation">(</span><span class="token string">"fmt"</span><span class="token string">"sync"</span><span class="token punctuation">)</span><span class="token comment">// go run -race main.go</span><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">for</span> j <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">100000</span><span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">{</span>count<span class="token operator">++</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="用mutex解决并发计数问题"><a href="#用mutex解决并发计数问题" class="headerlink" title="用mutex解决并发计数问题"></a>用mutex解决并发计数问题</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">import</span> <span class="token punctuation">(</span><span class="token string">"fmt"</span><span class="token string">"sync"</span><span class="token punctuation">)</span><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token keyword">var</span> mu sync<span class="token punctuation">.</span>Mutex<span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">for</span> j <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">100000</span><span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">{</span>mu<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>count<span class="token operator">++</span>mu<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="count和mutex可以封装到一起-而且一般mutex会定义在要锁的字段的上面："><a href="#count和mutex可以封装到一起-而且一般mutex会定义在要锁的字段的上面：" class="headerlink" title="count和mutex可以封装到一起, 而且一般mutex会定义在要锁的字段的上面："></a>count和mutex可以封装到一起, 而且一般mutex会定义在要锁的字段的上面：</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">import</span> <span class="token punctuation">(</span><span class="token string">"fmt"</span><span class="token string">"sync"</span><span class="token punctuation">)</span><span class="token keyword">type</span> Counter <span class="token keyword">struct</span> <span class="token punctuation">{</span>sync<span class="token punctuation">.</span>MutexCount <span class="token builtin">int64</span><span class="token punctuation">}</span><span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>Counter<span class="token punctuation">)</span> <span class="token function">Incr</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>c<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>c<span class="token punctuation">.</span>Count<span class="token operator">++</span>c<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token keyword">var</span> Incr10k <span class="token operator">=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>counter <span class="token operator">*</span>Counter<span class="token punctuation">,</span> wg <span class="token operator">*</span>sync<span class="token punctuation">.</span>WaitGroup<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">for</span> j <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">100000</span><span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">{</span>counter<span class="token punctuation">.</span><span class="token function">Incr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">var</span> counter Counter<span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">go</span> <span class="token function">Incr10k</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>counter<span class="token punctuation">,</span> <span class="token operator">&amp;</span>wg<span class="token punctuation">)</span><span class="token punctuation">}</span>wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>counter<span class="token punctuation">.</span>Count<span class="token punctuation">)</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Mutex实现"><a href="#Mutex实现" class="headerlink" title="Mutex实现"></a>Mutex实现</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://colobu.com/2018/12/18/dive-into-sync-mutex/">sync.mutex 源代码分析</a></p>]]></content>
       
       
       <categories>
@@ -510,9 +650,9 @@
       
         <tags>
             
-            <tag> bit map </tag>
-            
             <tag> big data </tag>
+            
+            <tag> bit map </tag>
             
         </tags>
       
