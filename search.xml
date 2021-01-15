@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>pulsar 基础知识</title>
+      <link href="pulsar-elementary-knowledge/"/>
+      <url>pulsar-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> MQ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> pulsar </tag>
+            
+            <tag> MQ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>kafka 基础知识</title>
+      <link href="kafka-elementary-knowledge/"/>
+      <url>kafka-elementary-knowledge/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> -MQ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -kafka -MQ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>REST</title>
       <link href="rest/"/>
       <url>rest/</url>
@@ -650,9 +702,9 @@
       
         <tags>
             
-            <tag> big data </tag>
-            
             <tag> bit map </tag>
+            
+            <tag> big data </tag>
             
         </tags>
       
