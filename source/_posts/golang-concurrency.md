@@ -8,7 +8,7 @@ categories:
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co41.jpg
 ---
 
-## 互斥锁Mutex
+## 互斥锁Mutex功能
 
 ### 不用锁会怎么样
 
@@ -111,6 +111,9 @@ func main() {
 }
 
 ```
+
+## Mutex实现
+
 
 ## 参考资料
 
