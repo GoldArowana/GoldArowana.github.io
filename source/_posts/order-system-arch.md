@@ -7,6 +7,7 @@ tags:
 categories:
     - arch
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co40.jpg
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co40.jpg
 ---
 
 [基于大中台架构的电商业务中台最佳实践之二：交易业务中台核心设计](https://juejin.cn/post/6844903699593035790)

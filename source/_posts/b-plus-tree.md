@@ -8,4 +8,5 @@ tags:
 categories:
     - data structure
 img:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co22.jpg
+tinyImg:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co22.jpg
 ---

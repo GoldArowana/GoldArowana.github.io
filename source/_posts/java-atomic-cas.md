@@ -1,6 +1,7 @@
 ---
 title: java原子类cas的实现原理 
 date: 2020-12-21 13:26:15
+summary: java并发必学
 categories: 
     - java
 tags:
@@ -8,6 +9,7 @@ tags:
     - atomic
     - cas
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co5.jpg
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co5.jpg
 ---
 
 ## cas简介

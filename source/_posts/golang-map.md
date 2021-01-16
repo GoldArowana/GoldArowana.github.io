@@ -6,5 +6,6 @@ tags:
     - map
 categories:
     - golang
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co26.jpg
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co51.jpg
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co51.jpg
 ---

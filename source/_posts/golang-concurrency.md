@@ -6,6 +6,7 @@ tags:
 categories:
     - golang 
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co41.jpg
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co41.jpg
 ---
 
 ## 互斥锁Mutex功能

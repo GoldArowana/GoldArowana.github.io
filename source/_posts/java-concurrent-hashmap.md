@@ -9,4 +9,5 @@ categories:
     - java
     - map
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co28.png
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co28.png
 ---

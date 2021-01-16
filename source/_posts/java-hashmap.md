@@ -6,6 +6,7 @@ tags:
     - map
 categories:
     - java
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co27.jpg
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co50.jpg
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co50.jpg
 ---
 

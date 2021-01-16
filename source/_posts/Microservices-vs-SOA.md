@@ -2,11 +2,12 @@
 title: Microservices vs SOA
 date: 2021-09-25 13:42:52
 tags:
-    -arch
-    -microservices
+    - arch
+    - microservices
 categories:
-    -arch
+    - arch
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co44.jpg
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co44.jpg
 ---
 https://insights.daffodilsw.com/blog/microservices-vs-service-oriented-architecture-soa-fundamental-differences
 

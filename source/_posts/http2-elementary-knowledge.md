@@ -7,4 +7,5 @@ tags:
     - internet
     - http
 img:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co12.png
+tinyImg:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co12.png
 ---

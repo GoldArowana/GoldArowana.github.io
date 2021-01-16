@@ -2,10 +2,11 @@
 title: Service-oriented architecture (SOA)
 date: 2021-09-01 13:24:14
 tags:
-    -arch
+    - arch
 categories:
-    -arch
+    - arch
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co42.jpg
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co42.jpg
 ---
 
 https://en.wikipedia.org/wiki/Service-oriented_architecture

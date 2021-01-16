@@ -7,4 +7,5 @@ tags:
     - internet
     - tcp
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co9.jpg
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co9.jpg
 ---
