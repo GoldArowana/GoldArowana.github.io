@@ -72,7 +72,9 @@
       
         <tags>
             
-            <tag> -arch </tag>
+            <tag> arch </tag>
+            
+            <tag> REST </tag>
             
         </tags>
       
@@ -113,6 +115,20 @@
         <content type="html"><![CDATA[<p><a href="https://martinfowler.com/articles/serverless.html">https://martinfowler.com/articles/serverless.html</a></p>]]></content>
       
       
+      <categories>
+          
+          <category> arch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> arch </tag>
+            
+            <tag> serverless </tag>
+            
+        </tags>
       
     </entry>
     
