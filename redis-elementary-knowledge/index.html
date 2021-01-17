@@ -466,14 +466,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    10 分
                 </div>
                 
 
@@ -600,6 +600,25 @@
 <p>当哨兵把新主库选择出来后, 客户端就会看到下面的switch-master事件, 这样就会知道新主库的地址和端口了。</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">switch-master &lt;master name&gt; &lt;oldip&gt; &lt;oldport&gt; &lt;newip&gt; &lt;newport&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>leader哨兵才可以执行主从切换的过程。哨兵leader选举需要满足2个条件：<br>    1. 拿到半数以上的票<br>    1. 拿到的票数大于等于哨兵配置文件中的quorum值</p>
+<h2 id="Redis-Cluster"><a href="#Redis-Cluster" class="headerlink" title="Redis Cluster"></a>Redis Cluster</h2><h3 id="横向扩容？纵向扩容？"><a href="#横向扩容？纵向扩容？" class="headerlink" title="横向扩容？纵向扩容？"></a>横向扩容？纵向扩容？</h3><p>纵向机器成本高, 也会导致单实例存储的数据过多, RDB有压力</p>
+<h3 id="Redis-Cluster是什么"><a href="#Redis-Cluster是什么" class="headerlink" title="Redis Cluster是什么"></a>Redis Cluster是什么</h3><p>采用哈希槽(Hash Slot)来处理数据和实例之间的映射关系。<br>在Redis Cluster方案中, 一个切片集群共有16384个哈希槽，<br>这些哈希槽类似于数据分区, 每个键值对都会根据key映射到一个哈希槽中。</p>
+<h3 id="槽是怎么计算的"><a href="#槽是怎么计算的" class="headerlink" title="槽是怎么计算的"></a>槽是怎么计算的</h3><p>按照CRC16算法计算一个16bit的值, 然后再由这个16bit值对16384取模, 得到哈希槽的编号。</p>
+<p>如果集群中有N个实例, 那么实例上的槽的个数为16384/N个。</p>
+<p>也可以使用<code>cluster addslots</code>命令指定每个实例上的哈希槽个数。如果总共设置了5个槽, 那么槽的编号就是<code>CRC16(key)%5</code>。</p>
+<h3 id="客户端怎么知道哪个key在哪个实例上？"><a href="#客户端怎么知道哪个key在哪个实例上？" class="headerlink" title="客户端怎么知道哪个key在哪个实例上？"></a>客户端怎么知道哪个key在哪个实例上？</h3><p>Redis会把自己的槽信息发送给和它相连的其他信息, 这样每个实例就有所有的槽信息了。</p>
+<p>当客户端访问任意一个实例时, 便可以把槽的信息缓存在本地, 这样就知道对应的key应该发给哪个实例了。</p>
+<h3 id="在集群中-实例和哈希槽的对应关系发生变化了怎么办？"><a href="#在集群中-实例和哈希槽的对应关系发生变化了怎么办？" class="headerlink" title="在集群中, 实例和哈希槽的对应关系发生变化了怎么办？"></a>在集群中, 实例和哈希槽的对应关系发生变化了怎么办？</h3><p>Redis Cluster提供了一种重定向机制: 当客户端给一个Redis实例发送数据读写操作时, 如果这个实力上并没有对应的数据,<br>这个实例就会给客户端返回MOVED重定向命令, 其中就带着对应实例的IP和端口</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">GET hello:key
+(error) MOVED 13320 172.16.19.5:5379<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>如果slot正好再迁移中, 那么可能会返回ASK命令</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">GET hello:key
+(error) ASK 13320 172.16.19.5:5379<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="为什么对key做CRC计算？直接key的slot的对应关系存下来可以吗？"><a href="#为什么对key做CRC计算？直接key的slot的对应关系存下来可以吗？" class="headerlink" title="为什么对key做CRC计算？直接key的slot的对应关系存下来可以吗？"></a>为什么对key做CRC计算？直接key的slot的对应关系存下来可以吗？</h3><p>不行。</p>
+<ol>
+<li>表的量会随着key增加而增大</li>
+<li>这个表只存一份的话会有单点问题, 如果部署多份的话会有一致性问题, 提高了系统复杂度。</li>
+<li>CRC类似于hash, 可以使哈希结果更加分散</li>
+</ol>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p>极客时间, 《Redis核心技术与实战》<br>《Redis 5 设计与源码分析》<br>《Redis设计与实现》<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qingyangcc123/article/details/107644885">解析Redis网络模型的源码</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lizhimin123/p/10197431.html">Redis源码剖析（十一）–AOF持久化</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/bruce128/article/details/104579288">redis aof持久化源码分析</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/hangbo216/article/details/68925644">redis aof持久化的源码分析</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Namcodream521/article/details/83032615">kqueue的用法</a><br><a target="_blank" rel="noopener" href="https://my.oschina.net/xilidou/blog/4381183">Redis 中的事件驱动模型</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35181209/article/details/80353299">Redis时间事件源码解析</a><br><a target="_blank" rel="noopener" href="https://redisbook.readthedocs.io/en/latest/internal/ae.html">Redis事件</a><br><a target="_blank" rel="noopener" href="https://www.dazhuanlan.com/2019/12/16/5df6dec38a0fa/">Redis 客户端与服务器连接流程实例</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/fishmai/article/details/78515355">深入浅出 Redis client/server交互流程</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32095699/article/details/99689830">Linux – fork() 写时拷贝（copy-on-write）</a><br><a target="_blank" rel="noopener" href="https://vlambda.com/wz_5hpcZyGM8O2.html">Redis的RDB持久化</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/27441342">Java NIO(7): Epoll版的Selector</a></p>
 
                 
@@ -994,7 +1013,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.9k</span>&nbsp;字
+                class="white-color">4.5k</span>&nbsp;字
             
             
             
