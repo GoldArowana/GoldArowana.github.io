@@ -65,7 +65,7 @@
       
       <categories>
           
-          <category> -arch </category>
+          <category> arch </category>
           
       </categories>
       
@@ -92,14 +92,14 @@
       
       <categories>
           
-          <category> -arch </category>
+          <category> arch </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> -arch </tag>
+            <tag> arch </tag>
             
         </tags>
       
@@ -144,14 +144,16 @@
       
       <categories>
           
-          <category> -arch </category>
+          <category> arch </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> -arch -microservices </tag>
+            <tag> arch </tag>
+            
+            <tag> microservices </tag>
             
         </tags>
       
@@ -196,14 +198,14 @@
       
       <categories>
           
-          <category> -arch </category>
+          <category> arch </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> -arch </tag>
+            <tag> arch </tag>
             
         </tags>
       
