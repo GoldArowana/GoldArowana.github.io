@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>编程范式</title>
+      <link href="programming-paradigm/"/>
+      <url>programming-paradigm/</url>
+      
+        <content type="html"><![CDATA[<p>编程范式：命令式编程(Imperative)、声明式编程(Declarative)和函数式编程(Functional)</p><p><a href="https://www.cnblogs.com/sirkevin/p/8283110.html">https://www.cnblogs.com/sirkevin/p/8283110.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> programming </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> programming </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>pulsar 基础知识</title>
       <link href="pulsar-elementary-knowledge/"/>
       <url>pulsar-elementary-knowledge/</url>
