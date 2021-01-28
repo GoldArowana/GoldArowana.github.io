@@ -455,21 +455,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-17
+                    2021-01-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2
+                    544
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -492,7 +492,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a target="_blank" rel="noopener" href="http://ifeve.com/tag/happens-before/">happens-before</a></p>
+                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在命令式编程中, 线程之间的通信机制有两种: 共享内存和消息传递。Java的并发采用的是共享内存模型。</p>
+<p>Java线程之间的通信由JMM控制, JMM决定一个线程对共享变量的写入何时对另一个线程可见。</p>
+<p>Java源代码到最终实际执行的指令序列, 会经理下面三种重排序：</p>
+<ol>
+<li>源代码 -&gt; 编译器优化重排序</li>
+<li>-&gt; 指令级并行重排序</li>
+<li>-&gt; 内存系统重排序 -&gt; 最终执行的指令序列</li>
+</ol>
+<p>禁止编译器重排序: JMM的编译器重排序规则会禁止特定类型的编译器重排序<br>禁止处理器重排序: JMM通过插入内存屏障</p>
+<p>JMM属于语言级的内存模型, 它确保在不同的编译器和处理器上 为程序员员提供一致的内存可见性(通过禁止特定类型的编译器重排序和处理器重排序)。</p>
+<h2 id="cpu写缓冲区"><a href="#cpu写缓冲区" class="headerlink" title="cpu写缓冲区"></a>cpu写缓冲区</h2><p>现代的cpu使用写缓冲区来临时保存向内存写入的数据。</p>
+<h3 id="写缓冲区的优点"><a href="#写缓冲区的优点" class="headerlink" title="写缓冲区的优点"></a>写缓冲区的优点</h3><ol>
+<li>cpu不必停顿下来等待向内存写入数据, 这种停顿等待会打断流水线的持续运行。</li>
+<li>通过以批处理的方式刷新写缓冲区, 以及合并写缓冲区对同一内存地址的多次写, 减少对内存总线的占用</li>
+</ol>
+<h3 id="写缓冲区带来的问题"><a href="#写缓冲区带来的问题" class="headerlink" title="写缓冲区带来的问题"></a>写缓冲区带来的问题</h3><p>处理器对内存的读/写操作的执行顺序, 不一定与内存实际发生的读/写操作顺序一致</p>
+<p>常见的缓存一致性协议有：MESI，MESIF（MESIF是缓存行的状态标识，M:Modified, E: Exclusive, S:Shared, I:Invalid, F: Forwad），通过标记缓存行的状态和处理器间的通讯来实现。</p>
+<p><a target="_blank" rel="noopener" href="http://ifeve.com/tag/happens-before/">happens-before</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/duanxz/archive/2013/01/15/2861606.html">指令重排、内存屏障概念解析</a></p>
+<p>Intel文档：<a target="_blank" rel="noopener" href="https://software.intel.com/content/www/us/en/develop/articles/intel-sdm.html">https://software.intel.com/content/www/us/en/develop/articles/intel-sdm.html</a></p>
+<p>cmpxchg指令：<a target="_blank" rel="noopener" href="https://www.felixcloutier.com/x86/cmpxchg">https://www.felixcloutier.com/x86/cmpxchg</a></p>
+<p>x86寄存器：<a target="_blank" rel="noopener" href="http://www.cs.virginia.edu/~evans/cs216/guides/x86.html">http://www.cs.virginia.edu/~evans/cs216/guides/x86.html</a></p>
+<p>ZF标志：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Zero_flag">https://en.wikipedia.org/wiki/Zero_flag</a></p>
+<p>The JSR-133 Cookbook for Compiler Writers  <a target="_blank" rel="noopener" href="http://gee.cs.oswego.edu/dl/jmm/cookbook.html">http://gee.cs.oswego.edu/dl/jmm/cookbook.html</a></p>
 
                 
             </div>
@@ -882,7 +904,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.5k</span>&nbsp;字
+                class="white-color">5k</span>&nbsp;字
             
             
             
