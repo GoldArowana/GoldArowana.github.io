@@ -459,7 +459,7 @@
       <link href="jvm-g1-gc/"/>
       <url>jvm-g1-gc/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://docs.oracle.com/javase/specs/index.html">Java Language and Virtual Machine Specifications</a></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://docs.oracle.com/javase/specs/index.html">Java Language and Virtual Machine Specifications</a><br>&lt;&lt;JVM G1GC的的算法与实现&gt;&gt;</p>]]></content>
       
       
       <categories>
