@@ -376,7 +376,7 @@
       <link href="authority-management-design/"/>
       <url>authority-management-design/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<div id="flowchart-0" class="flow-chart"></div><img src="http://www.plantuml.com/plantuml/svg/Syp9J4vLqBLJSCfFib9mB2t9ICqhoKnEBCdCprC8IYqiJIqkuGBAAUW2rJY256DHLLoGdrUSoiNbY6fONZvGNP52OaafDaCXYcrqTT5KOpSS0000"><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=&gt;start: Start|past:&gt;http://www.google.com[blank]e=&gt;end: End:&gt;http://www.google.comop1=&gt;operation: My Operation|pastop2=&gt;operation: Stuff|currentsub1=&gt;subroutine: My Subroutine|invalidcond=&gt;condition: Yesor No?|approved:&gt;http://www.google.comc2=&gt;condition: Good idea|rejectedio=&gt;inputoutput: catch something...|requestst-&gt;op1(right)-&gt;condcond(yes, right)-&gt;c2cond(no)-&gt;sub1(left)-&gt;op1c2(yes)-&gt;io-&gt;ec2(no)-&gt;op2-&gt;e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script>]]></content>
       
       
       <categories>
