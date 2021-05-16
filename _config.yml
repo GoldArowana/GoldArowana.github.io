@@ -120,3 +120,7 @@ lazyload:
   onlypost: false  # 是否只对文章的图片做懒加载
   loadingImg: /favicon2.png # eg ./images/loading.gif
 
+flowchart:
+  # raphael:   # optional, the source url of raphael.js
+  # flowchart: # optional, the source url of flowchart.js
+  options: # options used for `drawSVG`
