@@ -462,7 +462,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    360
                 </div>
                 
 
@@ -492,7 +492,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="一、黑名单网页过滤"><a href="#一、黑名单网页过滤" class="headerlink" title="一、黑名单网页过滤"></a>一、黑名单网页过滤</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>实通过判断网页url是否在黑名单里, 现一个黑名单网页过滤系统。<br>每个网页的url最多占用64B。</p>
+<h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><ol>
+<li>允许有万分之一以下的判断失误率。</li>
+<li>使用的额外空间不要超过30GB</li>
+</ol>
+<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><h4 id="思路1-哈希表-不可行"><a href="#思路1-哈希表-不可行" class="headerlink" title="思路1: 哈希表(不可行)"></a>思路1: 哈希表(不可行)</h4><p>如果通过哈希表保存, 那么64B * 100亿 &gt; 640GB, 显然不符合要求。</p>
+<h4 id="思路2-布隆过滤器"><a href="#思路2-布隆过滤器" class="headerlink" title="思路2: 布隆过滤器"></a>思路2: 布隆过滤器</h4><p>可以使用布隆过滤器。</p>
+<h2 id="二、在20亿个整数中找到出现次数最多的数"><a href="#二、在20亿个整数中找到出现次数最多的数" class="headerlink" title="二、在20亿个整数中找到出现次数最多的数"></a>二、在20亿个整数中找到出现次数最多的数</h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>有一个包含20亿个全是32位整数的大文件, 在其中找到出现次数最多的数。</p>
+<h3 id="要求-1"><a href="#要求-1" class="headerlink" title="要求"></a>要求</h3><ol>
+<li>内存限制为2GB</li>
+</ol>
+<h3 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h3><h4 id="思路1-直接使用哈希表-不可行"><a href="#思路1-直接使用哈希表-不可行" class="headerlink" title="思路1: 直接使用哈希表(不可行)"></a>思路1: 直接使用哈希表(不可行)</h4><p>如果用哈希表做词频统计, key需要占用4B, value需要占用4B,  那么可能最多需要的空间是: (4B+4B) * 20亿 &gt; 16GB, 显然这种方法不满足要求</p>
+<h4 id="思路2-分片后使用哈希表"><a href="#思路2-分片后使用哈希表" class="headerlink" title="思路2: 分片后使用哈希表"></a>思路2: 分片后使用哈希表</h4><p>可以通过哈希函数, 将20亿个数分成16个小文件。每个小文件对应的数不会大于2亿种, 用哈希表计算2亿种数的词频大约需要1.6GB内存。<br>接下来只需要选出这16个小文件各自的最高词频即可。</p>
+<h2 id="三、40亿个非负整数中找到未出现的数"><a href="#三、40亿个非负整数中找到未出现的数" class="headerlink" title="三、40亿个非负整数中找到未出现的数"></a>三、40亿个非负整数中找到未出现的数</h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><h3 id="要求-2"><a href="#要求-2" class="headerlink" title="要求"></a>要求</h3><h3 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h3>
                 
             </div>
             <hr/>
@@ -877,7 +890,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.2k</span>&nbsp;字
+                class="white-color">5.6k</span>&nbsp;字
             
             
             
