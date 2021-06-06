@@ -455,21 +455,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-06
+                    2021-06-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    360
+                    956
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -505,7 +505,24 @@
 </ol>
 <h3 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h3><h4 id="思路1-直接使用哈希表-不可行"><a href="#思路1-直接使用哈希表-不可行" class="headerlink" title="思路1: 直接使用哈希表(不可行)"></a>思路1: 直接使用哈希表(不可行)</h4><p>如果用哈希表做词频统计, key需要占用4B, value需要占用4B,  那么可能最多需要的空间是: (4B+4B) * 20亿 &gt; 16GB, 显然这种方法不满足要求</p>
 <h4 id="思路2-分片后使用哈希表"><a href="#思路2-分片后使用哈希表" class="headerlink" title="思路2: 分片后使用哈希表"></a>思路2: 分片后使用哈希表</h4><p>可以通过哈希函数, 将20亿个数分成16个小文件。每个小文件对应的数不会大于2亿种, 用哈希表计算2亿种数的词频大约需要1.6GB内存。<br>接下来只需要选出这16个小文件各自的最高词频即可。</p>
-<h2 id="三、40亿个非负整数中找到未出现的数"><a href="#三、40亿个非负整数中找到未出现的数" class="headerlink" title="三、40亿个非负整数中找到未出现的数"></a>三、40亿个非负整数中找到未出现的数</h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><h3 id="要求-2"><a href="#要求-2" class="headerlink" title="要求"></a>要求</h3><h3 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h3>
+<h2 id="三、40亿个非负整数中找到未出现的数"><a href="#三、40亿个非负整数中找到未出现的数" class="headerlink" title="三、40亿个非负整数中找到未出现的数"></a>三、40亿个非负整数中找到未出现的数</h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>32位无符号整数的范围是 0 ~ 4294967295, 请在一个有40亿个无符号整数的文件中, 找出未出现过的数。</p>
+<h3 id="要求-2"><a href="#要求-2" class="headerlink" title="要求"></a>要求</h3><ol>
+<li>最多使用1GB内存<h3 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h3><h4 id="思路1-直接使用哈希表-不可行-1"><a href="#思路1-直接使用哈希表-不可行-1" class="headerlink" title="思路1: 直接使用哈希表(不可行)"></a>思路1: 直接使用哈希表(不可行)</h4>如果直接使用哈希表, 那么需要使用内存: 4B * 40亿 ≈ 16GB, 显然是不满足条件的。<h4 id="思路2-bitmap"><a href="#思路2-bitmap" class="headerlink" title="思路2: bitmap"></a>思路2: bitmap</h4>4294967295个bit数组占用500MB空间, 可以解决这个问题。</li>
+</ol>
+<h2 id="四、在40亿个非负整数中找出1个未出现过的数"><a href="#四、在40亿个非负整数中找出1个未出现过的数" class="headerlink" title="四、在40亿个非负整数中找出1个未出现过的数"></a>四、在40亿个非负整数中找出1个未出现过的数</h2><h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><p>32位无符号整数的范围是 0 ~ 4294967295, 请在一个有40亿个无符号整数的文件中, 找出1个未出现过的数</p>
+<h3 id="要求-3"><a href="#要求-3" class="headerlink" title="要求"></a>要求</h3><ol>
+<li>最多使用10MB内存<h3 id="解析-3"><a href="#解析-3" class="headerlink" title="解析"></a>解析</h3><h4 id="思路-分片统计-然后用bitmap"><a href="#思路-分片统计-然后用bitmap" class="headerlink" title="思路: 分片统计, 然后用bitmap"></a>思路: 分片统计, 然后用bitmap</h4>将0 ~ 4294967295划分为64个区间, 统计每个区间的数字种类。如果哪个区间的总数不到 (4294967296/64)个, 那么说明在这个区间可以找出未出现过的数。<br>在对应的区间内使用bitset寻找未出现的数, 4294967296/64 = 67108864 bit ≈ 8MB</li>
+</ol>
+<h2 id="五、40亿个非负整数中找到出现两次的数"><a href="#五、40亿个非负整数中找到出现两次的数" class="headerlink" title="五、40亿个非负整数中找到出现两次的数"></a>五、40亿个非负整数中找到出现两次的数</h2><h3 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h3><p>32位无符号整数的范围是 0 ~ 4294967295, 现在有40亿个无符号整数, 找出所有出现了2次的数。 </p>
+<h3 id="要求-4"><a href="#要求-4" class="headerlink" title="要求"></a>要求</h3><ol>
+<li>最多使用1GB的内存<h3 id="解析-4"><a href="#解析-4" class="headerlink" title="解析"></a>解析</h3><h4 id="思路-bitmap变种"><a href="#思路-bitmap变种" class="headerlink" title="思路: bitmap变种"></a>思路: bitmap变种</h4>普通的bitmap值只有0和1, 在这道题下, 我们让bitmap的值支持0~3。所以申请的空间是4294967295 * 2bit = 1GB。<br>遍历所有文件, bitmap值为0表示未出现过, 1表示出现过1次, 2表示出现过2次, 3表示出现次数多于2次。</li>
+</ol>
+<h2 id="六、40亿个非负整数中找到中位数"><a href="#六、40亿个非负整数中找到中位数" class="headerlink" title="六、40亿个非负整数中找到中位数"></a>六、40亿个非负整数中找到中位数</h2><h3 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h3><p>32位无符号整数的范围是 0 ~ 4294967295, 现在有40亿个无符号整数, 找出中位数。</p>
+<h3 id="要求-5"><a href="#要求-5" class="headerlink" title="要求"></a>要求</h3><ol>
+<li>最多使用10MB的内存<h3 id="解析-5"><a href="#解析-5" class="headerlink" title="解析"></a>解析</h3><h4 id="思路-文件分流"><a href="#思路-文件分流" class="headerlink" title="思路: 文件分流"></a>思路: 文件分流</h4>(2 * 1000 * 1000) * 32bit ≈ 8MB , 所以我们将每 2000000 个数字划为一个区间。<br>4294967296/ 2000000 向上取整为2148个区间。<br>遍历一遍文件, 统计每个区间的总词频。<br>之后可以定位到中位数在具体的一个区间内, 再次遍历文件, 不在这个区间的数字忽略不计, 统计这个区间的每个数的词频, 找出中位数。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.sohu.com/a/138204769_236714">大数据求职必看：经典的大数据面试问题 )</a><br><a href="">程序员代码面试指南 第6章</a></p>
+
                 
             </div>
             <hr/>
@@ -890,7 +907,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.6k</span>&nbsp;字
+                class="white-color">6.1k</span>&nbsp;字
             
             
             
