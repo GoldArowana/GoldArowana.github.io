@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="jmm(java 内存管理), java,golang">
+    <meta name="keywords" content="bookkeeper, java,golang">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>jmm(java 内存管理) | 龙小喵的博客</title>
+    <title>bookkeeper | 龙小喵的博客</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages//favicon2.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages//libs/awesome/css/all.css">
@@ -302,12 +302,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co31.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co52.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">jmm(java 内存管理)</h1>
+                    <h1 class="description center-align post-title">bookkeeper</h1>
                 </div>
             </div>
         </div>
@@ -421,25 +421,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/java/" class="post-category">
-                                java
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -448,28 +435,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-08
+                    2021-05-20
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-28
+                    2021-06-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    544
+                    0
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -492,30 +479,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在命令式编程中, 线程之间的通信机制有两种: 共享内存和消息传递。Java的并发采用的是共享内存模型。</p>
-<p>Java线程之间的通信由JMM控制, JMM决定一个线程对共享变量的写入何时对另一个线程可见。</p>
-<p>Java源代码到最终实际执行的指令序列, 会经理下面三种重排序：</p>
-<ol>
-<li>源代码 -&gt; 编译器优化重排序</li>
-<li>-&gt; 指令级并行重排序</li>
-<li>-&gt; 内存系统重排序 -&gt; 最终执行的指令序列</li>
-</ol>
-<p>禁止编译器重排序: JMM的编译器重排序规则会禁止特定类型的编译器重排序<br>禁止处理器重排序: JMM通过插入内存屏障</p>
-<p>JMM属于语言级的内存模型, 它确保在不同的编译器和处理器上 为程序员员提供一致的内存可见性(通过禁止特定类型的编译器重排序和处理器重排序)。</p>
-<h2 id="cpu写缓冲区"><a href="#cpu写缓冲区" class="headerlink" title="cpu写缓冲区"></a>cpu写缓冲区</h2><p>现代的cpu使用写缓冲区来临时保存向内存写入的数据。</p>
-<h3 id="写缓冲区的优点"><a href="#写缓冲区的优点" class="headerlink" title="写缓冲区的优点"></a>写缓冲区的优点</h3><ol>
-<li>cpu不必停顿下来等待向内存写入数据, 这种停顿等待会打断流水线的持续运行。</li>
-<li>通过以批处理的方式刷新写缓冲区, 以及合并写缓冲区对同一内存地址的多次写, 减少对内存总线的占用</li>
-</ol>
-<h3 id="写缓冲区带来的问题"><a href="#写缓冲区带来的问题" class="headerlink" title="写缓冲区带来的问题"></a>写缓冲区带来的问题</h3><p>处理器对内存的读/写操作的执行顺序, 不一定与内存实际发生的读/写操作顺序一致</p>
-<p>常见的缓存一致性协议有：MESI，MESIF（MESIF是缓存行的状态标识，M:Modified, E: Exclusive, S:Shared, I:Invalid, F: Forwad），通过标记缓存行的状态和处理器间的通讯来实现。</p>
-<p><a target="_blank" rel="noopener" href="http://ifeve.com/tag/happens-before/">happens-before</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/duanxz/archive/2013/01/15/2861606.html">指令重排、内存屏障概念解析</a></p>
-<p>Intel文档：<a target="_blank" rel="noopener" href="https://software.intel.com/content/www/us/en/develop/articles/intel-sdm.html">https://software.intel.com/content/www/us/en/develop/articles/intel-sdm.html</a></p>
-<p>cmpxchg指令：<a target="_blank" rel="noopener" href="https://www.felixcloutier.com/x86/cmpxchg">https://www.felixcloutier.com/x86/cmpxchg</a></p>
-<p>x86寄存器：<a target="_blank" rel="noopener" href="http://www.cs.virginia.edu/~evans/cs216/guides/x86.html">http://www.cs.virginia.edu/~evans/cs216/guides/x86.html</a></p>
-<p>ZF标志：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Zero_flag">https://en.wikipedia.org/wiki/Zero_flag</a></p>
-<p>The JSR-133 Cookbook for Compiler Writers  <a target="_blank" rel="noopener" href="http://gee.cs.oswego.edu/dl/jmm/cookbook.html">http://gee.cs.oswego.edu/dl/jmm/cookbook.html</a></p>
-
+                
                 
             </div>
             <hr/>
@@ -541,7 +505,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://goldarowana.github.io/jmm/">https://goldarowana.github.io/jmm/</a>
+                    <a href="https://goldarowana.github.io/bookkeeper/">https://goldarowana.github.io/bookkeeper/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -578,11 +542,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -628,12 +588,12 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/jvm-g1-gc/">
+                <a href="/java-concurrent-hashmap/">
                     <div class="card-image">
                         
-                        <img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co32.jpg" class="responsive-img" alt="jvm g1 gc">
+                        <img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co28.png" class="responsive-img" alt="java concurrent hashmap 实现">
                         
-                        <span class="card-title">jvm g1 gc</span>
+                        <span class="card-title">java concurrent hashmap 实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -644,8 +604,68 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-18
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-20
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category">
+                                    java
+                                </a>
+                            
+                            <a href="/categories/java/map/" class="post-category">
+                                    map
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/map/">
+                        <span class="chip bg-color">map</span>
+                    </a>
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/concurrent/">
+                        <span class="chip bg-color">concurrent</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/java-hashmap/">
+                    <div class="card-image">
+                        
+                        <img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co50.jpg" class="responsive-img" alt="java hashmap实现">
+                        
+                        <span class="card-title">java hashmap实现</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -661,60 +681,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/gc/">
-                        <span class="chip bg-color">gc</span>
+                    <a href="/tags/map/">
+                        <span class="chip bg-color">map</span>
                     </a>
                     
                     <a href="/tags/java/">
                         <span class="chip bg-color">java</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/big-data-questions/">
-                    <div class="card-image">
-                        
-                        <img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co53.jpg" class="responsive-img" alt="big-data-questions">
-                        
-                        <span class="card-title">big-data-questions</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-06
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/big-data/" class="post-category">
-                                    big data
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/big-data/">
-                        <span class="chip bg-color">big data</span>
                     </a>
                     
                 </div>
