@@ -9,6 +9,9 @@ categories:
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co3.jpg
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co3.jpg
 ---
+# 思维导图
+![Redis思维导图](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/xmind/redis.xmind.svg)
+
 
 ## 高性能IO模型
 请参考我的另一篇文章:[高性能网络模型](/high-performance-network-model/)
