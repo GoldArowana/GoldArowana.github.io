@@ -459,7 +459,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-17
+                    2021-06-07
                 </div>
                 
 
@@ -496,7 +496,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="高性能IO模型"><a href="#高性能IO模型" class="headerlink" title="高性能IO模型"></a>高性能IO模型</h2><p>请参考我的另一篇文章:<a href="/high-performance-network-model/">高性能网络模型</a></p>
+                <h1 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h1><p><img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/xmind/redis.xmind.svg" alt="Redis思维导图"></p>
+<h2 id="高性能IO模型"><a href="#高性能IO模型" class="headerlink" title="高性能IO模型"></a>高性能IO模型</h2><p>请参考我的另一篇文章:<a href="/high-performance-network-model/">高性能网络模型</a></p>
 <h2 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h2><h3 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h3><h4 id="AOF基本概念"><a href="#AOF基本概念" class="headerlink" title="AOF基本概念"></a>AOF基本概念</h4><p>相比于数据库的写前日志(Write Ahead Log, WAL), AOF是在执行完命令后, 写入的日志。</p>
 <p>传统的数据库日志如redo log(重做日志), 记录的是修改后的数据, 而AOF里记录的是Redis服务器收到的每一条redis通信协议格式的命令。</p>
 <p>为了避免开销, 写AOF之前并不会进行语法校验。所以先记日志再执行的话，可能会记录错误的指令。<br>而如果先执行命令, 成功后再记录AOF的话，就不会存在这样的问题。</p>
@@ -1013,7 +1014,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.1k</span>&nbsp;字
+                class="white-color">6.2k</span>&nbsp;字
             
             
             
