@@ -6,8 +6,8 @@ tags:
     - microservices
 categories:
     - arch
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co44.jpg
-tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co44.jpg
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co66.png
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co66.jpg
 ---
 https://insights.daffodilsw.com/blog/microservices-vs-service-oriented-architecture-soa-fundamental-differences
 

@@ -6,8 +6,8 @@ tags:
     - REST
 categories:
     - arch
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co46.jpg
-tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co46.jpg
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co67.png
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co67.jpg
 ---
 
 https://martinfowler.com/articles/enterpriseREST.html

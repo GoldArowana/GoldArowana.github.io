@@ -5,8 +5,8 @@ tags:
     - java
 categories:
     - java
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co31.jpg
-tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co31.jpg
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co82.jpg
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co82.jpg
 ---
 ## 简介
 在命令式编程中, 线程之间的通信机制有两种: 共享内存和消息传递。Java的并发采用的是共享内存模型。

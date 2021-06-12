@@ -8,6 +8,6 @@ tags:
     - http
     - https
     - ssl/tls
-img:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co14.png
+img:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co14.png
 tinyImg:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co14.png
 ---

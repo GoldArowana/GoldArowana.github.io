@@ -6,7 +6,7 @@ tags:
     - consistency
 categories:
     - distribute
-img:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co19.jpg
-tinyImg:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co19.jpg
+img:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co88.jpg
+tinyImg:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co88.jpg
 ---
 
