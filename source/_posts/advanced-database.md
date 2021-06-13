@@ -1,5 +1,5 @@
 ---
-title: advanced-database
+title: 数据库学习进阶(advanced-database)
 date: 2021-11-28 10:32:00
 tags:
 categories:

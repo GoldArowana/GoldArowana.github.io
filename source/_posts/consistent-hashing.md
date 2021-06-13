@@ -1,5 +1,5 @@
 ---
-title: 一致性哈希
+title: 一致性哈希(consistent-hashing)
 date: 2021-04-02 12:13:41
 tags:
     - cache

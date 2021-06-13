@@ -1,5 +1,5 @@
 ---
-title: 编程范式
+title: 编程范式(programming-paradigm)
 date: 2021-11-06 13:54:24
 tags:
     - programming

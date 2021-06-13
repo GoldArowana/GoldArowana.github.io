@@ -1,5 +1,5 @@
 ---
-title: 面试大数据问题
+title: 大数据面试问题
 date: 2021-06-06 21:48:36
 tags:
     - big data

@@ -1,5 +1,5 @@
 ---
-title: paxos
+title: paxos协议
 date: 2021-01-19 12:10:55
 tags:
     - paxos

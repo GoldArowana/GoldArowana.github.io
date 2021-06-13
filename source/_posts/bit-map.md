@@ -1,5 +1,5 @@
 ---
-title: 位图 bit map
+title: 位图(bit map)
 date: 2021-04-16 18:45:27
 tags:
     - bit map

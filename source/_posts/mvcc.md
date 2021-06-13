@@ -1,5 +1,5 @@
 ---
-title: mvcc
+title: 多版本并发控制(mvcc)
 date: 2021-06-13 10:29:02
 tags:
 categories:
