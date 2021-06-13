@@ -25,6 +25,7 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 1. 阅读网络是怎样连接的, 下半本书, 并整理出笔记
 1. tcp
 1. selector, poll, epoll
+1. MQTT
 
 ## 算法
 1。 刷20道leetcode

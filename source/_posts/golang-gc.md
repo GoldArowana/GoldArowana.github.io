@@ -13,3 +13,7 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 
 
 [[典藏版]Golang三色标记、混合写屏障GC模式图文全分析](https://segmentfault.com/a/1190000022030353)
+
+https://www.bilibili.com/video/BV1wz4y1y7Kd
+
+https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-garbage-collector/

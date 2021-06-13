@@ -13,3 +13,9 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 
 
 [内存分配器](https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-memory-allocator/)
+
+https://www.bilibili.com/video/BV1Ja4y1i7AF/?spm_id_from=333.788.recommend_more_video.7
+
+https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-memory-allocator/
+
+https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-stack-management/
