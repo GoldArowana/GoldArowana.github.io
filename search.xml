@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>DDD</title>
+      <title>领域驱动设计(DDD)</title>
       <link href="ddd/"/>
       <url>ddd/</url>
       
@@ -17,7 +17,7 @@
     
     
     <entry>
-      <title>service-mesh</title>
+      <title>服务网格(service-mesh)</title>
       <link href="service-mesh/"/>
       <url>service-mesh/</url>
       
@@ -56,7 +56,7 @@
     
     
     <entry>
-      <title>advanced-database</title>
+      <title>数据库学习进阶(advanced-database)</title>
       <link href="advanced-database/"/>
       <url>advanced-database/</url>
       
@@ -82,7 +82,7 @@
     
     
     <entry>
-      <title>OS-interview</title>
+      <title>操作系统面试题</title>
       <link href="os-interview/"/>
       <url>os-interview/</url>
       
@@ -95,7 +95,7 @@
     
     
     <entry>
-      <title>tools</title>
+      <title>常用工具</title>
       <link href="tools/"/>
       <url>tools/</url>
       
@@ -108,7 +108,7 @@
     
     
     <entry>
-      <title>rate-limiter</title>
+      <title>限流器</title>
       <link href="rate-limiter/"/>
       <url>rate-limiter/</url>
       
@@ -121,7 +121,7 @@
     
     
     <entry>
-      <title>goroutine-pool</title>
+      <title>go协程池</title>
       <link href="goroutine-pool/"/>
       <url>goroutine-pool/</url>
       
@@ -134,7 +134,7 @@
     
     
     <entry>
-      <title>编程范式</title>
+      <title>编程范式(programming-paradigm)</title>
       <link href="programming-paradigm/"/>
       <url>programming-paradigm/</url>
       
@@ -394,7 +394,7 @@
     
     
     <entry>
-      <title>order system arch</title>
+      <title>订单系统架构</title>
       <link href="order-system-arch/"/>
       <url>order-system-arch/</url>
       
@@ -448,7 +448,7 @@
     
     
     <entry>
-      <title>cryphtography introduction</title>
+      <title>密码学基础</title>
       <link href="cryphtography-introduction/"/>
       <url>cryphtography-introduction/</url>
       
@@ -502,7 +502,7 @@
     
     
     <entry>
-      <title>权限管理设计</title>
+      <title>权限管理设计模式</title>
       <link href="authority-management-design/"/>
       <url>authority-management-design/</url>
       
@@ -529,7 +529,7 @@
     
     
     <entry>
-      <title>snowflake</title>
+      <title>ID生成器</title>
       <link href="snowflake/"/>
       <url>snowflake/</url>
       
@@ -612,7 +612,7 @@
     
     
     <entry>
-      <title>mvcc</title>
+      <title>多版本并发控制(mvcc)</title>
       <link href="mvcc/"/>
       <url>mvcc/</url>
       
@@ -650,7 +650,7 @@
     
     
     <entry>
-      <title>面试大数据问题</title>
+      <title>大数据面试问题</title>
       <link href="big-data-questions/"/>
       <url>big-data-questions/</url>
       
@@ -883,7 +883,7 @@
     
     
     <entry>
-      <title>布隆过滤器</title>
+      <title>布隆过滤器(bloom-filter)</title>
       <link href="bloom-filter/"/>
       <url>bloom-filter/</url>
       
@@ -910,7 +910,7 @@
     
     
     <entry>
-      <title>位图 bit map</title>
+      <title>位图(bit map)</title>
       <link href="bit-map/"/>
       <url>bit-map/</url>
       
@@ -926,9 +926,9 @@
       
         <tags>
             
-            <tag> big data </tag>
-            
             <tag> bit map </tag>
+            
+            <tag> big data </tag>
             
         </tags>
       
@@ -995,7 +995,7 @@
     
     
     <entry>
-      <title>一致性哈希</title>
+      <title>一致性哈希(consistent-hashing)</title>
       <link href="consistent-hashing/"/>
       <url>consistent-hashing/</url>
       
@@ -1134,7 +1134,7 @@
     
     
     <entry>
-      <title>paxos</title>
+      <title>paxos协议</title>
       <link href="paxos/"/>
       <url>paxos/</url>
       
