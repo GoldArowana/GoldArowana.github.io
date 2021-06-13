@@ -3,7 +3,7 @@ title: bpm
 date: 2021-12-05 10:35:02
 tags:
 categories:
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co90.png
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co90-m.jpg
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co90.jpg
 ---
 https://www.cnblogs.com/wpz2018/p/10276691.html

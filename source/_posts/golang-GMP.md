@@ -32,3 +32,11 @@ https://www.bilibili.com/video/BV1zT4y1F7XF?from=search&seid=6090279844654181905
 https://github.com/Zeb-D/my-review/blob/master/go/%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86--golang-runtime.md
 
 https://github.com/Zeb-D/my-review/blob/master/go/%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86-%E5%8D%8F%E7%A8%8B%E6%A0%88.md
+
+https://www.luozhiyun.com/archives/448
+
+https://www.luozhiyun.com/archives/485
+
+https://docs.google.com/document/d/1TTj4T2JO42uD5ID9e89oa0sLKhJYD0Y_kqxDv3I3XMw/edit
+
+https://docs.google.com/document/d/1TTj4T2JO42uD5ID9e89oa0sLKhJYD0Y_kqxDv3I3XMw/edit

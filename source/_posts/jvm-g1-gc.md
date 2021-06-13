@@ -6,7 +6,7 @@ tags:
     - gc
 categories:
     - java
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co61.png
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co61-m.jpg
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co61.jpg
 ---
 

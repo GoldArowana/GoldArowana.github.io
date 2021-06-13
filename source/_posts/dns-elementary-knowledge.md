@@ -7,6 +7,6 @@ tags:
     - internet
     - udp
     - dns
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co17.jpg
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co17-m.jpg
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co17.jpg
 ---

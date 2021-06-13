@@ -6,7 +6,7 @@ tags:
     - REST
 categories:
     - arch
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co67.png
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co67-m.jpg
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co67.jpg
 ---
 

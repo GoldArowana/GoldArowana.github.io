@@ -7,8 +7,9 @@ tags:
     - database
 categories:
     - data structure
-img:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co56.png
+img:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co56-m.jpg
 tinyImg:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co56.jpg
 ---
 https://jiekun.dev/posts/b_tree_page_split/
 
+https://weibo.com/ttarticle/p/show?id=2309404646090271227927

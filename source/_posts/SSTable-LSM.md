@@ -3,7 +3,7 @@ title: SSTable-LSM
 date: 2021-12-02 10:34:17
 tags:
 categories:
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co97.png
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co97-m.jpg
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co97.jpg
 ---
 

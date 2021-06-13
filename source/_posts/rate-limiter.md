@@ -3,7 +3,7 @@ title: 限流器
 date: 2021-11-14 10:17:36
 tags:
 categories:
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co95.jpg
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co95-m.jpg
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co95.jpg
 ---
 https://zhuanlan.zhihu.com/p/95066428

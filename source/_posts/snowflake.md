@@ -7,7 +7,7 @@ tags:
     - id generator
 categories:
     - distribute
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co34.png
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co34-m.jpg
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co34.jpg
 ---
 

@@ -19,3 +19,18 @@ https://www.bilibili.com/video/BV1Ja4y1i7AF/?spm_id_from=333.788.recommend_more_
 https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-memory-allocator/
 
 https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-stack-management/
+
+https://studygolang.com/articles/22652?fr=sidebar
+
+https://www.luozhiyun.com/archives/434
+
+https://deepu.tech/memory-management-in-golang/
+
+https://medium.com/@ankur_anand/a-visual-guide-to-golang-memory-allocator-from-ground-up-e132258453ed
+
+http://goog-perftools.sourceforge.net/doc/tcmalloc.html
+
+http://legendtkl.com/2017/04/02/golang-alloc/
+
+https://zhuanlan.zhihu.com/p/93838586
+

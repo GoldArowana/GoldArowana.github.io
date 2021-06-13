@@ -8,6 +8,6 @@ tags:
 categories:
     - java
     - map
-img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co58.png
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co58-m.jpg
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co58.jpg
 ---
