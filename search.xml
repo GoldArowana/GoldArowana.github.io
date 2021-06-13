@@ -4,6 +4,45 @@
   
     
     <entry>
+      <title>堆(数据结构)</title>
+      <link href="heap-data-structure/"/>
+      <url>heap-data-structure/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Trie树</title>
+      <link href="trie-tree/"/>
+      <url>trie-tree/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>elasticsearch</title>
+      <link href="elasticsearch/"/>
+      <url>elasticsearch/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>领域驱动设计(DDD)</title>
       <link href="ddd/"/>
       <url>ddd/</url>
@@ -606,6 +645,19 @@
             <tag> java </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>线段树</title>
+      <link href="segment-tree/"/>
+      <url>segment-tree/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       
     </entry>
     
