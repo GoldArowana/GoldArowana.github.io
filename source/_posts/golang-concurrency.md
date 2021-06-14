@@ -119,3 +119,5 @@ func main() {
 ## 参考资料
 
 [sync.mutex 源代码分析](https://colobu.com/2018/12/18/dive-into-sync-mutex/)
+
+https://golang.design/under-the-hood/zh-cn/part1basic/ch05sync/

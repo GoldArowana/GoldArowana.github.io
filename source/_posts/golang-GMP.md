@@ -40,3 +40,9 @@ https://www.luozhiyun.com/archives/485
 https://docs.google.com/document/d/1TTj4T2JO42uD5ID9e89oa0sLKhJYD0Y_kqxDv3I3XMw/edit
 
 https://docs.google.com/document/d/1TTj4T2JO42uD5ID9e89oa0sLKhJYD0Y_kqxDv3I3XMw/edit
+
+https://tonybai.com/2017/06/23/an-intro-about-goroutine-scheduler/
+
+https://tiancaiamao.gitbooks.io/go-internals/content/zh/05.0.html
+
+https://golang.design/under-the-hood/zh-cn/part2runtime/ch06sched/

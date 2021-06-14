@@ -7,3 +7,7 @@ img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co9
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co99.jpg
 ---
 https://xargin.com/diagram-tools-intro/
+
+https://coolors.co/palettes/trending
+
+https://draveness.me/sketch-and-sketch/

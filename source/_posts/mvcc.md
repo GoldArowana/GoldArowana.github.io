@@ -15,3 +15,9 @@ https://blog.csdn.net/qq_35190492/article/details/109044141
 https://www.youtube.com/watch?v=E4u4ogqfEIA&list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&index=20
 
 https://www.jianshu.com/p/8845ddca3b23
+
+https://liqitian.com/articles/2020/07/23/1595499457928.html
+
+https://chenjiayang.me/2019/06/22/mysql-innodb-mvcc/
+
+https://github.com/lifei6671/interview-go/blob/master/mysql/mysql-mvcc.md

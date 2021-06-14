@@ -46,3 +46,22 @@ https://www.oschina.net/translate/go-gc-solving-the-latency-problem-in-go-1-5?co
 
 https://www.jianshu.com/p/bfc3c65c05d1?utm_source=wechat_session
 
+https://www.bilibili.com/video/BV1Ui4y1F7n3/?spm_id_from=333.788.recommend_more_video.0
+
+https://xie.infoq.cn/article/67cfd494e6e10cd0b40de95ab
+
+https://golang.design/under-the-hood/zh-cn/part2runtime/ch08gc/
+
+https://zhuanlan.zhihu.com/p/297177002
+
+https://lessisbetter.site/2019/10/20/go-gc-1-history-and-priciple/
+
+https://learnku.com/docs/go-blog/ismmkeynote/6499
+
+https://golang.design/under-the-hood/zh-cn/part2runtime/ch08gc/history/
+
+https://tiancaiamao.gitbooks.io/go-internals/content/zh/06.2.html
+
+https://www.bookstack.cn/read/GoExpertProgramming/chapter04-4.2-garbage_collection.md
+
+https://docs.kilvn.com/go-internals/06.2.html
