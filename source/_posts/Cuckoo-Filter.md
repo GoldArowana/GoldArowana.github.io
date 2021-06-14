@@ -8,3 +8,8 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 ---
 
 https://www.luozhiyun.com/archives/453
+
+http://www.cs.cmu.edu/~binfan/papers/conext14_cuckoofilter.pdf
+
+https://coolshell.cn/articles/17225.html
+

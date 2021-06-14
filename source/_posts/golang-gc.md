@@ -12,11 +12,12 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 ---
 
 
-[[典藏版]Golang三色标记、混合写屏障GC模式图文全分析](https://segmentfault.com/a/1190000022030353)
+1. [Go语言设计与实现-垃圾收集器](https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-garbage-collector/)
+1. [[典藏版]Golang三色标记、混合写屏障GC模式图文全分析](https://segmentfault.com/a/1190000022030353)
+1. [golang设计-垃圾回收](https://golang.design/under-the-hood/zh-cn/part2runtime/ch08gc/)
+1. [Golang 垃圾回收剖析](http://legendtkl.com/2017/04/28/golang-gc/)
 
 https://www.bilibili.com/video/BV1wz4y1y7Kd
-
-https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-garbage-collector/
 
 https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice/
 
@@ -38,7 +39,7 @@ https://github.com/golang/proposal/blob/master/design/17503-eliminate-rescan.md
 
 https://talks.golang.org/2015/go-gc.pdf
 
-http://legendtkl.com/2017/04/28/golang-gc/
+
 
 https://www.luozhiyun.com/archives/475
 
@@ -49,8 +50,6 @@ https://www.jianshu.com/p/bfc3c65c05d1?utm_source=wechat_session
 https://www.bilibili.com/video/BV1Ui4y1F7n3/?spm_id_from=333.788.recommend_more_video.0
 
 https://xie.infoq.cn/article/67cfd494e6e10cd0b40de95ab
-
-https://golang.design/under-the-hood/zh-cn/part2runtime/ch08gc/
 
 https://zhuanlan.zhihu.com/p/297177002
 

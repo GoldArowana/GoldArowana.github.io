@@ -10,6 +10,11 @@ img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co7
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co70.jpg
 ---
 
+https://golang.design/under-the-hood/zh-cn/part2runtime/ch06sched/
+
+《Golang 源码剖析 1.5.1 雨痕》
+
+https://draveness.me/golang/docs/part3-runtime/ch06-concurrency/golang-goroutine/
 
 [[典藏版] Golang 调度器 GMP 原理与调度全分析](https://learnku.com/articles/41728)
 
@@ -45,4 +50,3 @@ https://tonybai.com/2017/06/23/an-intro-about-goroutine-scheduler/
 
 https://tiancaiamao.gitbooks.io/go-internals/content/zh/05.0.html
 
-https://golang.design/under-the-hood/zh-cn/part2runtime/ch06sched/

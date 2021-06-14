@@ -9,12 +9,14 @@ img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co2
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co24.jpg
 ---
 
+## 内存块
+span
 
+object
 
 ## 相关资料
 1. [内存分配器](https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-memory-allocator/)
 1. [【Golang】这个内存对齐呀！？](https://www.bilibili.com/video/BV1Ja4y1i7AF/?spm_id_from=333.788.recommend_more_video.7)
-1. [内存分配器](https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-memory-allocator/)
 1. [从源码讲解 golang 内存分配](https://studygolang.com/articles/22652?fr=sidebar)
 1. [详解Go中内存分配源码实现](https://www.luozhiyun.com/archives/434)
 1. [🚀 Visualizing memory management in Golang](https://deepu.tech/memory-management-in-golang/)

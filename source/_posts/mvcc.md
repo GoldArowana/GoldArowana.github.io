@@ -21,3 +21,5 @@ https://liqitian.com/articles/2020/07/23/1595499457928.html
 https://chenjiayang.me/2019/06/22/mysql-innodb-mvcc/
 
 https://github.com/lifei6671/interview-go/blob/master/mysql/mysql-mvcc.md
+
+https://blog.jcole.us/innodb/
