@@ -703,6 +703,19 @@
     
     
     <entry>
+      <title>克鲁斯卡尔算法</title>
+      <link href="kruskal-algorithm/"/>
+      <url>kruskal-algorithm/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://baike.baidu.com/item/%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94%E7%AE%97%E6%B3%95/4455899?fromtitle=Kruskal&amp;fromid=10242089">https://baike.baidu.com/item/%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94%E7%AE%97%E6%B3%95/4455899?fromtitle=Kruskal&amp;fromid=10242089</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>线段树</title>
       <link href="segment-tree/"/>
       <url>segment-tree/</url>
@@ -910,7 +923,7 @@
       <link href="golang-map/"/>
       <url>golang-map/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p><a href="https://my.oschina.net/renhc/blog/2208417">https://my.oschina.net/renhc/blog/2208417</a></p>]]></content>
       
       
       <categories>
