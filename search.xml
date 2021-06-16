@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>RSQF(过滤器算法)</title>
+      <link href="rsqf/"/>
+      <url>rsqf/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://github.com/splatlab/cqf">Counting Quotient Filter (CQF)</a></p><p><a href="https://www3.cs.stonybrook.edu/~ppandey/files/SIGMOD17_Talk_CQF_long.pdf">https://www3.cs.stonybrook.edu/~ppandey/files/SIGMOD17_Talk_CQF_long.pdf</a></p><p><a href="https://blog.csdn.net/weixin_30760895/article/details/97222824">https://blog.csdn.net/weixin_30760895/article/details/97222824</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hyperloglog</title>
       <link href="hyperloglog/"/>
       <url>hyperloglog/</url>
@@ -60,7 +73,7 @@
       <link href="cuckoo-filter/"/>
       <url>cuckoo-filter/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://www.luozhiyun.com/archives/453">https://www.luozhiyun.com/archives/453</a></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://www.luozhiyun.com/archives/453">https://www.luozhiyun.com/archives/453</a></p><p><a href="http://www.cs.cmu.edu/~binfan/papers/conext14_cuckoofilter.pdf">http://www.cs.cmu.edu/~binfan/papers/conext14_cuckoofilter.pdf</a></p><p><a href="https://coolshell.cn/articles/17225.html">https://coolshell.cn/articles/17225.html</a></p>]]></content>
       
       
       
