@@ -591,6 +591,7 @@ header .go-back i {
     font-size: 1.25rem;
     line-height: 1.4em;
     color: #3efb93; /*文章title标题颜色*/
+    text-shadow: 0px 0px 10px #000;
     /* color: #eee; */
 }
 
