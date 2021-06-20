@@ -4,6 +4,71 @@
   
     
     <entry>
+      <title>VoltDB</title>
+      <link href="voltdb/"/>
+      <url>voltdb/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/87340856">https://zhuanlan.zhihu.com/p/87340856</a></p><p><a href="https://github.com/VoltDB/voltdb/tree/master/lib">https://github.com/VoltDB/voltdb/tree/master/lib</a></p><p><a href="https://my.oschina.net/u/4277354/blog/3283040">https://my.oschina.net/u/4277354/blog/3283040</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>倒排索引(inverted index)</title>
+      <link href="inverted-index/"/>
+      <url>inverted-index/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>基数树(radix Tree)</title>
+      <link href="radix-tree/"/>
+      <url>radix-tree/</url>
+      
+        <content type="html"><![CDATA[<p><a href="http://www.360doc.com/content/19/0305/18/496343_819431105.shtml">http://www.360doc.com/content/19/0305/18/496343_819431105.shtml</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mysql-innodb</title>
+      <link href="mysql-innodb/"/>
+      <url>mysql-innodb/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=x5tqzyf0zrk&amp;list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&amp;index=9">cmu讲lock/latch 例子比较详细</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux mmap</title>
+      <link href="linux-mmap/"/>
+      <url>linux-mmap/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://www.cnblogs.com/huxiao-tee/p/4660352.html">https://www.cnblogs.com/huxiao-tee/p/4660352.html</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>RSQF(过滤器算法)</title>
       <link href="rsqf/"/>
       <url>rsqf/</url>
@@ -177,7 +242,7 @@
       <link href="advanced-database/"/>
       <url>advanced-database/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O">https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O</a></p><p><a href="https://www.luozhiyun.com/archives/273">https://www.luozhiyun.com/archives/273</a></p><p><a href="https://www.luozhiyun.com/archives/280">https://www.luozhiyun.com/archives/280</a></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O">https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O</a></p><p><a href="https://www.luozhiyun.com/archives/273">https://www.luozhiyun.com/archives/273</a></p><p><a href="https://www.luozhiyun.com/archives/280">https://www.luozhiyun.com/archives/280</a></p><p><a href="https://zhuanlan.zhihu.com/p/158622349">Latch-crabbing/Latch-couping</a></p>]]></content>
       
       
       
@@ -1113,7 +1178,7 @@
       <link href="b-tree/"/>
       <url>b-tree/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>《Modern B-Tree Techniques》</p>]]></content>
       
       
       <categories>
