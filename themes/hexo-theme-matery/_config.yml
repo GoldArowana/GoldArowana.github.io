@@ -237,19 +237,19 @@ mySkills:
   data:
     Java:
       background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
-      percent: 85%
+      percent: 75%
     Golang:
       background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
-      percent: 80%
-    NET:
-      background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
-      percent: 80%
-    SQL:
-      background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
       percent: 70%
+    INTERNET:
+      background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
+      percent: 60%
+    Mysql:
+      background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
+      percent: 50%
     KAFKA:
       background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
-      percent: 60%
+      percent: 50%
     REDIS:
       background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
       percent: 65%

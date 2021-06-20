@@ -20,3 +20,5 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 
 [流？I/O 操作？阻塞？epoll?](https://learnku.com/articles/41814)
 [---慢更-基于 go 的 IM 聊天](https://learnku.com/articles/37534)
+[深入理解IO复用之epoll](https://zhuanlan.zhihu.com/p/87843750)
+[如果这篇文章说不清epoll的本质，那就过来掐死我吧！ （1）](https://zhuanlan.zhihu.com/p/63179839)

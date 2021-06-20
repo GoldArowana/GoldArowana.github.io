@@ -170,3 +170,8 @@ getAndAddInt()方法内部实现如下:
 ## cas 的实现原理
 
 ## cas的源码探索之旅(java -> c++ -> 汇编)
+
+
+
+## 参考文章
+[【并发编程】CAS与FAA](https://blog.csdn.net/zhoufanyang_china/article/details/89488959)

@@ -8,8 +8,8 @@ tags:
     - database
 categories:
     - data structure
-img:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co56-m.jpg
-tinyImg:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co56.jpg
+img:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co134-m.jpg
+tinyImg:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co134.jpg
 ---
 https://jiekun.dev/posts/b_tree_page_split/
 

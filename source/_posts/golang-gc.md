@@ -65,3 +65,5 @@ https://tiancaiamao.gitbooks.io/go-internals/content/zh/06.2.html
 https://www.bookstack.cn/read/GoExpertProgramming/chapter04-4.2-garbage_collection.md
 
 https://docs.kilvn.com/go-internals/06.2.html
+
+[Garbage Collection Semantics - GopherCon SG 2019](https://www.youtube.com/watch?v=q4HoWwdZUHs)

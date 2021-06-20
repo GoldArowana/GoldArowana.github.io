@@ -1,0 +1,38 @@
+---
+title: LevelDB
+date: 2022-03-25 11:05:59
+summary: LevelDB
+tags:
+categories:
+img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co138-m.jpg
+tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co138.jpg
+---
+
+https://izualzhy.cn/leveldb-sstable
+
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.44.2782&rep=rep1&type=pdf
+
+https://www.open-open.com/lib/view/open1424916275249.html
+
+http://www.petermao.com/leveldb/leveldb-0-start.html
+
+https://github.com/google/leveldb/blob/master/doc/impl.md
+
+https://www.cnblogs.com/haippy/archive/2011/12/04/2276064.html
+
+http://www.petermao.com/leveldb/leveldb-1-overview.html
+
+https://cloud.tencent.com/developer/article/1399365
+
+https://www.jianshu.com/p/750c7ea9b88c
+
+https://www.jianshu.com/p/a4ce176f11ce
+
+https://www.jianshu.com/p/798c457412d7
+
+https://www.jianshu.com/p/82c0a55f8b92
+
+https://izualzhy.cn/leveldb-table
+
+https://izualzhy.cn/leveldb-sstable
+

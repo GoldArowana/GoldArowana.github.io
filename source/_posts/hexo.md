@@ -2,7 +2,6 @@
 title: hexo博客搭建记录
 date: 2020-12-10 11:02:16
 summary: hexo博客搭建
-summary:
 tags:
 categories:
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co116-m.jpg
@@ -32,6 +31,9 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 
 ```
 
+
+代码高亮, tomorrow night eighties:
+https://github.com/chriskempson/tomorrow-theme
 
 参考文章:
 1. [通过使用CSS字体阴影效果解决hover图片时显示文字看不清的问题](https://www.cnblogs.com/fanbi/p/7044587.html)
