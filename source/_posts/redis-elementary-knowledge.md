@@ -1,6 +1,7 @@
 ---
 title: redis基础知识
 date: 2021-03-04 16:06:02
+summary:
 tags: 
     - redis
     - cache

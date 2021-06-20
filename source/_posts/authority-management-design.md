@@ -1,6 +1,7 @@
 ---
 title: 权限管理设计模式
 date: 2021-07-09 13:03:33
+summary:
 tags:
     - authority
     - design patterns

@@ -1,6 +1,7 @@
 ---
 title: golang channel
 date: 2021-12-24 00:22:57
+summary:
 tags:
 categories:
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co108-m.jpg

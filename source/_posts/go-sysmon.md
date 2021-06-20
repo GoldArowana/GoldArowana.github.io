@@ -1,6 +1,7 @@
 ---
 title: go sysmon
 date: 2021-12-30 16:52:26
+summary:
 tags:
 categories:
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co110-m.jpg

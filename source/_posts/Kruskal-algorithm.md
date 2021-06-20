@@ -1,6 +1,7 @@
 ---
 title: 克鲁斯卡尔算法
 date: 2021-06-15 20:43:11
+summary:
 tags:
 categories:
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co112-m.jpg

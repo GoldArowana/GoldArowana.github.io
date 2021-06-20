@@ -1,6 +1,7 @@
 ---
 title: 多版本并发控制(mvcc)
 date: 2021-06-13 10:29:02
+summary:
 tags:
 categories:
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co93-m.jpg

@@ -1,6 +1,7 @@
 ---
 title: Service-oriented architecture (SOA)
 date: 2021-09-01 13:24:14
+summary:
 tags:
     - arch
 categories:
