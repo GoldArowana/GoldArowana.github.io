@@ -463,21 +463,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-20
+                    2021-06-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    921
+                    931
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -624,7 +624,8 @@
                                              <span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其中的<code>o</code>就是刚才传入的 AtomicInteger对象的<code>this</code>。<br>其中的<code>weakCompareAndSetInt</code>最终是调用的native方法<code>compareAndSetInt</code>。</p>
 <p>发现里面的逻辑很简单, 就是一个do-while循环:<br>通过<code>this和offset</code>从内存里拿到了当前的value值, 记为<code>v</code>。<br>然后通过while循环不断地调用<code>compareAndSetInt</code>, 尝试进行<strong>比较再替换</strong>。</p>
-<h2 id="cas-的实现原理"><a href="#cas-的实现原理" class="headerlink" title="cas 的实现原理"></a>cas 的实现原理</h2><h2 id="cas的源码探索之旅-java-gt-c-gt-汇编"><a href="#cas的源码探索之旅-java-gt-c-gt-汇编" class="headerlink" title="cas的源码探索之旅(java -> c++ -> 汇编)"></a>cas的源码探索之旅(java -&gt; c++ -&gt; 汇编)</h2>
+<h2 id="cas-的实现原理"><a href="#cas-的实现原理" class="headerlink" title="cas 的实现原理"></a>cas 的实现原理</h2><h2 id="cas的源码探索之旅-java-gt-c-gt-汇编"><a href="#cas的源码探索之旅-java-gt-c-gt-汇编" class="headerlink" title="cas的源码探索之旅(java -> c++ -> 汇编)"></a>cas的源码探索之旅(java -&gt; c++ -&gt; 汇编)</h2><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhoufanyang_china/article/details/89488959">【并发编程】CAS与FAA</a></p>
+
                 
             </div>
             <hr/>
@@ -1009,7 +1010,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.7k</span>&nbsp;字
+                class="white-color">7.8k</span>&nbsp;字
             
             
             
