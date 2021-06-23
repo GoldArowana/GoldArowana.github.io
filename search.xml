@@ -73,7 +73,7 @@
       <link href="mysql-innodb/"/>
       <url>mysql-innodb/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=x5tqzyf0zrk&amp;list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&amp;index=9">cmu讲lock/latch 例子比较详细</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Buffer-Pool"><a href="#Buffer-Pool" class="headerlink" title="Buffer Pool"></a>Buffer Pool</h2><h2 id="redo-log"><a href="#redo-log" class="headerlink" title="redo log"></a>redo log</h2><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://www.youtube.com/watch?v=x5tqzyf0zrk&amp;list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&amp;index=9">cmu讲lock/latch 例子比较详细</a><br><a href="https://www.zhihu.com/question/30272728">数据库事务原子性、一致性是怎样实现的？</a></p>]]></content>
       
       
       
@@ -1160,9 +1160,9 @@
       
         <tags>
             
-            <tag> bit map </tag>
-            
             <tag> big data </tag>
+            
+            <tag> bit map </tag>
             
         </tags>
       
