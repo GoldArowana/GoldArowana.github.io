@@ -442,14 +442,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-23
+                    2021-06-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    47
+                    155
                 </div>
                 
 
@@ -479,7 +479,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Buffer-Pool"><a href="#Buffer-Pool" class="headerlink" title="Buffer Pool"></a>Buffer Pool</h2><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h2 id="redo-log"><a href="#redo-log" class="headerlink" title="redo log"></a>redo log</h2><h2 id="undo-log"><a href="#undo-log" class="headerlink" title="undo log"></a>undo log</h2><h2 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h2><h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=x5tqzyf0zrk&amp;list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&amp;index=9">cmu讲lock/latch 例子比较详细</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/30272728">数据库事务原子性、一致性是怎样实现的？</a></p>
+                <h2 id="Buffer-Pool"><a href="#Buffer-Pool" class="headerlink" title="Buffer Pool"></a>Buffer Pool</h2><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h2 id="redo-log"><a href="#redo-log" class="headerlink" title="redo log"></a>redo log</h2><h2 id="undo-log"><a href="#undo-log" class="headerlink" title="undo log"></a>undo log</h2><h2 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h2><h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><h3 id="主从复制的步骤"><a href="#主从复制的步骤" class="headerlink" title="主从复制的步骤"></a>主从复制的步骤</h3><ol>
+<li><code>master</code>把数据更改记录到<code>binlog</code>中</li>
+<li><code>slave</code>把主服务器的<code>binlog</code>复制到自己的中继日志(<code>relay log</code>)中</li>
+<li><code>slave</code>重做中继日志中的日志, 把更改应用到自己的数据库上, 以达到最终一致性。</li>
+</ol>
+<h3 id="主从复制工作原理"><a href="#主从复制工作原理" class="headerlink" title="主从复制工作原理"></a>主从复制工作原理</h3><ol>
+<li><code>slave</code>的I/O线程负责读取<code>master</code>的<code>binlog</code>, 并将其保存为<code>relay log</code></li>
+<li><code>slave</code>的SQL线程负责执行中继日志</li>
+</ol>
+<p><img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/mysql/mysql-slave-binlog.jpg" alt="mysql主从复制"></p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=x5tqzyf0zrk&amp;list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&amp;index=9">cmu讲lock/latch 例子比较详细</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/30272728">数据库事务原子性、一致性是怎样实现的？</a></p>
 
                 
             </div>
@@ -833,7 +843,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.9k</span>&nbsp;字
+                class="white-color">8k</span>&nbsp;字
             
             
             
