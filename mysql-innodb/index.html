@@ -421,9 +421,21 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/database/">
+                                <span class="chip bg-color">database</span>
+                            </a>
+                        
+                            <a href="/tags/mysql/">
+                                <span class="chip bg-color">mysql</span>
+                            </a>
+                        
+                            <a href="/tags/innodb/">
+                                <span class="chip bg-color">innodb</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -449,7 +461,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    529
+                    527
                 </div>
                 
 
@@ -480,14 +492,14 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="mysql体系结构"><a href="#mysql体系结构" class="headerlink" title="mysql体系结构"></a>mysql体系结构</h2><p><img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/mysql/mysql-arch.jpg" alt="mysql主从复制"></p>
-<h3 id="InnoDB的特点概述"><a href="#InnoDB的特点概述" class="headerlink" title="InnoDB的特点概述"></a>InnoDB的特点概述</h3><ol>
+<h3 id="InnoDB特点概述"><a href="#InnoDB特点概述" class="headerlink" title="InnoDB特点概述"></a>InnoDB特点概述</h3><ol>
 <li>主要面向<code>OLTP</code></li>
 <li>通过使用<code>MVCC</code>来获得高并发性, 提供一致性非锁定读, 并实现了<code>SQL</code>标准的4中隔离级别</li>
 <li>支持行锁</li>
 <li>使用<code>next-key locking</code>的策略来避免幻读(<code>phantom</code>)现象</li>
 <li>提供了插入缓冲(<code>insert buffer</code>)、二次写(<code>double write</code>)、自适应哈希索引(<code>adptive hash index</code>)、预读(<code>read ahead</code>)等高性能和高可用功能 </li>
 </ol>
-<h2 id="InnoDB的体系结构"><a href="#InnoDB的体系结构" class="headerlink" title="InnoDB的体系结构"></a>InnoDB的体系结构</h2><p>InnoDB线程:<br><img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/mysql/innodb-arch.jpg" alt="InnoDB体系结构"><br>InnoDB内存:<br><img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/mysql/innodb-mem.jpg" alt="InnoDB内存数据对象"></p>
+<h2 id="InnoDB体系结构"><a href="#InnoDB体系结构" class="headerlink" title="InnoDB体系结构"></a>InnoDB体系结构</h2><p>InnoDB线程:<br><img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/mysql/innodb-arch.jpg" alt="InnoDB体系结构"><br>InnoDB内存:<br><img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/mysql/innodb-mem.jpg" alt="InnoDB内存数据对象"></p>
 <h3 id="Master-Thread"><a href="#Master-Thread" class="headerlink" title="Master Thread"></a>Master Thread</h3><h3 id="IO-Thread"><a href="#IO-Thread" class="headerlink" title="IO Thread"></a>IO Thread</h3><p>主要负责IO请求的回调处理, 有4类<code>IO Thread</code>:</p>
 <ul>
 <li><code>write</code>: 默认<code>innodb_write_io_threads = 4</code>, 即默认是4线程</li>
@@ -584,7 +596,19 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/database/">
+                                    <span class="chip bg-color">database</span>
+                                </a>
+                            
+                                <a href="/tags/mysql/">
+                                    <span class="chip bg-color">mysql</span>
+                                </a>
+                            
+                                <a href="/tags/innodb/">
+                                    <span class="chip bg-color">innodb</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
