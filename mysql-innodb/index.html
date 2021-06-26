@@ -461,14 +461,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -558,7 +558,21 @@ Notes
 <li>当重做日志缓冲池剩余空间小于1/2时会将<code>redo log buffer</code>刷到 <code>redo log file</code>中</li>
 </ul>
 <h3 id="额外的内存池"><a href="#额外的内存池" class="headerlink" title="额外的内存池"></a>额外的内存池</h3><p>对一些数据结构本身的内存进行分配时, 需要重额外的内存池进行申请。例如缓冲池中的帧缓冲(<code>frame buffer</code>)还有缓冲控制对象(<code>buffer control block</code>)等。</p>
-<h3 id="Checkpoint"><a href="#Checkpoint" class="headerlink" title="Checkpoint"></a>Checkpoint</h3><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h2 id="redo-log"><a href="#redo-log" class="headerlink" title="redo log"></a>redo log</h2><h2 id="undo-log"><a href="#undo-log" class="headerlink" title="undo log"></a>undo log</h2><h2 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h2><h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><h3 id="主从复制的步骤"><a href="#主从复制的步骤" class="headerlink" title="主从复制的步骤"></a>主从复制的步骤</h3><ol>
+<h3 id="Checkpoint"><a href="#Checkpoint" class="headerlink" title="Checkpoint"></a>Checkpoint</h3><p>InnoDB存储引擎内部, 有两种<code>Checkpoint</code>, 分别是<code>Sharp Checkpoint</code>, <code>Fuzzy Checkpoint</code>。<code>Checkpoint</code>技术的目的是解决一下几个问题:</p>
+<ol>
+<li>缩短数据库的恢复时间: 当数据库发生宕机时, 数据库不需要重做所有的日志, 只需对<code>Checkpoint</code>之后的重做日志进行恢复, 这样就大大缩短了恢复的时间。</li>
+<li>缓冲池不够时, 将脏页刷新到磁盘: 当缓冲池不够用时, 根据LRU算法会淘汰掉一些页, 若淘汰的页为脏页, 那么需要强制执行<code>CheckPoint</code>, 将脏页刷回磁盘。</li>
+<li>重做日志不可用时, 刷新脏页: 重做日志的空间是有限的, 是循环使用的。当被覆盖的时候, 需要强制执行<code>Checkpoint</code>将脏页刷新到磁盘。</li>
+</ol>
+<h4 id="Sharp-Checkpoint"><a href="#Sharp-Checkpoint" class="headerlink" title="Sharp Checkpoint"></a>Sharp Checkpoint</h4><p><code>Sharp Checkpoint</code>会将所有的脏页刷新回磁盘。发生在数据库关闭的时候。</p>
+<h4 id="Fuzzy-Checkpoint"><a href="#Fuzzy-Checkpoint" class="headerlink" title="Fuzzy Checkpoint"></a>Fuzzy Checkpoint</h4><p>InnoDB存储引擎内部使用<code>Fuzzy Checkpoint</code>进行页的刷新, 即只刷新一部分脏页。分为以下几种情况:</p>
+<ol>
+<li>Master Thread Checkpoint: 在 <code>Master Thread</code> 的 <code>flush loop</code> 中, 每秒或每十秒触发。</li>
+<li>FLUSH_LRU_LIST checkpoint: <code>Page Cleaner</code>线程会检查LRU列表中是否有足够的可用空闲页, 默认为<code>innodb_lru_scan_depth = 1024</code>。倘若如果没有1024个可用空闲页, 那么会将LRU列表尾端的页移除, 如果这些页中有脏页, 那么需要进行<code>Checkpoint</code></li>
+<li>Async/Sync Flush Checkpoint: 当重做日志文件不可用的时候, 会触发。主要是为了保证重做日志的循环使用。</li>
+<li>Dirty Page too much Checkpoint: 当脏页数太多的时候, 会导致InnoDB存储引擎强制进行<code>Checkpoint</code>. 默认是当超过<code>innodb_max_dirty_pages_pct = 75</code>的时候, 即脏页数量占据75%的时候, 会强制进行<code>Checkpoint</code></li>
+</ol>
+<h2 id="InnoDB关键特性"><a href="#InnoDB关键特性" class="headerlink" title="InnoDB关键特性"></a>InnoDB关键特性</h2><h3 id="插入缓冲"><a href="#插入缓冲" class="headerlink" title="插入缓冲"></a>插入缓冲</h3><h3 id="两次写"><a href="#两次写" class="headerlink" title="两次写"></a>两次写</h3><h3 id="自适应哈希索引"><a href="#自适应哈希索引" class="headerlink" title="自适应哈希索引"></a>自适应哈希索引</h3><h3 id="异步IO"><a href="#异步IO" class="headerlink" title="异步IO"></a>异步IO</h3><h3 id="刷新邻接页"><a href="#刷新邻接页" class="headerlink" title="刷新邻接页"></a>刷新邻接页</h3><h2 id="Mysql数据库的文件"><a href="#Mysql数据库的文件" class="headerlink" title="Mysql数据库的文件"></a>Mysql数据库的文件</h2><h2 id="InnoDB存储引擎表的文件"><a href="#InnoDB存储引擎表的文件" class="headerlink" title="InnoDB存储引擎表的文件"></a>InnoDB存储引擎表的文件</h2><h2 id="InnoDB存储引擎表的逻辑存储及实现"><a href="#InnoDB存储引擎表的逻辑存储及实现" class="headerlink" title="InnoDB存储引擎表的逻辑存储及实现"></a>InnoDB存储引擎表的逻辑存储及实现</h2><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h2 id="redo-log"><a href="#redo-log" class="headerlink" title="redo log"></a>redo log</h2><h2 id="undo-log"><a href="#undo-log" class="headerlink" title="undo log"></a>undo log</h2><h2 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h2><h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><h3 id="主从复制的步骤"><a href="#主从复制的步骤" class="headerlink" title="主从复制的步骤"></a>主从复制的步骤</h3><ol>
 <li><code>master</code>把数据更改记录到<code>binlog</code>中</li>
 <li><code>slave</code>把主服务器的<code>binlog</code>复制到自己的中继日志(<code>relay log</code>)中</li>
 <li><code>slave</code>重做中继日志中的日志, 把更改应用到自己的数据库上, 以达到最终一致性。</li>
@@ -934,7 +948,7 @@ Notes
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9k</span>&nbsp;字
+                class="white-color">9.5k</span>&nbsp;字
             
             
             
