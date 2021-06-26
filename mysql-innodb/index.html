@@ -461,14 +461,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 
@@ -572,7 +572,8 @@ Notes
 <li>Async/Sync Flush Checkpoint: 当重做日志文件不可用的时候, 会触发。主要是为了保证重做日志的循环使用。</li>
 <li>Dirty Page too much Checkpoint: 当脏页数太多的时候, 会导致InnoDB存储引擎强制进行<code>Checkpoint</code>. 默认是当超过<code>innodb_max_dirty_pages_pct = 75</code>的时候, 即脏页数量占据75%的时候, 会强制进行<code>Checkpoint</code></li>
 </ol>
-<h2 id="InnoDB关键特性"><a href="#InnoDB关键特性" class="headerlink" title="InnoDB关键特性"></a>InnoDB关键特性</h2><h3 id="插入缓冲-Insert-Buffer"><a href="#插入缓冲-Insert-Buffer" class="headerlink" title="插入缓冲(Insert Buffer)"></a>插入缓冲(Insert Buffer)</h3><h4 id="插入缓冲的作用"><a href="#插入缓冲的作用" class="headerlink" title="插入缓冲的作用"></a>插入缓冲的作用</h4><p>辅助索引的插入是较为离散的, 为了避免更新辅助索引的时候要频繁地离散读取数据,<br>所以InnoDB存储引擎设计了<code>Insert Buffer</code>, 对于非聚集索引的插入或更新操作, 不是每次都直接插入到索引页中,<br>而是先判断插入的非聚集索引页是否在缓冲池中, 若存在, 则直接插入;<br>若不存在, 那么先放入到一个<code>Insert Buffer</code>对象中, 假装已经插入到叶子节点, 再以一定的频率合并(merge)到辅助索引叶子节点中。 </p>
+<h2 id="InnoDB关键特性"><a href="#InnoDB关键特性" class="headerlink" title="InnoDB关键特性"></a>InnoDB关键特性</h2><h3 id="插入缓冲-Insert-Buffer"><a href="#插入缓冲-Insert-Buffer" class="headerlink" title="插入缓冲(Insert Buffer)"></a>插入缓冲(Insert Buffer)</h3><p>目的: 为了提升辅助索引的插入性能</p>
+<h4 id="插入缓冲的作用"><a href="#插入缓冲的作用" class="headerlink" title="插入缓冲的作用"></a>插入缓冲的作用</h4><p>辅助索引的插入是较为离散的, 为了避免更新辅助索引的时候要频繁地离散读取数据,<br>所以InnoDB存储引擎设计了<code>Insert Buffer</code>, 对于非聚集索引的插入或更新操作, 不是每次都直接插入到索引页中,<br>而是先判断插入的非聚集索引页是否在缓冲池中, 若存在, 则直接插入;<br>若不存在, 那么先放入到一个<code>Insert Buffer</code>对象中, 假装已经插入到叶子节点, 再以一定的频率合并(merge)到辅助索引叶子节点中。 </p>
 <h4 id="插入缓冲的缺点"><a href="#插入缓冲的缺点" class="headerlink" title="插入缓冲的缺点"></a>插入缓冲的缺点</h4><ol>
 <li>如果数据库发生了宕机, 有大量的<code>Insert Buffer</code>没有合并到实际的非聚集索引中去, 那么此时恢复可能需要很长的时间, 极端情况下甚至要几个小时。</li>
 <li>在写密集的情况下, 插入缓冲会占用过多的缓冲池内存(innodb_buffer_pool), 默认最大可以占用到1/2的缓冲池内存。</li>
@@ -585,7 +586,14 @@ Notes
 <h4 id="唯一索引为什么不能使用插入缓冲"><a href="#唯一索引为什么不能使用插入缓冲" class="headerlink" title="唯一索引为什么不能使用插入缓冲"></a>唯一索引为什么不能使用插入缓冲</h4><p>为什么不能是唯一的? 如果要校验唯一性, 那么就还是需要进行读取加载对应的数据页才能进行判断。</p>
 <h4 id="变更缓冲-Change-buffer"><a href="#变更缓冲-Change-buffer" class="headerlink" title="变更缓冲(Change buffer)"></a>变更缓冲(Change buffer)</h4><p>InnoDB从1.0.x版本开始引入了<code>Change Buffer</code>, 可以看做是<code>Insert Buffer</code>的升级版, 支持<code>INSERT</code>、<code>DELETE</code>、<code>UPDATE</code>。</p>
 <p>InnoDB1.2.x版本开始可以通过参数<code>innodb_change_buffer_max_size</code>来控制<code>Change Buffer</code>最大使用内存的数量, 默认值为25, 表示最多使用1/4的缓冲池内存空间。</p>
-<h4 id="Insert-Change-Buffer的实现"><a href="#Insert-Change-Buffer的实现" class="headerlink" title="Insert/Change Buffer的实现"></a>Insert/Change Buffer的实现</h4><h4 id="什么时候合并-Merge-Insert-Buffer"><a href="#什么时候合并-Merge-Insert-Buffer" class="headerlink" title="什么时候合并(Merge) Insert Buffer"></a>什么时候合并(Merge) Insert Buffer</h4><h3 id="两次写-double-write"><a href="#两次写-double-write" class="headerlink" title="两次写(double write)"></a>两次写(double write)</h3><h3 id="自适应哈希索引-Adaptive-Hash-Index-AHI"><a href="#自适应哈希索引-Adaptive-Hash-Index-AHI" class="headerlink" title="自适应哈希索引(Adaptive Hash Index, AHI)"></a>自适应哈希索引(Adaptive Hash Index, AHI)</h3><h3 id="异步IO"><a href="#异步IO" class="headerlink" title="异步IO"></a>异步IO</h3><h3 id="刷新邻接页"><a href="#刷新邻接页" class="headerlink" title="刷新邻接页"></a>刷新邻接页</h3><h2 id="Mysql数据库的文件"><a href="#Mysql数据库的文件" class="headerlink" title="Mysql数据库的文件"></a>Mysql数据库的文件</h2><h2 id="InnoDB存储引擎表的文件"><a href="#InnoDB存储引擎表的文件" class="headerlink" title="InnoDB存储引擎表的文件"></a>InnoDB存储引擎表的文件</h2><h2 id="InnoDB存储引擎表的逻辑存储及实现"><a href="#InnoDB存储引擎表的逻辑存储及实现" class="headerlink" title="InnoDB存储引擎表的逻辑存储及实现"></a>InnoDB存储引擎表的逻辑存储及实现</h2><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h2 id="redo-log"><a href="#redo-log" class="headerlink" title="redo log"></a>redo log</h2><h2 id="undo-log"><a href="#undo-log" class="headerlink" title="undo log"></a>undo log</h2><h2 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h2><h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><h3 id="主从复制的步骤"><a href="#主从复制的步骤" class="headerlink" title="主从复制的步骤"></a>主从复制的步骤</h3><ol>
+<h4 id="Insert-Change-Buffer的实现"><a href="#Insert-Change-Buffer的实现" class="headerlink" title="Insert/Change Buffer的实现"></a>Insert/Change Buffer的实现</h4><p><code>Insert/Change Buffer</code>的数据结构是一颗<code>B+树</code>, 且全局只有一颗<code>Insert/Change Buffer B+树</code>。</p>
+<h4 id="什么时候合并-Merge-Insert-Buffer"><a href="#什么时候合并-Merge-Insert-Buffer" class="headerlink" title="什么时候合并(Merge) Insert Buffer"></a>什么时候合并(Merge) Insert Buffer</h4><ul>
+<li>辅助索引页被读取到缓冲池时: 例如在执行SELECT查询时, 此时需要将辅助索引页读取到缓冲池中, 此时需要检查<code>Insert Buffer Bitmap</code>页, 确认该索引是否有记录存放于<code>Insert Buffer B+树</code>中。如果有, 则将<code>Insert Buffer B+树</code>中的记录插入到该辅助索引页中。</li>
+<li><code>Insert Buffer Bitmap</code> 页追踪到该辅助索引页已无可用空间时: <code>Insert Buffer Bitmap</code>里会记录可用空间, 若检测到插入记录后不够1/32页的剩余空间, 则会强制进行一次合并操作。</li>
+<li><code>Master Thread</code>: 每秒或每10秒进行一次<code>Merge Insert Buffer</code>的操作。会随机地选择<code>Insert Buffer B+树</code>中连续的几页, 进行merge。</li>
+</ul>
+<h3 id="两次写-double-write"><a href="#两次写-double-write" class="headerlink" title="两次写(double write)"></a>两次写(double write)</h3><p>目的: 提供数据页的可靠性</p>
+<h3 id="自适应哈希索引-Adaptive-Hash-Index-AHI"><a href="#自适应哈希索引-Adaptive-Hash-Index-AHI" class="headerlink" title="自适应哈希索引(Adaptive Hash Index, AHI)"></a>自适应哈希索引(Adaptive Hash Index, AHI)</h3><h3 id="异步IO"><a href="#异步IO" class="headerlink" title="异步IO"></a>异步IO</h3><h3 id="刷新邻接页"><a href="#刷新邻接页" class="headerlink" title="刷新邻接页"></a>刷新邻接页</h3><h2 id="Mysql数据库的文件"><a href="#Mysql数据库的文件" class="headerlink" title="Mysql数据库的文件"></a>Mysql数据库的文件</h2><h2 id="InnoDB存储引擎表的文件"><a href="#InnoDB存储引擎表的文件" class="headerlink" title="InnoDB存储引擎表的文件"></a>InnoDB存储引擎表的文件</h2><h2 id="InnoDB存储引擎表的逻辑存储及实现"><a href="#InnoDB存储引擎表的逻辑存储及实现" class="headerlink" title="InnoDB存储引擎表的逻辑存储及实现"></a>InnoDB存储引擎表的逻辑存储及实现</h2><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h2 id="redo-log"><a href="#redo-log" class="headerlink" title="redo log"></a>redo log</h2><h2 id="undo-log"><a href="#undo-log" class="headerlink" title="undo log"></a>undo log</h2><h2 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h2><h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><h3 id="主从复制的步骤"><a href="#主从复制的步骤" class="headerlink" title="主从复制的步骤"></a>主从复制的步骤</h3><ol>
 <li><code>master</code>把数据更改记录到<code>binlog</code>中</li>
 <li><code>slave</code>把主服务器的<code>binlog</code>复制到自己的中继日志(<code>relay log</code>)中</li>
 <li><code>slave</code>重做中继日志中的日志, 把更改应用到自己的数据库上, 以达到最终一致性。</li>
@@ -595,7 +603,7 @@ Notes
 <li><code>slave</code>的SQL线程负责执行中继日志</li>
 </ol>
 <p><img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/mysql/mysql-slave-binlog.jpg" alt="mysql主从复制"></p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=x5tqzyf0zrk&amp;list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&amp;index=9">cmu讲lock/latch 例子比较详细</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/30272728">数据库事务原子性、一致性是怎样实现的？</a></p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=x5tqzyf0zrk&amp;list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&amp;index=9">cmu讲lock/latch 例子比较详细</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/30272728">数据库事务原子性、一致性是怎样实现的？</a><br>《Mysql技术内幕 InnoDB存储引擎》</p>
 
                 
             </div>
@@ -961,7 +969,7 @@ Notes
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10k</span>&nbsp;字
+                class="white-color">10.2k</span>&nbsp;字
             
             
             
