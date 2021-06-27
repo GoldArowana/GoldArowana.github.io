@@ -454,21 +454,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-27
+                    2021-06-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    10 分
                 </div>
                 
 
@@ -491,7 +491,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="mysql体系结构"><a href="#mysql体系结构" class="headerlink" title="mysql体系结构"></a>mysql体系结构</h2><p><img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/mysql/mysql-arch.jpg" alt="mysql主从复制"></p>
+                <h2 id="mysql体系结构"><a href="#mysql体系结构" class="headerlink" title="mysql体系结构"></a>mysql体系结构</h2><p><img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/mysql/mysql-arch.jpg" alt="mysql体系结构"></p>
 <h3 id="InnoDB特点概述"><a href="#InnoDB特点概述" class="headerlink" title="InnoDB特点概述"></a>InnoDB特点概述</h3><ol>
 <li>主要面向<code>OLTP</code></li>
 <li>通过使用<code>MVCC</code>来获得高并发性, 提供一致性非锁定读, 并实现了<code>SQL</code>标准的4中隔离级别</li>
@@ -593,7 +593,13 @@ Notes
 <li><code>Master Thread</code>: 每秒或每10秒进行一次<code>Merge Insert Buffer</code>的操作。会随机地选择<code>Insert Buffer B+树</code>中连续的几页, 进行merge。</li>
 </ul>
 <h3 id="两次写-double-write"><a href="#两次写-double-write" class="headerlink" title="两次写(double write)"></a>两次写(double write)</h3><p>目的: 提供数据页的可靠性</p>
-<h3 id="自适应哈希索引-Adaptive-Hash-Index-AHI"><a href="#自适应哈希索引-Adaptive-Hash-Index-AHI" class="headerlink" title="自适应哈希索引(Adaptive Hash Index, AHI)"></a>自适应哈希索引(Adaptive Hash Index, AHI)</h3><h3 id="异步IO"><a href="#异步IO" class="headerlink" title="异步IO"></a>异步IO</h3><h3 id="刷新邻接页"><a href="#刷新邻接页" class="headerlink" title="刷新邻接页"></a>刷新邻接页</h3><h2 id="Mysql数据库的文件"><a href="#Mysql数据库的文件" class="headerlink" title="Mysql数据库的文件"></a>Mysql数据库的文件</h2><h2 id="InnoDB存储引擎表的文件"><a href="#InnoDB存储引擎表的文件" class="headerlink" title="InnoDB存储引擎表的文件"></a>InnoDB存储引擎表的文件</h2><h2 id="InnoDB存储引擎表的逻辑存储及实现"><a href="#InnoDB存储引擎表的逻辑存储及实现" class="headerlink" title="InnoDB存储引擎表的逻辑存储及实现"></a>InnoDB存储引擎表的逻辑存储及实现</h2><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h2 id="redo-log"><a href="#redo-log" class="headerlink" title="redo log"></a>redo log</h2><h2 id="undo-log"><a href="#undo-log" class="headerlink" title="undo log"></a>undo log</h2><h2 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h2><h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><h3 id="主从复制的步骤"><a href="#主从复制的步骤" class="headerlink" title="主从复制的步骤"></a>主从复制的步骤</h3><ol>
+<p>可能某个16KB的页只写了前4KB时, 数据库发生了宕机, 这种情况被称为部分写失效(<code>partial page write</code>)。</p>
+<h3 id="自适应哈希索引-Adaptive-Hash-Index-AHI"><a href="#自适应哈希索引-Adaptive-Hash-Index-AHI" class="headerlink" title="自适应哈希索引(Adaptive Hash Index, AHI)"></a>自适应哈希索引(Adaptive Hash Index, AHI)</h3><h3 id="异步IO"><a href="#异步IO" class="headerlink" title="异步IO"></a>异步IO</h3><h3 id="刷新邻接页"><a href="#刷新邻接页" class="headerlink" title="刷新邻接页"></a>刷新邻接页</h3><h2 id="Mysql数据库的文件"><a href="#Mysql数据库的文件" class="headerlink" title="Mysql数据库的文件"></a>Mysql数据库的文件</h2><h2 id="InnoDB存储引擎表的文件"><a href="#InnoDB存储引擎表的文件" class="headerlink" title="InnoDB存储引擎表的文件"></a>InnoDB存储引擎表的文件</h2><h2 id="InnoDB存储引擎表的逻辑存储及实现"><a href="#InnoDB存储引擎表的逻辑存储及实现" class="headerlink" title="InnoDB存储引擎表的逻辑存储及实现"></a>InnoDB存储引擎表的逻辑存储及实现</h2><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h3 id="索引下推优化"><a href="#索引下推优化" class="headerlink" title="索引下推优化"></a>索引下推优化</h3><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h3 id="MySQL表级锁"><a href="#MySQL表级锁" class="headerlink" title="MySQL表级锁"></a>MySQL表级锁</h3><p><code>MySQL</code>里面表级别的锁有两种:</p>
+<ol>
+<li>表锁: InnoDB支持行锁, 所以一般不使用<code>lock tables</code>命令来控制并发。</li>
+<li>元数据锁(meta data lock, MDL): 公平的读写锁。 不需要显示使用, 在访问一个表的时候会被自动加上。MDL的作用是保证读写的正确性, 防止查询的过程中表结构发生变更。</li>
+</ol>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="read-view"><a href="#read-view" class="headerlink" title="read view"></a>read view</h3><h2 id="redo-log"><a href="#redo-log" class="headerlink" title="redo log"></a>redo log</h2><h2 id="undo-log"><a href="#undo-log" class="headerlink" title="undo log"></a>undo log</h2><h2 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h2><h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><h3 id="主从复制的步骤"><a href="#主从复制的步骤" class="headerlink" title="主从复制的步骤"></a>主从复制的步骤</h3><ol>
 <li><code>master</code>把数据更改记录到<code>binlog</code>中</li>
 <li><code>slave</code>把主服务器的<code>binlog</code>复制到自己的中继日志(<code>relay log</code>)中</li>
 <li><code>slave</code>重做中继日志中的日志, 把更改应用到自己的数据库上, 以达到最终一致性。</li>
@@ -603,7 +609,7 @@ Notes
 <li><code>slave</code>的SQL线程负责执行中继日志</li>
 </ol>
 <p><img src="/favicon2.png" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/mysql/mysql-slave-binlog.jpg" alt="mysql主从复制"></p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=x5tqzyf0zrk&amp;list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&amp;index=9">cmu讲lock/latch 例子比较详细</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/30272728">数据库事务原子性、一致性是怎样实现的？</a><br>《Mysql技术内幕 InnoDB存储引擎》</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=x5tqzyf0zrk&amp;list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&amp;index=9">cmu讲lock/latch 例子比较详细</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/30272728">数据库事务原子性、一致性是怎样实现的？</a><br>《Mysql技术内幕 InnoDB存储引擎》<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/geaozhang/p/7241744.html">InnoDB关键特性之double write</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6890830002162499598">InnoDB 重要特性 Double Write 实现原理</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/synchronizing/article/details/109025093">mysql 为何需要Double Write？有redo log还不够吗？</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/59729819/answer/284180647">MySQL：数据库宕机以后恢复的过程？如何保证事务的ACID特性？</a><br><a target="_blank" rel="noopener" href="https://blog.jcole.us/innodb/">On learning InnoDB: A journey to the core</a><br><a target="_blank" rel="noopener" href="http://blog.itpub.net/15498/viewspace-2153760/">innodb_support_xa的作用</a></p>
 
                 
             </div>
@@ -969,7 +975,7 @@ Notes
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.2k</span>&nbsp;字
+                class="white-color">10.4k</span>&nbsp;字
             
             
             
