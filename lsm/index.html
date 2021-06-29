@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SSTable-LSM, java,golang">
+    <meta name="keywords" content="LSM-Tree, java,golang">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SSTable-LSM | 龙小喵的博客</title>
+    <title>LSM-Tree | 龙小喵的博客</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/favicon2.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/awesome/css/all.css">
@@ -307,7 +307,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SSTable-LSM</h1>
+                    <h1 class="description center-align post-title">LSM-Tree</h1>
                 </div>
             </div>
         </div>
@@ -449,7 +449,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    298
+                    335
                 </div>
                 
 
@@ -479,7 +479,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1399365">深入 LevelDB 数据文件 SSTable 的结构</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/141186118">深入探讨LSM Compaction机制</a></p>
+                <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1399365">深入 LevelDB 数据文件 SSTable 的结构</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/141186118">深入探讨LSM Compaction机制</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.toberoot.com/news/2020/12/19/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E4%BB%80%E4%B9%88%E6%98%AFLSM-Tree/">深入理解什么是LSM-Tree</a></li>
+<li><a target="_blank" rel="noopener" href="https://niceaz.com/2018/11/27/sstable">SSTable 原理</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.benstopford.com/2015/02/14/log-structured-merge-trees/">Log Structured Merge Trees</a></li>
+</ol>
 <p><a target="_blank" rel="noopener" href="http://www.blogjava.net/DLevin/archive/2015/09/25/427481.html">http://www.blogjava.net/DLevin/archive/2015/09/25/427481.html</a></p>
 <p><a target="_blank" rel="noopener" href="https://izualzhy.cn/leveldb-sstable">https://izualzhy.cn/leveldb-sstable</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fxjwind/archive/2012/08/14/2638371.html">https://www.cnblogs.com/fxjwind/archive/2012/08/14/2638371.html</a></p>
@@ -495,8 +501,6 @@
 <p><a target="_blank" rel="noopener" href="https://github.com/google/leveldb/blob/master/doc/impl.md">https://github.com/google/leveldb/blob/master/doc/impl.md</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/haippy/archive/2011/12/04/2276064.html">https://www.cnblogs.com/haippy/archive/2011/12/04/2276064.html</a></p>
 <p><a target="_blank" rel="noopener" href="http://www.petermao.com/leveldb/leveldb-1-overview.html">http://www.petermao.com/leveldb/leveldb-1-overview.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.toberoot.com/news/2020/12/19/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E4%BB%80%E4%B9%88%E6%98%AFLSM-Tree/">https://www.toberoot.com/news/2020/12/19/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E4%BB%80%E4%B9%88%E6%98%AFLSM-Tree/</a></p>
-<p><a target="_blank" rel="noopener" href="https://niceaz.com/2018/11/27/sstable/">https://niceaz.com/2018/11/27/sstable/</a></p>
 <p><a target="_blank" rel="noopener" href="http://www.benstopford.com/2015/02/14/log-structured-merge-trees/">http://www.benstopford.com/2015/02/14/log-structured-merge-trees/</a></p>
 <p><a target="_blank" rel="noopener" href="http://www.benstopford.com/2015/02/14/log-structured-merge-trees/">http://www.benstopford.com/2015/02/14/log-structured-merge-trees/</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/facebook/rocksdb/wiki/Leveled-Compaction">https://github.com/facebook/rocksdb/wiki/Leveled-Compaction</a></p>
@@ -508,6 +512,12 @@
 <p><a target="_blank" rel="noopener" href="https://speakerdeck.com/mschoch/value-store-in-go?slide=3">https://speakerdeck.com/mschoch/value-store-in-go?slide=3</a></p>
 <p><a target="_blank" rel="noopener" href="https://izualzhy.cn/leveldb-table">https://izualzhy.cn/leveldb-table</a></p>
 <p><a target="_blank" rel="noopener" href="https://izualzhy.cn/leveldb-sstable">https://izualzhy.cn/leveldb-sstable</a></p>
+<p><a target="_blank" rel="noopener" href="https://scholar.harvard.edu/files/stratos/files/dostoevskykv.pdf">https://scholar.harvard.edu/files/stratos/files/dostoevskykv.pdf</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8fb8f2458253">https://www.jianshu.com/p/8fb8f2458253</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/elithnever/paperreading/blob/master/lsm-tree-1.md">https://github.com/elithnever/paperreading/blob/master/lsm-tree-1.md</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/elithnever/paperreading/blob/master/lsm-tree-2.md">https://github.com/elithnever/paperreading/blob/master/lsm-tree-2.md</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/elithnever/paperreading/blob/master/lsm-tree-3.md">https://github.com/elithnever/paperreading/blob/master/lsm-tree-3.md</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3fb899684392">https://www.jianshu.com/p/3fb899684392</a></p>
 
                 
             </div>
@@ -534,7 +544,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://goldarowana.github.io/sstable-lsm/">https://goldarowana.github.io/sstable-lsm/</a>
+                    <a href="https://goldarowana.github.io/lsm/">https://goldarowana.github.io/lsm/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -861,7 +871,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.8k</span>&nbsp;字
+                class="white-color">10.9k</span>&nbsp;字
             
             
             
