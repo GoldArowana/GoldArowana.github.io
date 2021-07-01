@@ -66,6 +66,8 @@ http://www.youtube.com/watch?v=b6SI8VbcT4w
 
 http://www.youtube.com/watch?v=ttebJcN5bgQ
 
+https://www.microsoft.com/en-us/research/uploads/prod/2019/05/Scaling-Write-Intensive-Key-Value-Stores-slides.pdf
+
 https://speakerdeck.com/mschoch/value-store-in-go?slide=3
 
 https://izualzhy.cn/leveldb-table
@@ -88,3 +90,35 @@ https://www.jianshu.com/p/3fb899684392
 [LSM trees (Log Structured Merge Trees) - Detailed video, 印度口音, 而且没字幕](https://www.youtube.com/watch?v=oUNjDHYFES8)
 
 [GopherCon 2017: Marty Schoch - Building a High-Performance Key/Value Store in Go](https://www.youtube.com/watch?v=ttebJcN5bgQ)
+
+https://zhuanlan.zhihu.com/p/80523835
+
+[Apache Cassandra SSTable 存储格式详解](https://www.iteblog.com/archives/2548.html)
+
+https://blog.csdn.net/qq_21125183/article/details/103915326
+
+https://www.youtube.com/watch?v=ttebJcN5bgQ
+
+https://blog.csdn.net/SweeNeil/article/details/86482781
+
+https://www.cnblogs.com/qwj-sysu/p/5640256.html
+
+https://daemondshu.github.io/2019/03/21/Programming/Data%20Structure/LevelDB_RocksDB/
+
+https://www.shuzhiduo.com/A/amd0LMe1dg/
+
+https://blog.csdn.net/zxpoiu/article/details/116190330
+
+https://zhuanlan.zhihu.com/p/65557081
+
+https://yetanotherdevblog.com/lsm/
+
+https://www.cs.umb.edu/~poneil/lsmtree.pdf
+
+https://tikv.org/deep-dive/key-value-engine/b-tree-vs-lsm/
+
+https://www.usenix.org/conference/atc15/technical-session/presentation/wu
+
+https://zhuanlan.zhihu.com/p/129355502
+
+https://blog.csdn.net/weixin_32496547/article/details/114098111

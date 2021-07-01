@@ -36,3 +36,9 @@ https://izualzhy.cn/leveldb-table
 
 https://izualzhy.cn/leveldb-sstable
 
+https://zhuanlan.zhihu.com/p/80523835
+
+https://daemondshu.github.io/2019/03/21/Programming/Data%20Structure/LevelDB_RocksDB/
+
+https://eileen-code4fun.medium.com/log-structured-merge-tree-lsm-tree-implementations-a-demo-and-leveldb-d5e028257330
+

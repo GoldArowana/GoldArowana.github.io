@@ -12,3 +12,6 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 1. https://rocksdb.org.cn/doc/Leveled-Compaction.html
 1. https://rocksdb.org.cn/doc/Universal-Compaction.html
 1. [Leveled Compaction](https://github.com/facebook/rocksdb/wiki/Leveled-Compaction)
+1. https://zhuanlan.zhihu.com/p/37633790
+
+https://daemondshu.github.io/2019/03/21/Programming/Data%20Structure/LevelDB_RocksDB/
