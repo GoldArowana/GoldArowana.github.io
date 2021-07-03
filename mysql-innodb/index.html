@@ -454,7 +454,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-01
+                    2021-07-03
                 </div>
                 
 
@@ -599,7 +599,7 @@ Notes
 <li>表锁: InnoDB支持行锁, 所以一般不使用<code>lock tables</code>命令来控制并发。</li>
 <li>元数据锁(meta data lock, MDL): 公平的读写锁。 不需要显示使用, 在访问一个表的时候会被自动加上。MDL的作用是保证读写的正确性, 防止查询的过程中表结构发生变更。</li>
 </ol>
-<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="read-view"><a href="#read-view" class="headerlink" title="read view"></a>read view</h3><h2 id="redo-log"><a href="#redo-log" class="headerlink" title="redo log"></a>redo log</h2><h2 id="undo-log"><a href="#undo-log" class="headerlink" title="undo log"></a>undo log</h2><h2 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h2><h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><h3 id="主从复制的步骤"><a href="#主从复制的步骤" class="headerlink" title="主从复制的步骤"></a>主从复制的步骤</h3><ol>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="read-view"><a href="#read-view" class="headerlink" title="read view"></a>read view</h3><h2 id="binlog"><a href="#binlog" class="headerlink" title="binlog"></a>binlog</h2><h2 id="redo-log"><a href="#redo-log" class="headerlink" title="redo log"></a>redo log</h2><h2 id="undo-log"><a href="#undo-log" class="headerlink" title="undo log"></a>undo log</h2><h2 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h2><h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><h3 id="主从复制的步骤"><a href="#主从复制的步骤" class="headerlink" title="主从复制的步骤"></a>主从复制的步骤</h3><ol>
 <li><code>master</code>把数据更改记录到<code>binlog</code>中</li>
 <li><code>slave</code>把主服务器的<code>binlog</code>复制到自己的中继日志(<code>relay log</code>)中</li>
 <li><code>slave</code>重做中继日志中的日志, 把更改应用到自己的数据库上, 以达到最终一致性。</li>
