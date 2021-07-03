@@ -14,3 +14,5 @@ tinyImg:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny
 https://jiekun.dev/posts/b_tree_page_split/
 
 https://weibo.com/ttarticle/p/show?id=2309404646090271227927
+
+https://www.youtube.com/watch?v=aZjYr87r1b8
