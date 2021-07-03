@@ -536,9 +536,9 @@
       
         <tags>
             
-            <tag> pulsar </tag>
-            
             <tag> MQ </tag>
+            
+            <tag> pulsar </tag>
             
         </tags>
       
@@ -556,14 +556,16 @@
       
       <categories>
           
-          <category> -MQ </category>
+          <category> MQ </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> -kafka -MQ </tag>
+            <tag> kafka </tag>
+            
+            <tag> MQ </tag>
             
         </tags>
       
