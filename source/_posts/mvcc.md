@@ -7,20 +7,18 @@ categories:
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co93-m.jpg
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co93.jpg
 ---
-https://jiekun.dev/posts/mvcc/
 
-https://15721.courses.cs.cmu.edu/spring2020/papers/03-mvcc1/wu-vldb2017.pdf
+## MySQL-innodb
 
-https://blog.csdn.net/qq_35190492/article/details/109044141
+## ETCD
 
-https://www.youtube.com/watch?v=E4u4ogqfEIA&list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&index=20
-
-https://www.jianshu.com/p/8845ddca3b23
-
-https://liqitian.com/articles/2020/07/23/1595499457928.html
-
-https://chenjiayang.me/2019/06/22/mysql-innodb-mvcc/
-
-https://github.com/lifei6671/interview-go/blob/master/mysql/mysql-mvcc.md
-
-https://blog.jcole.us/innodb/
+## 参考文章
+1. https://jiekun.dev/posts/mvcc/
+1. https://15721.courses.cs.cmu.edu/spring2020/papers/03-mvcc1/wu-vldb2017.pdf
+1. https://blog.csdn.net/qq_35190492/article/details/109044141
+1. https://www.youtube.com/watch?v=E4u4ogqfEIA&list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&index=20
+1. https://www.jianshu.com/p/8845ddca3b23
+1. https://liqitian.com/articles/2020/07/23/1595499457928.html
+1. https://chenjiayang.me/2019/06/22/mysql-innodb-mvcc/
+1. https://github.com/lifei6671/interview-go/blob/master/mysql/mysql-mvcc.md
+1. https://blog.jcole.us/innodb/
