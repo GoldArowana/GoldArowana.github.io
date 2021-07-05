@@ -9,3 +9,7 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 ---
 
 http://research.google.com/pubs/pub36726.html
+
+https://www.cnblogs.com/foxmailed/p/3887430.html
+
+https://www.jianshu.com/p/05194f4b29dd

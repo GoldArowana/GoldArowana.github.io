@@ -24,3 +24,5 @@ https://docs.pingcap.com/zh/tidb/stable/optimistic-transaction
 https://docs.pingcap.com/zh/tidb/stable/pessimistic-transaction
 
 https://zhenghe.gitbook.io/open-courses/cmu-15-445-645-database-systems/two-phase-locking
+
+https://www.jdon.com/55452
