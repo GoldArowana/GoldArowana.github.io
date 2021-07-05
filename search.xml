@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>计算机组成原理(Computer Organization)</title>
+      <link href="computer-organization/"/>
+      <url>computer-organization/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Apollo</title>
       <link href="apollo/"/>
       <url>apollo/</url>
@@ -60,7 +73,7 @@
       <link href="percolator/"/>
       <url>percolator/</url>
       
-        <content type="html"><![CDATA[<p><a href="http://research.google.com/pubs/pub36726.html">http://research.google.com/pubs/pub36726.html</a></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="http://research.google.com/pubs/pub36726.html">http://research.google.com/pubs/pub36726.html</a></p><p><a href="https://www.cnblogs.com/foxmailed/p/3887430.html">https://www.cnblogs.com/foxmailed/p/3887430.html</a></p><p><a href="https://www.jianshu.com/p/05194f4b29dd">https://www.jianshu.com/p/05194f4b29dd</a></p>]]></content>
       
       
       
@@ -73,7 +86,7 @@
       <link href="tidb/"/>
       <url>tidb/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://docs.pingcap.com/zh/tidb/stable/tikv-overview">https://docs.pingcap.com/zh/tidb/stable/tikv-overview</a></p><p><a href="https://zhuanlan.zhihu.com/p/24118962">https://zhuanlan.zhihu.com/p/24118962</a></p><p><a href="http://research.google.com/pubs/pub36726.html">http://research.google.com/pubs/pub36726.html</a></p><p><a href="https://pingcap.com/blog-cn/percolator-and-txn/">https://pingcap.com/blog-cn/percolator-and-txn/</a></p><p><a href="https://www.jianshu.com/p/513fc11cbb1e">https://www.jianshu.com/p/513fc11cbb1e</a></p><p><a href="https://docs.jdcloud.com/cn/tidb-service/secondary-index">https://docs.jdcloud.com/cn/tidb-service/secondary-index</a></p><p><a href="https://docs.pingcap.com/zh/tidb/stable/optimistic-transaction">https://docs.pingcap.com/zh/tidb/stable/optimistic-transaction</a></p><p><a href="https://docs.pingcap.com/zh/tidb/stable/pessimistic-transaction">https://docs.pingcap.com/zh/tidb/stable/pessimistic-transaction</a></p><p><a href="https://zhenghe.gitbook.io/open-courses/cmu-15-445-645-database-systems/two-phase-locking">https://zhenghe.gitbook.io/open-courses/cmu-15-445-645-database-systems/two-phase-locking</a></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://docs.pingcap.com/zh/tidb/stable/tikv-overview">https://docs.pingcap.com/zh/tidb/stable/tikv-overview</a></p><p><a href="https://zhuanlan.zhihu.com/p/24118962">https://zhuanlan.zhihu.com/p/24118962</a></p><p><a href="http://research.google.com/pubs/pub36726.html">http://research.google.com/pubs/pub36726.html</a></p><p><a href="https://pingcap.com/blog-cn/percolator-and-txn/">https://pingcap.com/blog-cn/percolator-and-txn/</a></p><p><a href="https://www.jianshu.com/p/513fc11cbb1e">https://www.jianshu.com/p/513fc11cbb1e</a></p><p><a href="https://docs.jdcloud.com/cn/tidb-service/secondary-index">https://docs.jdcloud.com/cn/tidb-service/secondary-index</a></p><p><a href="https://docs.pingcap.com/zh/tidb/stable/optimistic-transaction">https://docs.pingcap.com/zh/tidb/stable/optimistic-transaction</a></p><p><a href="https://docs.pingcap.com/zh/tidb/stable/pessimistic-transaction">https://docs.pingcap.com/zh/tidb/stable/pessimistic-transaction</a></p><p><a href="https://zhenghe.gitbook.io/open-courses/cmu-15-445-645-database-systems/two-phase-locking">https://zhenghe.gitbook.io/open-courses/cmu-15-445-645-database-systems/two-phase-locking</a></p><p><a href="https://www.jdon.com/55452">https://www.jdon.com/55452</a></p>]]></content>
       
       
       
