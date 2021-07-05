@@ -447,7 +447,7 @@
       <link href="os/"/>
       <url>os/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://www.cnblogs.com/inception6-lxc/p/9073983.html">https://www.cnblogs.com/inception6-lxc/p/9073983.html</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h2><ul><li>运算单元</li><li>数据单元<ul><li>缓存</li><li>寄存器组</li></ul></li><li>控制单元<ul><li>指令起始地址寄存器</li><li>数据起始地址寄存器</li><li>指令指针寄存器</li><li>指令寄存器</li></ul></li></ul><h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><blockquote><p>在主板上，有一个东西叫ROM（Read Only Memory，只读存储器）。这和咱们平常说的内存RAM（Random Access Memory，随机存取存储器）不同。</p><p>咱们平时买的内存条是可读可写的，这样才能保存计算结果。而 ROM 是只读的，上面早就固化了一些初始化的程序，也就是BIOS（Basic Input and Output System，基本输入输出系统）。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/os/BIOS.png" alt="BIOS"></p><h2 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h2><h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><h2 id="网络系统"><a href="#网络系统" class="headerlink" title="网络系统"></a>网络系统</h2><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol><li><a href="https://www.cnblogs.com/inception6-lxc/p/9073983.html">https://www.cnblogs.com/inception6-lxc/p/9073983.html</a></li><li>《深入理解 LINUX 内核》</li><li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/">Operating Systems: Three Easy Pieces</a></li><li>《从实模式到保护模式》</li><li>《一个64位操作系统的设计与实现》</li></ol>]]></content>
       
       
       
