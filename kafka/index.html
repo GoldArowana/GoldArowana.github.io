@@ -459,21 +459,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-06
+                    2021-07-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    728
+                    994
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -517,10 +517,16 @@
 <li>设置 min.insync.replicas &gt; 1。这依然是 Broker 端参数，控制的是消息至少要被写入到多少个副本才算是“已提交”。设置成大于 1 可以提升消息持久性。在实际环境中千万不要使用默认值 1。</li>
 <li>确保 replication.factor &gt; min.insync.replicas。如果两者相等，那么只要有一个副本挂机，整个分区就无法正常工作了。我们不仅要改善消息的持久性，防止数据丢失，还要在不降低可用性的基础上完成。推荐设置成 replication.factor = min.insync.replicas + 1。</li>
 </ol>
-<h2 id="位移主题"><a href="#位移主题" class="headerlink" title="位移主题"></a>位移主题</h2><p>__consumer_offsets 叫位移主题, 是kafka的内部主题。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<h2 id="位移"><a href="#位移" class="headerlink" title="位移"></a>位移</h2><h3 id="位移主题"><a href="#位移主题" class="headerlink" title="位移主题"></a>位移主题</h3><p>__consumer_offsets 叫位移主题, 是kafka的内部主题。该主题的默认分区数是50, 副本数是3.</p>
+<h3 id="自动提交"><a href="#自动提交" class="headerlink" title="自动提交"></a>自动提交</h3><h3 id="手动提交"><a href="#手动提交" class="headerlink" title="手动提交"></a>手动提交</h3><h2 id="Coordinator-协调者"><a href="#Coordinator-协调者" class="headerlink" title="Coordinator(协调者)"></a>Coordinator(协调者)</h2><p>专门为 Consumer Group 服务，负责为 Group 执行 Rebalance 以及提供位移管理和组成员管理等</p>
+<p>Consumer 端应用程序在提交位移时，其实是向 Coordinator 所在的 Broker 提交位移。同样地，当 Consumer 应用启动时，也是向 Coordinator 所在的 Broker 发送各种请求，然后由 Coordinator 负责执行消费者组的注册、成员管理记录等元数据管理操作。</p>
+<p>所有 Broker 在启动时，都会创建和开启相应的 Coordinator 组件。也就是说，所有 Broker 都有各自的 Coordinator 组件。那么，Consumer Group 如何确定为它服务的 Coordinator 在哪台 Broker 上呢？</p>
+<p>确定由位移主题的哪个分区来保存该 Group 数据, 然后找出该分区 Leader 副本所在的 Broker，该 Broker 即为对应的 Coordinator。</p>
+<h3 id="StickyAssignor-有粘性的分区分配策略"><a href="#StickyAssignor-有粘性的分区分配策略" class="headerlink" title="StickyAssignor(有粘性的分区分配策略)"></a>StickyAssignor(有粘性的分区分配策略)</h3><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
 <li>《极客时间-Kafka核心技术与实战》</li>
 <li>《极客时间-Kafka核心源码解读》</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u4110122855/article/details/103616791">Kafka分区分配策略分析——重点：StickyAssignor</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013256816/article/details/81123625">Kafka分区分配策略（2）——RoundRobinAssignor和StickyAssignor</a></li>
 </ol>
 
                 
@@ -915,7 +921,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12.3k</span>&nbsp;字
+                class="white-color">12.6k</span>&nbsp;字
             
             
             
