@@ -35,10 +35,27 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 1. 设置 min.insync.replicas > 1。这依然是 Broker 端参数，控制的是消息至少要被写入到多少个副本才算是“已提交”。设置成大于 1 可以提升消息持久性。在实际环境中千万不要使用默认值 1。
 1. 确保 replication.factor > min.insync.replicas。如果两者相等，那么只要有一个副本挂机，整个分区就无法正常工作了。我们不仅要改善消息的持久性，防止数据丢失，还要在不降低可用性的基础上完成。推荐设置成 replication.factor = min.insync.replicas + 1。
 
-## 位移主题
-__consumer_offsets 叫位移主题, 是kafka的内部主题。
+## 位移
+### 位移主题
+__consumer_offsets 叫位移主题, 是kafka的内部主题。该主题的默认分区数是50, 副本数是3.
 
+### 自动提交
+
+### 手动提交
+
+## Coordinator(协调者)
+专门为 Consumer Group 服务，负责为 Group 执行 Rebalance 以及提供位移管理和组成员管理等
+
+Consumer 端应用程序在提交位移时，其实是向 Coordinator 所在的 Broker 提交位移。同样地，当 Consumer 应用启动时，也是向 Coordinator 所在的 Broker 发送各种请求，然后由 Coordinator 负责执行消费者组的注册、成员管理记录等元数据管理操作。
+
+所有 Broker 在启动时，都会创建和开启相应的 Coordinator 组件。也就是说，所有 Broker 都有各自的 Coordinator 组件。那么，Consumer Group 如何确定为它服务的 Coordinator 在哪台 Broker 上呢？
+
+确定由位移主题的哪个分区来保存该 Group 数据, 然后找出该分区 Leader 副本所在的 Broker，该 Broker 即为对应的 Coordinator。
+
+### StickyAssignor(有粘性的分区分配策略)
 
 ## 参考资料
 1. 《极客时间-Kafka核心技术与实战》
 1. 《极客时间-Kafka核心源码解读》
+1. [Kafka分区分配策略分析——重点：StickyAssignor](https://blog.csdn.net/u4110122855/article/details/103616791)
+1. [Kafka分区分配策略（2）——RoundRobinAssignor和StickyAssignor](https://blog.csdn.net/u013256816/article/details/81123625)

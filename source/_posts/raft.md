@@ -14,3 +14,5 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 
 
 https://www.luozhiyun.com/archives/287
+
+https://raft.github.io/raft.pdf
