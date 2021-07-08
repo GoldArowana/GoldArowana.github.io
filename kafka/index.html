@@ -466,14 +466,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -523,6 +523,13 @@
 <p>所有 Broker 在启动时，都会创建和开启相应的 Coordinator 组件。也就是说，所有 Broker 都有各自的 Coordinator 组件。那么，Consumer Group 如何确定为它服务的 Coordinator 在哪台 Broker 上呢？</p>
 <p>确定由位移主题的哪个分区来保存该 Group 数据, 然后找出该分区 Leader 副本所在的 Broker，该 Broker 即为对应的 Coordinator。</p>
 <h3 id="StickyAssignor-有粘性的分区分配策略"><a href="#StickyAssignor-有粘性的分区分配策略" class="headerlink" title="StickyAssignor(有粘性的分区分配策略)"></a>StickyAssignor(有粘性的分区分配策略)</h3><h2 id="副本机制"><a href="#副本机制" class="headerlink" title="副本机制"></a>副本机制</h2><h2 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h2><h3 id="Reactor"><a href="#Reactor" class="headerlink" title="Reactor"></a>Reactor</h3><h3 id="Kafka里的网络模型"><a href="#Kafka里的网络模型" class="headerlink" title="Kafka里的网络模型"></a>Kafka里的网络模型</h3><p><img src="/loading2.gif" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/kafka-network-thread.jpg" alt="kafka网络模型"></p>
+<h2 id="消费组重平衡"><a href="#消费组重平衡" class="headerlink" title="消费组重平衡"></a>消费组重平衡</h2><h2 id="重平衡的条件"><a href="#重平衡的条件" class="headerlink" title="重平衡的条件"></a>重平衡的条件</h2><ol>
+<li>组成员数量发生变化。</li>
+<li>订阅主题数量发生变化。</li>
+<li>订阅主题的分区数发生变化。</li>
+</ol>
+<h3 id="通知机制"><a href="#通知机制" class="headerlink" title="通知机制"></a>通知机制</h3><h4 id="消费端着端的心跳线程-Heartbeat-Thread"><a href="#消费端着端的心跳线程-Heartbeat-Thread" class="headerlink" title="消费端着端的心跳线程(Heartbeat Thread)"></a>消费端着端的心跳线程(Heartbeat Thread)</h4><p>重平衡过程是如何通知到其他消费者实例的？答案就是，靠消费者端的心跳线程（Heartbeat Thread）</p>
+<p>重平衡的通知机制正是通过心跳线程来完成的。当协调者决定开启新一轮重平衡后，它会将“REBALANCE_IN_PROGRESS”封装进心跳请求的响应中，发还给消费者实例。当消费者实例发现心跳响应中包含了“REBALANCE_IN_PROGRESS”，就能立马知道重平衡又开始了，这就是重平衡的通知机制。</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
 <li>《极客时间-Kafka核心技术与实战》</li>
 <li>《极客时间-Kafka核心源码解读》</li>
@@ -922,7 +929,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12.6k</span>&nbsp;字
+                class="white-color">13.1k</span>&nbsp;字
             
             
             
