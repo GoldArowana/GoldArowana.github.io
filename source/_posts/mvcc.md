@@ -22,3 +22,6 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 1. https://chenjiayang.me/2019/06/22/mysql-innodb-mvcc/
 1. https://github.com/lifei6671/interview-go/blob/master/mysql/mysql-mvcc.md
 1. https://blog.jcole.us/innodb/
+
+1. [一篇讲透如何理解数据库并发控制](https://zhuanlan.zhihu.com/p/139697896)
+1. [Basic T/O, MV-TO以及"真"MVCC](https://zhuanlan.zhihu.com/p/30635236)

@@ -54,6 +54,28 @@ Consumer 端应用程序在提交位移时，其实是向 Coordinator 所在的 
 
 ### StickyAssignor(有粘性的分区分配策略)
 
+
+## 副本机制
+
+## 网络模型
+### Reactor
+### Kafka里的网络模型
+![kafka网络模型](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/kafka-network-thread.jpg)
+
+
+## 消费组重平衡
+## 重平衡的条件
+1. 组成员数量发生变化。
+1. 订阅主题数量发生变化。
+1. 订阅主题的分区数发生变化。
+
+### 通知机制
+#### 消费端着端的心跳线程(Heartbeat Thread)
+重平衡过程是如何通知到其他消费者实例的？答案就是，靠消费者端的心跳线程（Heartbeat Thread）
+
+重平衡的通知机制正是通过心跳线程来完成的。当协调者决定开启新一轮重平衡后，它会将“REBALANCE_IN_PROGRESS”封装进心跳请求的响应中，发还给消费者实例。当消费者实例发现心跳响应中包含了“REBALANCE_IN_PROGRESS”，就能立马知道重平衡又开始了，这就是重平衡的通知机制。
+
+
 ## 参考资料
 1. 《极客时间-Kafka核心技术与实战》
 1. 《极客时间-Kafka核心源码解读》

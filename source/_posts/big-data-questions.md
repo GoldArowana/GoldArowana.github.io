@@ -89,3 +89,4 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 [大数据求职必看：经典的大数据面试问题 )](https://www.sohu.com/a/138204769_236714)
 [程序员代码面试指南 第6章]()
 
+http://duanple.com/?p=289
