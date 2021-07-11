@@ -76,8 +76,22 @@ Consumer 端应用程序在提交位移时，其实是向 Coordinator 所在的 
 重平衡的通知机制正是通过心跳线程来完成的。当协调者决定开启新一轮重平衡后，它会将“REBALANCE_IN_PROGRESS”封装进心跳请求的响应中，发还给消费者实例。当消费者实例发现心跳响应中包含了“REBALANCE_IN_PROGRESS”，就能立马知道重平衡又开始了，这就是重平衡的通知机制。
 
 
+## 调优
+
+## kafka stream
+
 ## 参考资料
 1. 《极客时间-Kafka核心技术与实战》
 1. 《极客时间-Kafka核心源码解读》
 1. [Kafka分区分配策略分析——重点：StickyAssignor](https://blog.csdn.net/u4110122855/article/details/103616791)
 1. [Kafka分区分配策略（2）——RoundRobinAssignor和StickyAssignor](https://blog.csdn.net/u013256816/article/details/81123625)
+1. 《Kafka技术内幕》
+1. 《深入理解Kafka：核心设计与实践原理》
+
+https://www.cnblogs.com/huxi2b/
+
+https://www.confluent.io/blog/
+
+https://cwiki.apache.org/confluence/display/KAFKA/Index
+
+https://cwiki.apache.org/confluence/display/KAFKA/Kafka+papers+and+presentations

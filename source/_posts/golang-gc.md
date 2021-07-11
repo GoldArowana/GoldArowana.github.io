@@ -18,6 +18,8 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 1. [golang设计-垃圾回收](https://golang.design/under-the-hood/zh-cn/part2runtime/ch08gc/)
 1. [Golang 垃圾回收剖析](http://legendtkl.com/2017/04/28/golang-gc/)
 
+
+
 https://www.bilibili.com/video/BV1wz4y1y7Kd
 
 https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice/
@@ -57,8 +59,6 @@ https://zhuanlan.zhihu.com/p/297177002
 https://lessisbetter.site/2019/10/20/go-gc-1-history-and-priciple/
 
 https://learnku.com/docs/go-blog/ismmkeynote/6499
-
-https://golang.design/under-the-hood/zh-cn/part2runtime/ch08gc/history/
 
 https://tiancaiamao.gitbooks.io/go-internals/content/zh/06.2.html
 

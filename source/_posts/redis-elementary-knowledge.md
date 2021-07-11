@@ -218,3 +218,5 @@ https://jiekun.dev/posts/2020-03-14-redis-6-0-acl%E5%9F%BA%E4%BA%8Ebitmap%E5%AE%
 https://jiekun.dev/posts/2020-01-31-redis%E5%93%A8%E5%85%B5%E6%95%85%E9%9A%9C%E8%BD%AC%E7%A7%BB/
 https://blog.csdn.net/cywosp/article/details/8767327
 https://blog.csdn.net/xinghuah/article/details/80487525
+
+https://www.iocoder.cn/Redis/good-collection/

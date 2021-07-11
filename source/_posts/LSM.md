@@ -16,6 +16,7 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 1. [SSTable 原理](https://niceaz.com/2018/11/27/sstable)
 1. [Log Structured Merge Trees](http://www.benstopford.com/2015/02/14/log-structured-merge-trees/)
 
+https://blog.csdn.net/weixin_32496547/article/details/114098111
 
 http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.44.2782&rep=rep1&type=pdf
 
@@ -118,8 +119,6 @@ https://tikv.org/deep-dive/key-value-engine/b-tree-vs-lsm/
 https://www.usenix.org/conference/atc15/technical-session/presentation/wu
 
 https://zhuanlan.zhihu.com/p/129355502
-
-https://blog.csdn.net/weixin_32496547/article/details/114098111
 
 https://www.youtube.com/watch?v=auI8BTws-f8
 
