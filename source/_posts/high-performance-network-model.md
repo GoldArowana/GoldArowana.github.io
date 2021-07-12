@@ -23,3 +23,9 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 1. [深入理解IO复用之epoll](https://zhuanlan.zhihu.com/p/87843750)
 1. [如果这篇文章说不清epoll的本质，那就过来掐死我吧！ （1）](https://zhuanlan.zhihu.com/p/63179839)
 1. [Scalable IO in Java (Doug Lea)](http://gee.cs.oswego.edu/dl/cpjslides/nio.pdf)
+
+https://www.zhihu.com/question/20122137/answer/146866418
+
+https://www.jianshu.com/p/e4d1c485c32a
+
+https://www.cnblogs.com/jukan/p/5272257.html

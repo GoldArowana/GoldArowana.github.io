@@ -11,6 +11,18 @@ img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co1
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co129.jpg
 ---
 
+## zero-copy(零拷贝)
+![零拷贝](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/zero-copy.jpg)
+
+
+## 生产者
+
+## 消费者
+
+## 协调者
+
+## 存储层
+
 ## 消息分区机制
 - 轮循策略(未指定key的默认策略)
 - 随机策略(老版本)
@@ -95,3 +107,7 @@ https://www.confluent.io/blog/
 https://cwiki.apache.org/confluence/display/KAFKA/Index
 
 https://cwiki.apache.org/confluence/display/KAFKA/Kafka+papers+and+presentations
+
+https://blog.csdn.net/yjh314/article/details/78863875
+
+https://www.jianshu.com/p/afd5da6a92ab
