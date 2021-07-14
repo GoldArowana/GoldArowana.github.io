@@ -10,3 +10,6 @@ tags:
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co16-m.jpg
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co16.jpg
 ---
+
+
+https://draveness.me/whys-the-design-udp-minimum-header/

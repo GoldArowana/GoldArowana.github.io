@@ -43,3 +43,21 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 1. [Operating Systems: Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP/)
 1. 《从实模式到保护模式》
 1. 《一个64位操作系统的设计与实现》
+
+https://draveness.me/whys-the-design-linux-swapping
+
+https://draveness.me/whys-the-design-os-virtual-memory/
+
+https://draveness.me/whys-the-design-syscall-overhead/
+
+https://draveness.me/whys-the-design-linux-default-page/
+
+https://draveness.me/whys-the-design-cpu-and-disk/
+
+https://draveness.me/whys-the-design-numa-performance
+
+https://draveness.me/whys-the-design-linux-hugepages
+
+https://draveness.me/whys-the-design-windows-defragmentation/
+
+https://draveness.me/whys-the-design-linux-macos-fragmentation

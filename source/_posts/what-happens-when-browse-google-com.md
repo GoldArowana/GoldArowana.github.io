@@ -26,3 +26,11 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 ## IP
 
 ## TCP
+
+
+
+## 参考文章
+
+https://draveness.me/whys-the-design-non-unique-mac-address/
+
+https://draveness.me/whys-the-design-ipv6-replacing-ipv4/

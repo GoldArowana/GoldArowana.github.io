@@ -220,3 +220,7 @@ https://blog.csdn.net/cywosp/article/details/8767327
 https://blog.csdn.net/xinghuah/article/details/80487525
 
 https://www.iocoder.cn/Redis/good-collection/
+
+https://draveness.me/whys-the-design-redis-single-thread/
+
+https://draveness.me/whys-the-design-redis-bgsave-fork/

@@ -16,3 +16,5 @@ https://jiekun.dev/posts/b_tree_page_split/
 https://weibo.com/ttarticle/p/show?id=2309404646090271227927
 
 https://www.youtube.com/watch?v=aZjYr87r1b8
+
+https://draveness.me/whys-the-design-mysql-b-plus-tree/

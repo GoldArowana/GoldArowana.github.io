@@ -11,3 +11,6 @@ tags:
 img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co17-m.jpg
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co17.jpg
 ---
+
+
+https://draveness.me/whys-the-design-dns-udp-tcp/

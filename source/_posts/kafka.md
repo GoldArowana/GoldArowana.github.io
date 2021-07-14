@@ -15,9 +15,11 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 ![零拷贝](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/zero-copy.jpg)
 
 
-## 生产者
+## 生产者(producer)
 
-## 消费者
+## 消费者(consumer)
+
+## 消息代理(broker)
 
 ## 协调者
 

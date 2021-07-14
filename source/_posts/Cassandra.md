@@ -15,3 +15,5 @@ https://book.douban.com/subject/6393021/
 https://blog.csdn.net/u010912405/article/details/40863491
 
 https://en.wikipedia.org/wiki/Apache_Cassandra
+
+https://draveness.me/whys-the-design-olap-column-oriented/

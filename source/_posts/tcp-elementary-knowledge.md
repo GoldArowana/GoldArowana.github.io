@@ -17,3 +17,13 @@ https://datatracker.ietf.org/doc/rfc1644/
 http://www.tcpipguide.com/free/t_TCPSlidingWindowAcknowledgmentSystemForDataTranspo-6.htm
 
 https://www.youtube.com/playlist?list=PLoCMsyE1cvdWKsLVyf6cPwCLDIZnOj0NS
+
+https://draveness.me/whys-the-design-tcp-three-way-handshake/
+
+https://draveness.me/whys-the-design-tcp-performance/
+
+https://draveness.me/whys-the-design-tcp-segment-ip-packet/
+
+https://draveness.me/whys-the-design-tcp-message-frame/
+
+https://draveness.me/whys-the-design-tcp-time-wait/
