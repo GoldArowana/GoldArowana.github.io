@@ -18,12 +18,49 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 ## 生产者(producer)
 
 ## 消费者(consumer)
+一个分区只会被分配给一个消费者的一个线程
+
+![消费进度的保存和恢复](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-offset-save.jpg)
+![消费者客户端的消费消息流程](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consume-flow.jpg)
+
+左图: 一个消费者进程里开了3个线程。
+右图: 三个消费者进程分别开了1个线程。
+两种都是开了3线程消费, 只不过对zk来说看到的消费组成员列表是不同的。
+![消费者进程和线程](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-threads-vs-procs.jpg)
+
+### 消费者连接器
+![](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-connect-text.jpg)
+![ConsumerConnect连接器各组件协调完成消息的消费](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-connect.jpg)
+
+### 消费者客户端的线程模型
+使用队列作为消息的缓存
+![消费者客户端线程模型](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-threads-model.jpg)
+
+### 消费组重平衡
+#### 重平衡的条件
+1. 组成员数量发生变化。
+1. 订阅主题数量发生变化。
+1. 订阅主题的分区数发生变化。
+![触发消费者连接器执行再平衡操作的两种方式](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-rebalance.jpg)
+
+#### 通知机制, 消费端着端的心跳线程(Heartbeat Thread)
+重平衡过程是如何通知到其他消费者实例的？答案就是，靠消费者端的心跳线程（Heartbeat Thread）
+
+重平衡的通知机制正是通过心跳线程来完成的。当协调者决定开启新一轮重平衡后，它会将“REBALANCE_IN_PROGRESS”封装进心跳请求的响应中，发还给消费者实例。当消费者实例发现心跳响应中包含了“REBALANCE_IN_PROGRESS”，就能立马知道重平衡又开始了，这就是重平衡的通知机制。
+
 
 ## 消息代理(broker)
 
 ## 协调者
 
 ## 存储层
+
+## 内部元数据
+### zookeeper
+ZK存储了Kafka的内部元数据, 还记录了消费组的成员列表, 分区的消费进度, 分区的所有者。节点、主题、分区、消费者、偏移量(offset)、所有权(ownership)
+
+### kraft
+2.8开始kafka去掉了zookeeper, 
 
 ## 消息分区机制
 - 轮循策略(未指定key的默认策略)
@@ -76,20 +113,6 @@ Consumer 端应用程序在提交位移时，其实是向 Coordinator 所在的 
 ### Kafka里的网络模型
 ![kafka网络模型](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/kafka-network-thread.jpg)
 
-
-## 消费组重平衡
-## 重平衡的条件
-1. 组成员数量发生变化。
-1. 订阅主题数量发生变化。
-1. 订阅主题的分区数发生变化。
-
-### 通知机制
-#### 消费端着端的心跳线程(Heartbeat Thread)
-重平衡过程是如何通知到其他消费者实例的？答案就是，靠消费者端的心跳线程（Heartbeat Thread）
-
-重平衡的通知机制正是通过心跳线程来完成的。当协调者决定开启新一轮重平衡后，它会将“REBALANCE_IN_PROGRESS”封装进心跳请求的响应中，发还给消费者实例。当消费者实例发现心跳响应中包含了“REBALANCE_IN_PROGRESS”，就能立马知道重平衡又开始了，这就是重平衡的通知机制。
-
-
 ## 调优
 
 ## kafka stream
@@ -113,3 +136,7 @@ https://cwiki.apache.org/confluence/display/KAFKA/Kafka+papers+and+presentations
 https://blog.csdn.net/yjh314/article/details/78863875
 
 https://www.jianshu.com/p/afd5da6a92ab
+
+https://blog.csdn.net/nazeniwaresakini/article/details/116085573
+
+https://zhuanlan.zhihu.com/p/368600560
