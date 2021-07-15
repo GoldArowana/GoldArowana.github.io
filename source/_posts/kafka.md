@@ -42,21 +42,33 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 1. 订阅主题数量发生变化。
 1. 订阅主题的分区数发生变化。
 ![触发消费者连接器执行再平衡操作的两种方式](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-rebalance.jpg)
+   
+#### 重平衡的过程
+![拉取线程再平衡中的关闭和更新](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-pull-thread-rebalance-flow.jpg)
+
 
 #### 通知机制, 消费端着端的心跳线程(Heartbeat Thread)
 重平衡过程是如何通知到其他消费者实例的？答案就是，靠消费者端的心跳线程（Heartbeat Thread）
 
 重平衡的通知机制正是通过心跳线程来完成的。当协调者决定开启新一轮重平衡后，它会将“REBALANCE_IN_PROGRESS”封装进心跳请求的响应中，发还给消费者实例。当消费者实例发现心跳响应中包含了“REBALANCE_IN_PROGRESS”，就能立马知道重平衡又开始了，这就是重平衡的通知机制。
 
-### 位移的管理
+### 消费者消费消息
+![消费者消费消息的主流程](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-main-flow.jpg)
+![](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/temp2.jpg)
+![拉取线程和消费线程分别更新分区信息的状态](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-pull-consume-state.jpg)
 
-#### 位移主题
+
+### 位移的管理
+![](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/temp1.jpg)
+
+#### 提交偏移量到ZK
+
+#### 提交偏移量到内部位移主题
 __consumer_offsets 叫位移主题, 是kafka的内部主题。该主题的默认分区数是50, 副本数是3.
 
 #### 自动提交
 
 #### 手动提交
-
 
 ## 消息代理(broker)
 
