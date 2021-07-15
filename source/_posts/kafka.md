@@ -48,6 +48,15 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 
 重平衡的通知机制正是通过心跳线程来完成的。当协调者决定开启新一轮重平衡后，它会将“REBALANCE_IN_PROGRESS”封装进心跳请求的响应中，发还给消费者实例。当消费者实例发现心跳响应中包含了“REBALANCE_IN_PROGRESS”，就能立马知道重平衡又开始了，这就是重平衡的通知机制。
 
+### 位移的管理
+
+#### 位移主题
+__consumer_offsets 叫位移主题, 是kafka的内部主题。该主题的默认分区数是50, 副本数是3.
+
+#### 自动提交
+
+#### 手动提交
+
 
 ## 消息代理(broker)
 
@@ -86,13 +95,7 @@ ZK存储了Kafka的内部元数据, 还记录了消费组的成员列表, 分区
 1. 设置 min.insync.replicas > 1。这依然是 Broker 端参数，控制的是消息至少要被写入到多少个副本才算是“已提交”。设置成大于 1 可以提升消息持久性。在实际环境中千万不要使用默认值 1。
 1. 确保 replication.factor > min.insync.replicas。如果两者相等，那么只要有一个副本挂机，整个分区就无法正常工作了。我们不仅要改善消息的持久性，防止数据丢失，还要在不降低可用性的基础上完成。推荐设置成 replication.factor = min.insync.replicas + 1。
 
-## 位移
-### 位移主题
-__consumer_offsets 叫位移主题, 是kafka的内部主题。该主题的默认分区数是50, 副本数是3.
 
-### 自动提交
-
-### 手动提交
 
 ## Coordinator(协调者)
 专门为 Consumer Group 服务，负责为 Group 执行 Rebalance 以及提供位移管理和组成员管理等
