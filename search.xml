@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>GFS</title>
+      <link href="gfs/"/>
+      <url>gfs/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol><li><a href="https://www.youtube.com/watch?v=EpIgvowZr00">https://www.youtube.com/watch?v=EpIgvowZr00</a></li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Flink</title>
       <link href="flink/"/>
       <url>flink/</url>
@@ -56,37 +69,11 @@
     
     
     <entry>
-      <title>Tomcat</title>
-      <link href="tomcat/"/>
-      <url>tomcat/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>RabbitMQ</title>
       <link href="rabbitmq/"/>
       <url>rabbitmq/</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Codis</title>
-      <link href="codis/"/>
-      <url>codis/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/youanyyou/article/details/108613010">https://blog.csdn.net/youanyyou/article/details/108613010</a></p><p><a href="https://www.cnblogs.com/pingyeaa/p/11294773.html">https://www.cnblogs.com/pingyeaa/p/11294773.html</a></p>]]></content>
       
       
       
@@ -216,7 +203,7 @@
       <link href="2pc/"/>
       <url>2pc/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/343226202">https://zhuanlan.zhihu.com/p/343226202</a></p><p><a href="https://zhuanlan.zhihu.com/p/343224188">https://zhuanlan.zhihu.com/p/343224188</a></p><p><a href="https://www.cnblogs.com/qdhxhz/p/11167025.html">https://www.cnblogs.com/qdhxhz/p/11167025.html</a></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/343226202">https://zhuanlan.zhihu.com/p/343226202</a></p><p><a href="https://zhuanlan.zhihu.com/p/343224188">https://zhuanlan.zhihu.com/p/343224188</a></p><p><a href="https://www.cnblogs.com/qdhxhz/p/11167025.html">https://www.cnblogs.com/qdhxhz/p/11167025.html</a></p><p><a href="https://www.youtube.com/watch?v=aDp99WDIM_4">https://www.youtube.com/watch?v=aDp99WDIM_4</a></p>]]></content>
       
       
       
@@ -294,7 +281,7 @@
       <link href="google-spanner/"/>
       <url>google-spanner/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://www.jianshu.com/p/6ae6e7989161">https://www.jianshu.com/p/6ae6e7989161</a></p><p><a href="http://dblab.xmu.edu.cn/post/google-spanner/">http://dblab.xmu.edu.cn/post/google-spanner/</a></p><p><a href="https://zhuanlan.zhihu.com/p/91635202">https://zhuanlan.zhihu.com/p/91635202</a></p><p><a href="https://www.zhihu.com/question/52033960/answer/1531184480">https://www.zhihu.com/question/52033960/answer/1531184480</a></p><p><a href="http://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf">http://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf</a></p><p><a href="https://cloud.tencent.com/developer/article/1131036">https://cloud.tencent.com/developer/article/1131036</a></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://www.jianshu.com/p/6ae6e7989161">https://www.jianshu.com/p/6ae6e7989161</a></p><p><a href="http://dblab.xmu.edu.cn/post/google-spanner/">http://dblab.xmu.edu.cn/post/google-spanner/</a></p><p><a href="https://zhuanlan.zhihu.com/p/91635202">https://zhuanlan.zhihu.com/p/91635202</a></p><p><a href="https://www.zhihu.com/question/52033960/answer/1531184480">https://www.zhihu.com/question/52033960/answer/1531184480</a></p><p><a href="http://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf">http://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf</a></p><p><a href="https://cloud.tencent.com/developer/article/1131036">https://cloud.tencent.com/developer/article/1131036</a></p><p><a href="https://www.youtube.com/watch?v=4eW5SWBi7vs">https://www.youtube.com/watch?v=4eW5SWBi7vs</a></p>]]></content>
       
       
       
@@ -560,19 +547,6 @@
     
     
     <entry>
-      <title>RSQF(过滤器算法)</title>
-      <link href="rsqf/"/>
-      <url>rsqf/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://github.com/splatlab/cqf">Counting Quotient Filter (CQF)</a></p><p><a href="https://www3.cs.stonybrook.edu/~ppandey/files/SIGMOD17_Talk_CQF_long.pdf">https://www3.cs.stonybrook.edu/~ppandey/files/SIGMOD17_Talk_CQF_long.pdf</a></p><p><a href="https://blog.csdn.net/weixin_30760895/article/details/97222824">https://blog.csdn.net/weixin_30760895/article/details/97222824</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>hyperloglog</title>
       <link href="hyperloglog/"/>
       <url>hyperloglog/</url>
@@ -703,19 +677,6 @@
     
     
     <entry>
-      <title>bpm</title>
-      <link href="bpm/"/>
-      <url>bpm/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://www.cnblogs.com/wpz2018/p/10276691.html">https://www.cnblogs.com/wpz2018/p/10276691.html</a></p><p><a href="https://jbpm.org/">https://jbpm.org/</a></p><p><a href="https://github.com/kiegroup/jbpm">https://github.com/kiegroup/jbpm</a></p><p><a href="https://max.book118.com/html/2018/0325/158546150.shtm">https://max.book118.com/html/2018/0325/158546150.shtm</a></p><p><a href="https://blog.csdn.net/xiangbq/article/details/46365127">https://blog.csdn.net/xiangbq/article/details/46365127</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>LSM-Tree</title>
       <link href="lsm/"/>
       <url>lsm/</url>
@@ -734,19 +695,6 @@
       <url>advanced-database/</url>
       
         <content type="html"><![CDATA[<p><a href="https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O">https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O</a></p><p><a href="https://www.luozhiyun.com/archives/273">https://www.luozhiyun.com/archives/273</a></p><p><a href="https://www.luozhiyun.com/archives/280">https://www.luozhiyun.com/archives/280</a></p><p><a href="https://zhuanlan.zhihu.com/p/158622349">Latch-crabbing/Latch-couping</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>链路染色</title>
-      <link href="traffic-coloring/"/>
-      <url>traffic-coloring/</url>
-      
-        <content type="html"><![CDATA[<p><a href="http://hbchen.com/post/microservice/2019-11-30-go-micro-service-chain/#%E6%9F%93%E8%89%B2">http://hbchen.com/post/microservice/2019-11-30-go-micro-service-chain/#%E6%9F%93%E8%89%B2</a></p>]]></content>
       
       
       
@@ -801,31 +749,6 @@
         <content type="html"><![CDATA[<p><a href="https://www.zhihu.com/question/302981392/answer/549889122">https://www.zhihu.com/question/302981392/answer/549889122</a></p><p><a href="https://blog.csdn.net/weixin_40581617/article/details/82910117">https://blog.csdn.net/weixin_40581617/article/details/82910117</a></p>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>编程范式(programming-paradigm)</title>
-      <link href="programming-paradigm/"/>
-      <url>programming-paradigm/</url>
-      
-        <content type="html"><![CDATA[<p>编程范式：命令式编程(Imperative)、声明式编程(Declarative)和函数式编程(Functional)</p><p><a href="https://www.cnblogs.com/sirkevin/p/8283110.html">https://www.cnblogs.com/sirkevin/p/8283110.html</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> programming </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> programming </tag>
-            
-        </tags>
       
     </entry>
     
@@ -905,58 +828,6 @@
             <tag> arch </tag>
             
             <tag> REST </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>micro-frontends (微前端)</title>
-      <link href="micro-frontends/"/>
-      <url>micro-frontends/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://martinfowler.com/articles/micro-frontends.html">https://martinfowler.com/articles/micro-frontends.html</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> arch </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> arch </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>serverless</title>
-      <link href="serverless/"/>
-      <url>serverless/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://martinfowler.com/articles/serverless.html">https://martinfowler.com/articles/serverless.html</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> arch </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> arch </tag>
-            
-            <tag> serverless </tag>
             
         </tags>
       
@@ -1074,33 +945,6 @@
         <tags>
             
             <tag> golang </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>订单系统架构</title>
-      <link href="order-system-arch/"/>
-      <url>order-system-arch/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://juejin.cn/post/6844903699593035790">基于大中台架构的电商业务中台最佳实践之二：交易业务中台核心设计</a><br><a href="https://dbaplus.cn/news-141-2983-1.html">有赞高度复杂业务下的零售中台建设</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> arch </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> arch </tag>
-            
-            <tag> order system </tag>
             
         </tags>
       
@@ -1470,19 +1314,6 @@
             <tag> concurrent </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>bookkeeper</title>
-      <link href="bookkeeper/"/>
-      <url>bookkeeper/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
       
     </entry>
     
@@ -1925,7 +1756,7 @@
       <link href="raft/"/>
       <url>raft/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://www.luozhiyun.com/archives/287">https://www.luozhiyun.com/archives/287</a></p><p><a href="https://raft.github.io/raft.pdf">https://raft.github.io/raft.pdf</a></p><p><a href="https://disksing.com/even-node-raft/">https://disksing.com/even-node-raft/</a></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://www.luozhiyun.com/archives/287">https://www.luozhiyun.com/archives/287</a></p><p><a href="https://raft.github.io/raft.pdf">https://raft.github.io/raft.pdf</a></p><p><a href="https://disksing.com/even-node-raft/">https://disksing.com/even-node-raft/</a></p><p><a href="https://www.youtube.com/watch?v=UzzcUS2OHqo">https://www.youtube.com/watch?v=UzzcUS2OHqo</a></p><p><a href="https://www.youtube.com/watch?v=64Zp3tzNbpE">https://www.youtube.com/watch?v=64Zp3tzNbpE</a></p><p><a href="https://www.youtube.com/watch?v=4r8Mz3MMivY">https://www.youtube.com/watch?v=4r8Mz3MMivY</a></p>]]></content>
       
       
       <categories>
@@ -1954,7 +1785,7 @@
       <link href="zab/"/>
       <url>zab/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=pbmyrNjzdDk">https://www.youtube.com/watch?v=pbmyrNjzdDk</a></p>]]></content>
       
       
       <categories>
