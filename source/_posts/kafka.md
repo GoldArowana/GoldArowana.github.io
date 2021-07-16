@@ -139,19 +139,11 @@ Consumer 端应用程序在提交位移时，其实是向 Coordinator 所在的 
 1. [Kafka分区分配策略（2）——RoundRobinAssignor和StickyAssignor](https://blog.csdn.net/u013256816/article/details/81123625)
 1. 《Kafka技术内幕》
 1. 《深入理解Kafka：核心设计与实践原理》
-
-https://www.cnblogs.com/huxi2b/
-
-https://www.confluent.io/blog/
-
-https://cwiki.apache.org/confluence/display/KAFKA/Index
-
-https://cwiki.apache.org/confluence/display/KAFKA/Kafka+papers+and+presentations
-
-https://blog.csdn.net/yjh314/article/details/78863875
-
-https://www.jianshu.com/p/afd5da6a92ab
-
-https://blog.csdn.net/nazeniwaresakini/article/details/116085573
-
-https://zhuanlan.zhihu.com/p/368600560
+1. https://www.cnblogs.com/huxi2b/
+1. https://www.confluent.io/blog/
+1. https://cwiki.apache.org/confluence/display/KAFKA/Index
+1. https://cwiki.apache.org/confluence/display/KAFKA/Kafka+papers+and+presentations
+1. https://blog.csdn.net/yjh314/article/details/78863875
+1. https://www.jianshu.com/p/afd5da6a92ab
+1. https://blog.csdn.net/nazeniwaresakini/article/details/116085573
+1. https://zhuanlan.zhihu.com/p/368600560
