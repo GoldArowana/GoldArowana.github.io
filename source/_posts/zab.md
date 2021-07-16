@@ -11,3 +11,4 @@ img:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co
 tinyImg:  https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co88.jpg
 ---
 
+https://www.youtube.com/watch?v=pbmyrNjzdDk

@@ -20,3 +20,5 @@ https://www.zhihu.com/question/52033960/answer/1531184480
 http://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf
 
 https://cloud.tencent.com/developer/article/1131036
+
+https://www.youtube.com/watch?v=4eW5SWBi7vs

@@ -18,3 +18,9 @@ https://www.luozhiyun.com/archives/287
 https://raft.github.io/raft.pdf
 
 https://disksing.com/even-node-raft/
+
+https://www.youtube.com/watch?v=UzzcUS2OHqo
+
+https://www.youtube.com/watch?v=64Zp3tzNbpE
+
+https://www.youtube.com/watch?v=4r8Mz3MMivY
