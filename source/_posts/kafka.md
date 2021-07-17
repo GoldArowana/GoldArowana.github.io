@@ -11,10 +11,6 @@ img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co1
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co129.jpg
 ---
 
-## zero-copy(零拷贝)
-![零拷贝](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/zero-copy.jpg)
-
-
 ## 生产者(producer)
 
 ## 消费者(consumer)
@@ -84,7 +80,18 @@ Consumer 端应用程序在提交位移时，其实是向 Coordinator 所在的 
 
 ## 消息代理(broker)
 
-## 存储层
+### 存储层
+
+### 分区、副本
+
+### 网络模型
+#### Reactor
+#### Kafka里的网络模型
+![kafka网络模型](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/kafka-network-thread.jpg)
+
+### zero-copy(零拷贝)
+![零拷贝](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/zero-copy.jpg)
+
 
 ## 内部元数据
 ### zookeeper
@@ -118,16 +125,11 @@ ZK存储了Kafka的内部元数据, 还记录了消费组的成员列表, 分区
 1. 确保 replication.factor > min.insync.replicas。如果两者相等，那么只要有一个副本挂机，整个分区就无法正常工作了。我们不仅要改善消息的持久性，防止数据丢失，还要在不降低可用性的基础上完成。推荐设置成 replication.factor = min.insync.replicas + 1。
 
 
-## 副本机制
 
-## 网络模型
-### Reactor
-### Kafka里的网络模型
-![kafka网络模型](https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/kafka-network-thread.jpg)
+## kafka stream
 
 ## 调优
 
-## kafka stream
 
 ## 参考资料
 1. 《极客时间-Kafka核心技术与实战》
