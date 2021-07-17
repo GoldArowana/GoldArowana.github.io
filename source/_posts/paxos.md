@@ -38,3 +38,5 @@ http://linbingdong.com/2017/11/21/PhxPaxos%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E
 https://www.cnblogs.com/linbingdong/p/6253479.html
 
 https://www.zhihu.com/question/19787937
+
+https://www.youtube.com/watch?v=JEpsBg0AO6o

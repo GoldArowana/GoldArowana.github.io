@@ -8,5 +8,6 @@ img: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co1
 tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co125.jpg
 ---
 
+https://www.youtube.com/playlist?list=PLfgMNKpBVg4V8GtMB7eUrTyvITri8WF7i
 
-
+https://tech.ipalfish.com/blog/2021/05/25/source-code-search-engine-fundamentals/
