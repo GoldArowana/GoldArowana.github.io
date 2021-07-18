@@ -459,7 +459,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-17
+                    2021-07-18
                 </div>
                 
 
@@ -516,7 +516,7 @@
 <p>Consumer 端应用程序在提交位移时，其实是向 Coordinator 所在的 Broker 提交位移。同样地，当 Consumer 应用启动时，也是向 Coordinator 所在的 Broker 发送各种请求，然后由 Coordinator 负责执行消费者组的注册、成员管理记录等元数据管理操作。</p>
 <p>所有 Broker 在启动时，都会创建和开启相应的 Coordinator 组件。也就是说，所有 Broker 都有各自的 Coordinator 组件。那么，Consumer Group 如何确定为它服务的 Coordinator 在哪台 Broker 上呢？</p>
 <p>确定由位移主题的哪个分区来保存该 Group 数据, 然后找出该分区 Leader 副本所在的 Broker，该 Broker 即为对应的 Coordinator。</p>
-<h3 id="StickyAssignor-有粘性的分区分配策略"><a href="#StickyAssignor-有粘性的分区分配策略" class="headerlink" title="StickyAssignor(有粘性的分区分配策略)"></a>StickyAssignor(有粘性的分区分配策略)</h3><h2 id="消息代理-broker"><a href="#消息代理-broker" class="headerlink" title="消息代理(broker)"></a>消息代理(broker)</h2><h3 id="存储层"><a href="#存储层" class="headerlink" title="存储层"></a>存储层</h3><h3 id="分区、副本"><a href="#分区、副本" class="headerlink" title="分区、副本"></a>分区、副本</h3><h4 id="消息分区机制"><a href="#消息分区机制" class="headerlink" title="消息分区机制"></a>消息分区机制</h4><ul>
+<h3 id="StickyAssignor-有粘性的分区分配策略"><a href="#StickyAssignor-有粘性的分区分配策略" class="headerlink" title="StickyAssignor(有粘性的分区分配策略)"></a>StickyAssignor(有粘性的分区分配策略)</h3><h2 id="消息代理-broker"><a href="#消息代理-broker" class="headerlink" title="消息代理(broker)"></a>消息代理(broker)</h2><h3 id="存储层"><a href="#存储层" class="headerlink" title="存储层"></a>存储层</h3><h4 id="数据文件"><a href="#数据文件" class="headerlink" title="数据文件"></a>数据文件</h4><h4 id="索引文件"><a href="#索引文件" class="headerlink" title="索引文件"></a>索引文件</h4><h3 id="控制器-controller"><a href="#控制器-controller" class="headerlink" title="控制器(controller)"></a>控制器(controller)</h3><h3 id="分区、副本"><a href="#分区、副本" class="headerlink" title="分区、副本"></a>分区、副本</h3><h4 id="消息分区机制"><a href="#消息分区机制" class="headerlink" title="消息分区机制"></a>消息分区机制</h4><ul>
 <li>轮循策略(未指定key的默认策略)</li>
 <li>随机策略(老版本)</li>
 <li>根据key计算hash(指定key时的默认策略)</li>
@@ -946,7 +946,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.2k</span>&nbsp;字
+                class="white-color">13.3k</span>&nbsp;字
             
             
             
