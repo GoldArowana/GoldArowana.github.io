@@ -30,110 +30,6 @@
     
     
     <entry>
-      <title>Flink</title>
-      <link href="flink/"/>
-      <url>flink/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>neo4j</title>
-      <link href="neo4j/"/>
-      <url>neo4j/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>logstash</title>
-      <link href="logstash/"/>
-      <url>logstash/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>kong</title>
-      <link href="kong/"/>
-      <url>kong/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>RabbitMQ</title>
-      <link href="rabbitmq/"/>
-      <url>rabbitmq/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Ehcache</title>
-      <link href="ehcache/"/>
-      <url>ehcache/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Caffeine</title>
-      <link href="caffeine/"/>
-      <url>caffeine/</url>
-      
-        <content type="html"><![CDATA[<p><a href="http://highscalability.com/blog/2016/1/25/design-of-a-modern-cache.html">http://highscalability.com/blog/2016/1/25/design-of-a-modern-cache.html</a></p><p><a href="https://arxiv.org/pdf/1512.00727.pdf">https://arxiv.org/pdf/1512.00727.pdf</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Cassandra</title>
-      <link href="cassandra/"/>
-      <url>cassandra/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://www.jianshu.com/p/653a5f0089f6">https://www.jianshu.com/p/653a5f0089f6</a></p><p><a href="https://book.douban.com/subject/6393021/">https://book.douban.com/subject/6393021/</a></p><p><a href="https://blog.csdn.net/u010912405/article/details/40863491">https://blog.csdn.net/u010912405/article/details/40863491</a></p><p><a href="https://en.wikipedia.org/wiki/Apache_Cassandra">https://en.wikipedia.org/wiki/Apache_Cassandra</a></p><p><a href="https://draveness.me/whys-the-design-olap-column-oriented/">https://draveness.me/whys-the-design-olap-column-oriented/</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>HBase</title>
       <link href="hbase/"/>
       <url>hbase/</url>
@@ -264,76 +160,11 @@
     
     
     <entry>
-      <title>Bw-Tree</title>
-      <link href="bw-tree/"/>
-      <url>bw-tree/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=Pr-b9stpAV4">https://www.youtube.com/watch?v=Pr-b9stpAV4</a></p><p><a href="https://zhuanlan.zhihu.com/p/29314464">https://zhuanlan.zhihu.com/p/29314464</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>CockroachDB</title>
-      <link href="cockroachdb/"/>
-      <url>cockroachdb/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://www.zhihu.com/question/52033960/answer/1531184480">https://www.zhihu.com/question/52033960/answer/1531184480</a></p><p><a href="https://github.com/cockroachdb/cockroach/blob/master/docs/design.md">https://github.com/cockroachdb/cockroach/blob/master/docs/design.md</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Google Spanner</title>
       <link href="google-spanner/"/>
       <url>google-spanner/</url>
       
         <content type="html"><![CDATA[<p><a href="https://www.jianshu.com/p/6ae6e7989161">https://www.jianshu.com/p/6ae6e7989161</a></p><p><a href="http://dblab.xmu.edu.cn/post/google-spanner/">http://dblab.xmu.edu.cn/post/google-spanner/</a></p><p><a href="https://zhuanlan.zhihu.com/p/91635202">https://zhuanlan.zhihu.com/p/91635202</a></p><p><a href="https://www.zhihu.com/question/52033960/answer/1531184480">https://www.zhihu.com/question/52033960/answer/1531184480</a></p><p><a href="http://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf">http://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf</a></p><p><a href="https://cloud.tencent.com/developer/article/1131036">https://cloud.tencent.com/developer/article/1131036</a></p><p><a href="https://www.youtube.com/watch?v=4eW5SWBi7vs">https://www.youtube.com/watch?v=4eW5SWBi7vs</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>计算机组成原理(Computer Organization)</title>
-      <link href="computer-organization/"/>
-      <url>computer-organization/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Apollo</title>
-      <link href="apollo/"/>
-      <url>apollo/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://www.iocoder.cn/categories/Apollo/">https://www.iocoder.cn/categories/Apollo/</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Quartz</title>
-      <link href="quartz/"/>
-      <url>quartz/</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
       
       
@@ -420,19 +251,6 @@
     
     
     <entry>
-      <title>SSDB</title>
-      <link href="ssdb/"/>
-      <url>ssdb/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>LevelDB</title>
       <link href="leveldb/"/>
       <url>leveldb/</url>
@@ -485,37 +303,11 @@
     
     
     <entry>
-      <title>VoltDB</title>
-      <link href="voltdb/"/>
-      <url>voltdb/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/87340856">https://zhuanlan.zhihu.com/p/87340856</a></p><p><a href="https://github.com/VoltDB/voltdb/tree/master/lib">https://github.com/VoltDB/voltdb/tree/master/lib</a></p><p><a href="https://my.oschina.net/u/4277354/blog/3283040">https://my.oschina.net/u/4277354/blog/3283040</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>倒排索引(inverted index)</title>
       <link href="inverted-index/"/>
       <url>inverted-index/</url>
       
         <content type="html"><![CDATA[<p><a href="https://www.youtube.com/playlist?list=PLfgMNKpBVg4V8GtMB7eUrTyvITri8WF7i">https://www.youtube.com/playlist?list=PLfgMNKpBVg4V8GtMB7eUrTyvITri8WF7i</a></p><p><a href="https://tech.ipalfish.com/blog/2021/05/25/source-code-search-engine-fundamentals/">https://tech.ipalfish.com/blog/2021/05/25/source-code-search-engine-fundamentals/</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>基数树(radix Tree)</title>
-      <link href="radix-tree/"/>
-      <url>radix-tree/</url>
-      
-        <content type="html"><![CDATA[<p><a href="http://www.360doc.com/content/19/0305/18/496343_819431105.shtml">http://www.360doc.com/content/19/0305/18/496343_819431105.shtml</a></p>]]></content>
       
       
       
@@ -541,19 +333,6 @@
             <tag> innodb </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>linux mmap</title>
-      <link href="linux-mmap/"/>
-      <url>linux-mmap/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://www.cnblogs.com/huxiao-tee/p/4660352.html">https://www.cnblogs.com/huxiao-tee/p/4660352.html</a></p>]]></content>
-      
-      
       
     </entry>
     
@@ -612,19 +391,6 @@
     
     
     <entry>
-      <title>布谷鸟过滤器 (Cuckoo Filter)</title>
-      <link href="cuckoo-filter/"/>
-      <url>cuckoo-filter/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://www.luozhiyun.com/archives/453">https://www.luozhiyun.com/archives/453</a></p><p><a href="http://www.cs.cmu.edu/~binfan/papers/conext14_cuckoofilter.pdf">http://www.cs.cmu.edu/~binfan/papers/conext14_cuckoofilter.pdf</a></p><p><a href="https://coolshell.cn/articles/17225.html">https://coolshell.cn/articles/17225.html</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>堆(数据结构)</title>
       <link href="heap-data-structure/"/>
       <url>heap-data-structure/</url>
@@ -651,45 +417,6 @@
     
     
     <entry>
-      <title>elasticsearch</title>
-      <link href="elasticsearch/"/>
-      <url>elasticsearch/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>领域驱动设计(DDD)</title>
-      <link href="ddd/"/>
-      <url>ddd/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://tech.meituan.com/2017/12/22/ddd-in-practice.html">https://tech.meituan.com/2017/12/22/ddd-in-practice.html</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>服务网格(service-mesh)</title>
-      <link href="service-mesh/"/>
-      <url>service-mesh/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/u010278923/article/details/69427246">https://blog.csdn.net/u010278923/article/details/69427246</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>LSM-Tree</title>
       <link href="lsm/"/>
       <url>lsm/</url>
@@ -708,19 +435,6 @@
       <url>advanced-database/</url>
       
         <content type="html"><![CDATA[<p><a href="https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O">https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O</a></p><p><a href="https://www.luozhiyun.com/archives/273">https://www.luozhiyun.com/archives/273</a></p><p><a href="https://www.luozhiyun.com/archives/280">https://www.luozhiyun.com/archives/280</a></p><p><a href="https://zhuanlan.zhihu.com/p/158622349">Latch-crabbing/Latch-couping</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>操作系统</title>
-      <link href="os/"/>
-      <url>os/</url>
-      
-        <content type="html"><![CDATA[<h2 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h2><ul><li>运算单元</li><li>数据单元<ul><li>缓存</li><li>寄存器组</li></ul></li><li>控制单元<ul><li>指令起始地址寄存器</li><li>数据起始地址寄存器</li><li>指令指针寄存器</li><li>指令寄存器</li></ul></li></ul><h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><blockquote><p>在主板上，有一个东西叫ROM（Read Only Memory，只读存储器）。这和咱们平常说的内存RAM（Random Access Memory，随机存取存储器）不同。</p><p>咱们平时买的内存条是可读可写的，这样才能保存计算结果。而 ROM 是只读的，上面早就固化了一些初始化的程序，也就是BIOS（Basic Input and Output System，基本输入输出系统）。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/os/BIOS.png" alt="BIOS"></p><h2 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h2><h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><h2 id="网络系统"><a href="#网络系统" class="headerlink" title="网络系统"></a>网络系统</h2><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol><li><a href="https://www.cnblogs.com/inception6-lxc/p/9073983.html">https://www.cnblogs.com/inception6-lxc/p/9073983.html</a></li><li>《深入理解 LINUX 内核》</li><li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/">Operating Systems: Three Easy Pieces</a></li><li>《从实模式到保护模式》</li><li>《一个64位操作系统的设计与实现》</li></ol><p><a href="https://draveness.me/whys-the-design-linux-swapping">https://draveness.me/whys-the-design-linux-swapping</a></p><p><a href="https://draveness.me/whys-the-design-os-virtual-memory/">https://draveness.me/whys-the-design-os-virtual-memory/</a></p><p><a href="https://draveness.me/whys-the-design-syscall-overhead/">https://draveness.me/whys-the-design-syscall-overhead/</a></p><p><a href="https://draveness.me/whys-the-design-linux-default-page/">https://draveness.me/whys-the-design-linux-default-page/</a></p><p><a href="https://draveness.me/whys-the-design-cpu-and-disk/">https://draveness.me/whys-the-design-cpu-and-disk/</a></p><p><a href="https://draveness.me/whys-the-design-numa-performance">https://draveness.me/whys-the-design-numa-performance</a></p><p><a href="https://draveness.me/whys-the-design-linux-hugepages">https://draveness.me/whys-the-design-linux-hugepages</a></p><p><a href="https://draveness.me/whys-the-design-windows-defragmentation/">https://draveness.me/whys-the-design-windows-defragmentation/</a></p><p><a href="https://draveness.me/whys-the-design-linux-macos-fragmentation">https://draveness.me/whys-the-design-linux-macos-fragmentation</a></p>]]></content>
       
       
       
@@ -799,7 +513,7 @@
       <link href="kafka/"/>
       <url>kafka/</url>
       
-        <content type="html"><![CDATA[<h2 id="生产者-producer"><a href="#生产者-producer" class="headerlink" title="生产者(producer)"></a>生产者(producer)</h2><h2 id="消费者-consumer"><a href="#消费者-consumer" class="headerlink" title="消费者(consumer)"></a>消费者(consumer)</h2><p>一个分区只会被分配给一个消费者的一个线程</p><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-offset-save.jpg" alt="消费进度的保存和恢复"><br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consume-flow.jpg" alt="消费者客户端的消费消息流程"></p><p>左图: 一个消费者进程里开了3个线程。<br>右图: 三个消费者进程分别开了1个线程。<br>两种都是开了3线程消费, 只不过对zk来说看到的消费组成员列表是不同的。<br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-threads-vs-procs.jpg" alt="消费者进程和线程"></p><h3 id="消费者连接器"><a href="#消费者连接器" class="headerlink" title="消费者连接器"></a>消费者连接器</h3><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-connect-text.jpg"><br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-connect.jpg" alt="ConsumerConnect连接器各组件协调完成消息的消费"></p><h3 id="消费者客户端的线程模型"><a href="#消费者客户端的线程模型" class="headerlink" title="消费者客户端的线程模型"></a>消费者客户端的线程模型</h3><p>使用队列作为消息的缓存<br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-threads-model.jpg" alt="消费者客户端线程模型"></p><h3 id="消费组重平衡"><a href="#消费组重平衡" class="headerlink" title="消费组重平衡"></a>消费组重平衡</h3><h4 id="重平衡的条件"><a href="#重平衡的条件" class="headerlink" title="重平衡的条件"></a>重平衡的条件</h4><ol><li>组成员数量发生变化。</li><li>订阅主题数量发生变化。</li><li>订阅主题的分区数发生变化。<br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-rebalance.jpg" alt="触发消费者连接器执行再平衡操作的两种方式"></li></ol><h4 id="重平衡的过程"><a href="#重平衡的过程" class="headerlink" title="重平衡的过程"></a>重平衡的过程</h4><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-pull-thread-rebalance-flow.jpg" alt="拉取线程再平衡中的关闭和更新"></p><h4 id="通知机制-消费端着端的心跳线程-Heartbeat-Thread"><a href="#通知机制-消费端着端的心跳线程-Heartbeat-Thread" class="headerlink" title="通知机制, 消费端着端的心跳线程(Heartbeat Thread)"></a>通知机制, 消费端着端的心跳线程(Heartbeat Thread)</h4><p>重平衡过程是如何通知到其他消费者实例的？答案就是，靠消费者端的心跳线程（Heartbeat Thread）</p><p>重平衡的通知机制正是通过心跳线程来完成的。当协调者决定开启新一轮重平衡后，它会将“REBALANCE_IN_PROGRESS”封装进心跳请求的响应中，发还给消费者实例。当消费者实例发现心跳响应中包含了“REBALANCE_IN_PROGRESS”，就能立马知道重平衡又开始了，这就是重平衡的通知机制。</p><h3 id="消费者消费消息"><a href="#消费者消费消息" class="headerlink" title="消费者消费消息"></a>消费者消费消息</h3><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-main-flow.jpg" alt="消费者消费消息的主流程"><br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/temp2.jpg"><br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-pull-consume-state.jpg" alt="拉取线程和消费线程分别更新分区信息的状态"></p><h3 id="位移的管理"><a href="#位移的管理" class="headerlink" title="位移的管理"></a>位移的管理</h3><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/temp1.jpg"></p><h4 id="提交偏移量到ZK"><a href="#提交偏移量到ZK" class="headerlink" title="提交偏移量到ZK"></a>提交偏移量到ZK</h4><h4 id="提交偏移量到内部位移主题"><a href="#提交偏移量到内部位移主题" class="headerlink" title="提交偏移量到内部位移主题"></a>提交偏移量到内部位移主题</h4><p>__consumer_offsets 叫位移主题, 是kafka的内部主题。该主题的默认分区数是50, 副本数是3.</p><h4 id="自动提交"><a href="#自动提交" class="headerlink" title="自动提交"></a>自动提交</h4><h4 id="手动提交"><a href="#手动提交" class="headerlink" title="手动提交"></a>手动提交</h4><h2 id="Coordinator-协调者"><a href="#Coordinator-协调者" class="headerlink" title="Coordinator(协调者)"></a>Coordinator(协调者)</h2><p>专门为 Consumer Group 服务，负责为 Group 执行 Rebalance 以及提供位移管理和组成员管理等</p><p>Consumer 端应用程序在提交位移时，其实是向 Coordinator 所在的 Broker 提交位移。同样地，当 Consumer 应用启动时，也是向 Coordinator 所在的 Broker 发送各种请求，然后由 Coordinator 负责执行消费者组的注册、成员管理记录等元数据管理操作。</p><p>所有 Broker 在启动时，都会创建和开启相应的 Coordinator 组件。也就是说，所有 Broker 都有各自的 Coordinator 组件。那么，Consumer Group 如何确定为它服务的 Coordinator 在哪台 Broker 上呢？</p><p>确定由位移主题的哪个分区来保存该 Group 数据, 然后找出该分区 Leader 副本所在的 Broker，该 Broker 即为对应的 Coordinator。</p><h3 id="StickyAssignor-有粘性的分区分配策略"><a href="#StickyAssignor-有粘性的分区分配策略" class="headerlink" title="StickyAssignor(有粘性的分区分配策略)"></a>StickyAssignor(有粘性的分区分配策略)</h3><h2 id="消息代理-broker"><a href="#消息代理-broker" class="headerlink" title="消息代理(broker)"></a>消息代理(broker)</h2><h3 id="存储层"><a href="#存储层" class="headerlink" title="存储层"></a>存储层</h3><h3 id="分区、副本"><a href="#分区、副本" class="headerlink" title="分区、副本"></a>分区、副本</h3><h3 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h3><h4 id="Reactor"><a href="#Reactor" class="headerlink" title="Reactor"></a>Reactor</h4><h4 id="Kafka里的网络模型"><a href="#Kafka里的网络模型" class="headerlink" title="Kafka里的网络模型"></a>Kafka里的网络模型</h4><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/kafka-network-thread.jpg" alt="kafka网络模型"></p><h3 id="zero-copy-零拷贝"><a href="#zero-copy-零拷贝" class="headerlink" title="zero-copy(零拷贝)"></a>zero-copy(零拷贝)</h3><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/zero-copy.jpg" alt="零拷贝"></p><h2 id="内部元数据"><a href="#内部元数据" class="headerlink" title="内部元数据"></a>内部元数据</h2><h3 id="zookeeper"><a href="#zookeeper" class="headerlink" title="zookeeper"></a>zookeeper</h3><p>ZK存储了Kafka的内部元数据, 还记录了消费组的成员列表, 分区的消费进度, 分区的所有者。节点、主题、分区、消费者、偏移量(offset)、所有权(ownership)</p><h3 id="kraft"><a href="#kraft" class="headerlink" title="kraft"></a>kraft</h3><p>2.8开始kafka去掉了zookeeper, </p><h2 id="消息分区机制"><a href="#消息分区机制" class="headerlink" title="消息分区机制"></a>消息分区机制</h2><ul><li>轮循策略(未指定key的默认策略)</li><li>随机策略(老版本)</li><li>根据key计算hash(指定key时的默认策略)</li></ul><h2 id="消息压缩"><a href="#消息压缩" class="headerlink" title="消息压缩"></a>消息压缩</h2><blockquote><p>Producer和Broker都可以配置压缩算法。其实大部分情况下 Broker 从 Producer 端接收到消息后仅仅是原封不动地保存而不会对其进行任何修改.</p><p>有两种例外情况就可能让 Broker 重新压缩消息:</p><p>情况一：Broker 端指定了和 Producer 端不同的压缩算法。</p><p>情况二：Broker 端发生了消息格式转换(Kafka集群中同时保存了多种版本的消息格式, 为了兼容老版本的格式，Broker 端会对新版本消息执行向老版本格式的转换。这个过程中会涉及消息的解压缩和重新压缩。)</p></blockquote><h2 id="消息丢失"><a href="#消息丢失" class="headerlink" title="消息丢失"></a>消息丢失</h2><ol><li>Producer要使用带callback的函数, 这样可以处理失败。</li><li>不开启自动提交, 而是手动提交位移</li><li>设置 acks = all。acks 是 Producer 的一个参数，代表了你对“已提交”消息的定义。如果设置成 all，则表明所有副本 Broker 都要接收到消息，该消息才算是“已提交”。这是最高等级的“已提交”定义。</li><li>设置 retries 为一个较大的值。这里的 retries 同样是 Producer 的参数，对应前面提到的 Producer 自动重试。当出现网络的瞬时抖动时，消息发送可能会失败，此时配置了 retries &gt; 0 的 Producer 能够自动重试消息发送，避免消息丢失。</li><li>设置 unclean.leader.election.enable = false。这是 Broker 端的参数，它控制的是哪些 Broker 有资格竞选分区的 Leader。如果一个 Broker 落后原先的 Leader 太多，那么它一旦成为新的 Leader，必然会造成消息的丢失。故一般都要将该参数设置成 false，即不允许这种情况的发生。</li><li>设置 replication.factor &gt;= 3。这也是 Broker 端的参数。其实这里想表述的是，最好将消息多保存几份，毕竟目前防止消息丢失的主要机制就是冗余。</li><li>设置 min.insync.replicas &gt; 1。这依然是 Broker 端参数，控制的是消息至少要被写入到多少个副本才算是“已提交”。设置成大于 1 可以提升消息持久性。在实际环境中千万不要使用默认值 1。</li><li>确保 replication.factor &gt; min.insync.replicas。如果两者相等，那么只要有一个副本挂机，整个分区就无法正常工作了。我们不仅要改善消息的持久性，防止数据丢失，还要在不降低可用性的基础上完成。推荐设置成 replication.factor = min.insync.replicas + 1。</li></ol><h2 id="kafka-stream"><a href="#kafka-stream" class="headerlink" title="kafka stream"></a>kafka stream</h2><h2 id="调优"><a href="#调优" class="headerlink" title="调优"></a>调优</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol><li>《极客时间-Kafka核心技术与实战》</li><li>《极客时间-Kafka核心源码解读》</li><li><a href="https://blog.csdn.net/u4110122855/article/details/103616791">Kafka分区分配策略分析——重点：StickyAssignor</a></li><li><a href="https://blog.csdn.net/u013256816/article/details/81123625">Kafka分区分配策略（2）——RoundRobinAssignor和StickyAssignor</a></li><li>《Kafka技术内幕》</li><li>《深入理解Kafka：核心设计与实践原理》</li><li><a href="https://www.cnblogs.com/huxi2b/">https://www.cnblogs.com/huxi2b/</a></li><li><a href="https://www.confluent.io/blog/">https://www.confluent.io/blog/</a></li><li><a href="https://cwiki.apache.org/confluence/display/KAFKA/Index">https://cwiki.apache.org/confluence/display/KAFKA/Index</a></li><li><a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+papers+and+presentations">https://cwiki.apache.org/confluence/display/KAFKA/Kafka+papers+and+presentations</a></li><li><a href="https://blog.csdn.net/yjh314/article/details/78863875">https://blog.csdn.net/yjh314/article/details/78863875</a></li><li><a href="https://www.jianshu.com/p/afd5da6a92ab">https://www.jianshu.com/p/afd5da6a92ab</a></li><li><a href="https://blog.csdn.net/nazeniwaresakini/article/details/116085573">https://blog.csdn.net/nazeniwaresakini/article/details/116085573</a></li><li><a href="https://zhuanlan.zhihu.com/p/368600560">https://zhuanlan.zhihu.com/p/368600560</a></li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="生产者-producer"><a href="#生产者-producer" class="headerlink" title="生产者(producer)"></a>生产者(producer)</h2><h2 id="消费者-consumer"><a href="#消费者-consumer" class="headerlink" title="消费者(consumer)"></a>消费者(consumer)</h2><p>一个分区只会被分配给一个消费者的一个线程</p><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-offset-save.jpg" alt="消费进度的保存和恢复"><br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consume-flow.jpg" alt="消费者客户端的消费消息流程"></p><p>左图: 一个消费者进程里开了3个线程。<br>右图: 三个消费者进程分别开了1个线程。<br>两种都是开了3线程消费, 只不过对zk来说看到的消费组成员列表是不同的。<br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-threads-vs-procs.jpg" alt="消费者进程和线程"></p><h3 id="消费者连接器"><a href="#消费者连接器" class="headerlink" title="消费者连接器"></a>消费者连接器</h3><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-connect-text.jpg"><br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-connect.jpg" alt="ConsumerConnect连接器各组件协调完成消息的消费"></p><h3 id="消费者客户端的线程模型"><a href="#消费者客户端的线程模型" class="headerlink" title="消费者客户端的线程模型"></a>消费者客户端的线程模型</h3><p>使用队列作为消息的缓存<br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-threads-model.jpg" alt="消费者客户端线程模型"></p><h3 id="消费组重平衡"><a href="#消费组重平衡" class="headerlink" title="消费组重平衡"></a>消费组重平衡</h3><h4 id="重平衡的条件"><a href="#重平衡的条件" class="headerlink" title="重平衡的条件"></a>重平衡的条件</h4><ol><li>组成员数量发生变化。</li><li>订阅主题数量发生变化。</li><li>订阅主题的分区数发生变化。<br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-rebalance.jpg" alt="触发消费者连接器执行再平衡操作的两种方式"></li></ol><h4 id="重平衡的过程"><a href="#重平衡的过程" class="headerlink" title="重平衡的过程"></a>重平衡的过程</h4><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-pull-thread-rebalance-flow.jpg" alt="拉取线程再平衡中的关闭和更新"></p><h4 id="通知机制-消费端着端的心跳线程-Heartbeat-Thread"><a href="#通知机制-消费端着端的心跳线程-Heartbeat-Thread" class="headerlink" title="通知机制, 消费端着端的心跳线程(Heartbeat Thread)"></a>通知机制, 消费端着端的心跳线程(Heartbeat Thread)</h4><p>重平衡过程是如何通知到其他消费者实例的？答案就是，靠消费者端的心跳线程（Heartbeat Thread）</p><p>重平衡的通知机制正是通过心跳线程来完成的。当协调者决定开启新一轮重平衡后，它会将“REBALANCE_IN_PROGRESS”封装进心跳请求的响应中，发还给消费者实例。当消费者实例发现心跳响应中包含了“REBALANCE_IN_PROGRESS”，就能立马知道重平衡又开始了，这就是重平衡的通知机制。</p><h3 id="消费者消费消息"><a href="#消费者消费消息" class="headerlink" title="消费者消费消息"></a>消费者消费消息</h3><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-main-flow.jpg" alt="消费者消费消息的主流程"><br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/temp2.jpg"><br><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/consumer-pull-consume-state.jpg" alt="拉取线程和消费线程分别更新分区信息的状态"></p><h3 id="位移的管理"><a href="#位移的管理" class="headerlink" title="位移的管理"></a>位移的管理</h3><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/temp1.jpg"></p><h4 id="提交偏移量到ZK"><a href="#提交偏移量到ZK" class="headerlink" title="提交偏移量到ZK"></a>提交偏移量到ZK</h4><h4 id="提交偏移量到内部位移主题"><a href="#提交偏移量到内部位移主题" class="headerlink" title="提交偏移量到内部位移主题"></a>提交偏移量到内部位移主题</h4><p>__consumer_offsets 叫位移主题, 是kafka的内部主题。该主题的默认分区数是50, 副本数是3.</p><h4 id="自动提交"><a href="#自动提交" class="headerlink" title="自动提交"></a>自动提交</h4><h4 id="手动提交"><a href="#手动提交" class="headerlink" title="手动提交"></a>手动提交</h4><h2 id="Coordinator-协调者"><a href="#Coordinator-协调者" class="headerlink" title="Coordinator(协调者)"></a>Coordinator(协调者)</h2><p>专门为 Consumer Group 服务，负责为 Group 执行 Rebalance 以及提供位移管理和组成员管理等</p><p>Consumer 端应用程序在提交位移时，其实是向 Coordinator 所在的 Broker 提交位移。同样地，当 Consumer 应用启动时，也是向 Coordinator 所在的 Broker 发送各种请求，然后由 Coordinator 负责执行消费者组的注册、成员管理记录等元数据管理操作。</p><p>所有 Broker 在启动时，都会创建和开启相应的 Coordinator 组件。也就是说，所有 Broker 都有各自的 Coordinator 组件。那么，Consumer Group 如何确定为它服务的 Coordinator 在哪台 Broker 上呢？</p><p>确定由位移主题的哪个分区来保存该 Group 数据, 然后找出该分区 Leader 副本所在的 Broker，该 Broker 即为对应的 Coordinator。</p><h3 id="StickyAssignor-有粘性的分区分配策略"><a href="#StickyAssignor-有粘性的分区分配策略" class="headerlink" title="StickyAssignor(有粘性的分区分配策略)"></a>StickyAssignor(有粘性的分区分配策略)</h3><h2 id="消息代理-broker"><a href="#消息代理-broker" class="headerlink" title="消息代理(broker)"></a>消息代理(broker)</h2><h3 id="存储层"><a href="#存储层" class="headerlink" title="存储层"></a>存储层</h3><h3 id="分区、副本"><a href="#分区、副本" class="headerlink" title="分区、副本"></a>分区、副本</h3><h4 id="消息分区机制"><a href="#消息分区机制" class="headerlink" title="消息分区机制"></a>消息分区机制</h4><ul><li>轮循策略(未指定key的默认策略)</li><li>随机策略(老版本)</li><li>根据key计算hash(指定key时的默认策略)</li></ul><h4 id="消息压缩"><a href="#消息压缩" class="headerlink" title="消息压缩"></a>消息压缩</h4><blockquote><p>Producer和Broker都可以配置压缩算法。其实大部分情况下 Broker 从 Producer 端接收到消息后仅仅是原封不动地保存而不会对其进行任何修改.</p><p>有两种例外情况就可能让 Broker 重新压缩消息:</p><p>情况一：Broker 端指定了和 Producer 端不同的压缩算法。</p><p>情况二：Broker 端发生了消息格式转换(Kafka集群中同时保存了多种版本的消息格式, 为了兼容老版本的格式，Broker 端会对新版本消息执行向老版本格式的转换。这个过程中会涉及消息的解压缩和重新压缩。)</p></blockquote><h3 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h3><h4 id="Reactor"><a href="#Reactor" class="headerlink" title="Reactor"></a>Reactor</h4><h4 id="Kafka里的网络模型"><a href="#Kafka里的网络模型" class="headerlink" title="Kafka里的网络模型"></a>Kafka里的网络模型</h4><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/kafka-network-thread.jpg" alt="kafka网络模型"></p><h3 id="zero-copy-零拷贝"><a href="#zero-copy-零拷贝" class="headerlink" title="zero-copy(零拷贝)"></a>zero-copy(零拷贝)</h3><p><img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/post-content-pic/kafka/zero-copy.jpg" alt="零拷贝"></p><h2 id="内部元数据"><a href="#内部元数据" class="headerlink" title="内部元数据"></a>内部元数据</h2><h3 id="zookeeper"><a href="#zookeeper" class="headerlink" title="zookeeper"></a>zookeeper</h3><p>ZK存储了Kafka的内部元数据, 还记录了消费组的成员列表, 分区的消费进度, 分区的所有者。节点、主题、分区、消费者、偏移量(offset)、所有权(ownership)</p><h3 id="kraft"><a href="#kraft" class="headerlink" title="kraft"></a>kraft</h3><p>2.8开始kafka去掉了zookeeper, </p><h2 id="kafka-stream"><a href="#kafka-stream" class="headerlink" title="kafka stream"></a>kafka stream</h2><h2 id="调优"><a href="#调优" class="headerlink" title="调优"></a>调优</h2><h3 id="消息丢失"><a href="#消息丢失" class="headerlink" title="消息丢失"></a>消息丢失</h3><ol><li>Producer要使用带callback的函数, 这样可以处理失败。</li><li>不开启自动提交, 而是手动提交位移</li><li>设置 acks = all。acks 是 Producer 的一个参数，代表了你对“已提交”消息的定义。如果设置成 all，则表明所有副本 Broker 都要接收到消息，该消息才算是“已提交”。这是最高等级的“已提交”定义。</li><li>设置 retries 为一个较大的值。这里的 retries 同样是 Producer 的参数，对应前面提到的 Producer 自动重试。当出现网络的瞬时抖动时，消息发送可能会失败，此时配置了 retries &gt; 0 的 Producer 能够自动重试消息发送，避免消息丢失。</li><li>设置 unclean.leader.election.enable = false。这是 Broker 端的参数，它控制的是哪些 Broker 有资格竞选分区的 Leader。如果一个 Broker 落后原先的 Leader 太多，那么它一旦成为新的 Leader，必然会造成消息的丢失。故一般都要将该参数设置成 false，即不允许这种情况的发生。</li><li>设置 replication.factor &gt;= 3。这也是 Broker 端的参数。其实这里想表述的是，最好将消息多保存几份，毕竟目前防止消息丢失的主要机制就是冗余。</li><li>设置 min.insync.replicas &gt; 1。这依然是 Broker 端参数，控制的是消息至少要被写入到多少个副本才算是“已提交”。设置成大于 1 可以提升消息持久性。在实际环境中千万不要使用默认值 1。</li><li>确保 replication.factor &gt; min.insync.replicas。如果两者相等，那么只要有一个副本挂机，整个分区就无法正常工作了。我们不仅要改善消息的持久性，防止数据丢失，还要在不降低可用性的基础上完成。推荐设置成 replication.factor = min.insync.replicas + 1。</li></ol><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol><li>《极客时间-Kafka核心技术与实战》</li><li>《极客时间-Kafka核心源码解读》</li><li><a href="https://blog.csdn.net/u4110122855/article/details/103616791">Kafka分区分配策略分析——重点：StickyAssignor</a></li><li><a href="https://blog.csdn.net/u013256816/article/details/81123625">Kafka分区分配策略（2）——RoundRobinAssignor和StickyAssignor</a></li><li>《Kafka技术内幕》</li><li>《深入理解Kafka：核心设计与实践原理》</li><li><a href="https://www.cnblogs.com/huxi2b/">https://www.cnblogs.com/huxi2b/</a></li><li><a href="https://www.confluent.io/blog/">https://www.confluent.io/blog/</a></li><li><a href="https://cwiki.apache.org/confluence/display/KAFKA/Index">https://cwiki.apache.org/confluence/display/KAFKA/Index</a></li><li><a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+papers+and+presentations">https://cwiki.apache.org/confluence/display/KAFKA/Kafka+papers+and+presentations</a></li><li><a href="https://blog.csdn.net/yjh314/article/details/78863875">https://blog.csdn.net/yjh314/article/details/78863875</a></li><li><a href="https://www.jianshu.com/p/afd5da6a92ab">https://www.jianshu.com/p/afd5da6a92ab</a></li><li><a href="https://blog.csdn.net/nazeniwaresakini/article/details/116085573">https://blog.csdn.net/nazeniwaresakini/article/details/116085573</a></li><li><a href="https://zhuanlan.zhihu.com/p/368600560">https://zhuanlan.zhihu.com/p/368600560</a></li></ol>]]></content>
       
       
       <categories>
@@ -814,125 +528,6 @@
             <tag> kafka </tag>
             
             <tag> MQ </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>REST</title>
-      <link href="rest/"/>
-      <url>rest/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://martinfowler.com/articles/enterpriseREST.html">https://martinfowler.com/articles/enterpriseREST.html</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> arch </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> arch </tag>
-            
-            <tag> REST </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Microservices vs SOA</title>
-      <link href="microservices-vs-soa/"/>
-      <url>microservices-vs-soa/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://insights.daffodilsw.com/blog/microservices-vs-service-oriented-architecture-soa-fundamental-differences">https://insights.daffodilsw.com/blog/microservices-vs-service-oriented-architecture-soa-fundamental-differences</a></p><p><a href="https://martinfowler.com/bliki/ServiceOrientedAmbiguity.html">https://martinfowler.com/bliki/ServiceOrientedAmbiguity.html</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> arch </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> arch </tag>
-            
-            <tag> microservices </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Microservices (微服务)</title>
-      <link href="microservices/"/>
-      <url>microservices/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://martinfowler.com/articles/microservices.html">https://martinfowler.com/articles/microservices.html</a></p><p><a href="https://martinfowler.com/microservices/">https://martinfowler.com/microservices/</a></p><p><a href="https://martinfowler.com/bliki/PresentationDomainDataLayering.html">https://martinfowler.com/bliki/PresentationDomainDataLayering.html</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> arch </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> arch </tag>
-            
-            <tag> microservices </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ClickHouse</title>
-      <link href="clickhouse/"/>
-      <url>clickhouse/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/98135840">https://zhuanlan.zhihu.com/p/98135840</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Service-oriented architecture (SOA)</title>
-      <link href="service-oriented-architecture/"/>
-      <url>service-oriented-architecture/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Service-oriented_architecture">https://en.wikipedia.org/wiki/Service-oriented_architecture</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> arch </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> arch </tag>
             
         </tags>
       
@@ -1078,33 +673,6 @@
     
     
     <entry>
-      <title>jvm zgc</title>
-      <link href="jvm-zgc/"/>
-      <url>jvm-zgc/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> gc </tag>
-            
-            <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>jvm g1 gc</title>
       <link href="jvm-g1-gc/"/>
       <url>jvm-g1-gc/</url>
@@ -1121,37 +689,11 @@
       
         <tags>
             
-            <tag> gc </tag>
-            
             <tag> java </tag>
             
+            <tag> gc </tag>
+            
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>克鲁斯卡尔算法</title>
-      <link href="kruskal-algorithm/"/>
-      <url>kruskal-algorithm/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://baike.baidu.com/item/%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94%E7%AE%97%E6%B3%95/4455899?fromtitle=Kruskal&amp;fromid=10242089">https://baike.baidu.com/item/%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94%E7%AE%97%E6%B3%95/4455899?fromtitle=Kruskal&amp;fromid=10242089</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>线段树</title>
-      <link href="segment-tree/"/>
-      <url>segment-tree/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
       
     </entry>
     
@@ -1295,9 +837,9 @@
       
         <tags>
             
-            <tag> map </tag>
-            
             <tag> java </tag>
+            
+            <tag> map </tag>
             
             <tag> concurrent </tag>
             
@@ -1324,9 +866,9 @@
       
         <tags>
             
-            <tag> map </tag>
-            
             <tag> java </tag>
+            
+            <tag> map </tag>
             
         </tags>
       
@@ -1380,9 +922,9 @@
       
         <tags>
             
-            <tag> golang </tag>
-            
             <tag> gc </tag>
+            
+            <tag> golang </tag>
             
         </tags>
       
@@ -1661,19 +1203,6 @@
             <tag> tcp </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>设计模式</title>
-      <link href="designpattern/"/>
-      <url>designpattern/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://www.iocoder.cn/DesignPattern/good-collection/">https://www.iocoder.cn/DesignPattern/good-collection/</a></p>]]></content>
-      
-      
       
     </entry>
     
