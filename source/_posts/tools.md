@@ -12,3 +12,5 @@ https://xargin.com/diagram-tools-intro/
 https://coolors.co/palettes/trending
 
 https://draveness.me/sketch-and-sketch/
+
+youtube开启双语字幕: https://github.com/ADengrc/youtube-captions
