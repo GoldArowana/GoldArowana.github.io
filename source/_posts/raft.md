@@ -28,3 +28,11 @@ https://www.youtube.com/watch?v=4r8Mz3MMivY
 https://www.cnblogs.com/linbingdong/p/6442673.html
 
 https://www.youtube.com/watch?v=fcFqFfsAlSQ
+
+https://zhuanlan.zhihu.com/p/262192992
+
+https://www.youtube.com/watch?v=g4epAvtzDYA
+
+https://github.com/maemual/raft-zh_cn/blob/master/raft-zh_cn.md
+
+https://github.com/wenweihu86/raft-java

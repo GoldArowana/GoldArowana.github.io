@@ -46,3 +46,21 @@ https://www.youtube.com/watch?v=d7nAGI_NZPk
 https://www.youtube.com/watch?v=fcFqFfsAlSQ
 
 https://www.youtube.com/watch?v=-Bl5GleEN5s
+
+https://www.youtube.com/watch?v=uBQSE4MMWhY
+
+https://www.youtube.com/watch?v=JEpsBg0AO6o
+
+https://www.youtube.com/playlist?list=PLkLazW-A4v3KEuYn-rW_19OEnPmn0Gq3v
+
+https://www.youtube.com/watch?v=bkWL4mtiVbs
+
+https://www.youtube.com/watch?v=vmwnhZmEZjc
+
+https://blog.openacid.com/algo/paxos/
+
+https://drmingdrmer.github.io/algo/2020/10/18/quorum.html
+
+https://github.com/kr/paxos
+
+https://github.com/openacid/paxoskv

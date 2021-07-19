@@ -14,3 +14,5 @@ https://blog.csdn.net/jfkidear/article/details/81275974
 https://zh.wikipedia.org/wiki/%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B0%86%E5%86%9B%E9%97%AE%E9%A2%98
 
 https://zhuanlan.zhihu.com/p/43067427
+
+https://lrita.github.io/2018/10/28/time-sequence-in-blockchain-by-bft/

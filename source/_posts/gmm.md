@@ -77,3 +77,7 @@ https://www.bookstack.cn/read/GoExpertProgramming/chapter04-4.1-memory_alloc.md
 [Understanding Allocations: the Stack and the Heap - GopherCon SG 2019](https://www.youtube.com/watch?v=ZMZpH4yT7M0)
 [GopherCon UK 2018: Andre Carvalho - Understanding Go's Memory Allocator](youtube.com/watch?v=3CR4UNMK_Is)
 [The Go Memory Model: GoSF Meetup, 1/23/19](https://www.youtube.com/watch?v=NzhH0p32fMY)
+
+https://tonybai.com/2020/03/10/visualizing-memory-management-in-golang/
+
+https://tonybai.com/2020/02/20/a-visual-guide-to-golang-memory-allocator-from-ground-up/

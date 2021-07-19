@@ -61,3 +61,5 @@ https://draveness.me/whys-the-design-linux-hugepages
 https://draveness.me/whys-the-design-windows-defragmentation/
 
 https://draveness.me/whys-the-design-linux-macos-fragmentation
+
+https://lrita.github.io/2018/11/20/debug-cpu-cacheline-false-sharing/#%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84
