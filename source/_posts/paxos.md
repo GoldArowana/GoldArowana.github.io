@@ -13,7 +13,11 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 ---
 
 
-[拜占庭将军问题](http://duanple.com/?p=174)
+1. [拜占庭将军问题](http://duanple.com/?p=174)
+1. [The Part-Time Parliament](https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf)
+1. [Paxos算法《The Part-Time Parliament》译文](https://blog.csdn.net/zhaoshouyue/article/details/92787920)
+1. [Paxos Made Simple](https://lamport.azurewebsites.net/pubs/paxos-simple.pdf)
+1. [Fast Paxos](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-2005-112.pdf)
 
 https://zhuanlan.zhihu.com/p/343225569
 
