@@ -689,9 +689,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> gc </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -837,9 +837,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> map </tag>
+            
+            <tag> java </tag>
             
             <tag> concurrent </tag>
             
@@ -866,9 +866,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> map </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -922,9 +922,9 @@
       
         <tags>
             
-            <tag> gc </tag>
-            
             <tag> golang </tag>
+            
+            <tag> gc </tag>
             
         </tags>
       
