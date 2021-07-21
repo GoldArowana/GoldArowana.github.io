@@ -224,3 +224,5 @@ https://www.iocoder.cn/Redis/good-collection/
 https://draveness.me/whys-the-design-redis-single-thread/
 
 https://draveness.me/whys-the-design-redis-bgsave-fork/
+
+https://redis.io/topics/distlock

@@ -21,3 +21,5 @@ https://www.youtube.com/watch?v=S4FnmSeRpAY
 https://www.youtube.com/watch?v=aDp99WDIM_4
 
 https://www.youtube.com/watch?v=VtUpBtAOizc
+
+http://oceanbase.org.cn/?p=195

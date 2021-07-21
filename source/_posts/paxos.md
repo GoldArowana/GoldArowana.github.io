@@ -17,6 +17,7 @@ tinyImg: https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/
 1. [The Part-Time Parliament](https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf)
 1. [Paxos算法《The Part-Time Parliament》译文](https://blog.csdn.net/zhaoshouyue/article/details/92787920)
 1. [Paxos Made Simple](https://lamport.azurewebsites.net/pubs/paxos-simple.pdf)
+1. [Paxos Made Simple 译文](https://www.jianshu.com/p/67dd80555ba2)
 1. [Fast Paxos](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-2005-112.pdf)
 
 https://zhuanlan.zhihu.com/p/343225569
@@ -68,3 +69,29 @@ https://drmingdrmer.github.io/algo/2020/10/18/quorum.html
 https://github.com/kr/paxos
 
 https://github.com/openacid/paxoskv
+
+https://lrita.github.io/2018/10/23/safety-and-liveness-in-distributed/
+
+https://zhuanlan.zhihu.com/p/21438357?refer=lynncui
+
+https://zhuanlan.zhihu.com/p/21466932
+
+http://oceanbase.org.cn/?p=90
+
+http://oceanbase.org.cn/?p=111
+
+http://oceanbase.org.cn/?p=160
+
+http://oceanbase.org.cn/?p=136
+
+https://en.wikipedia.org/wiki/Paxos_(computer_science)#Multi-Paxos
+
+https://mp.weixin.qq.com/s?__biz=MjM5MDg2NjIyMA==&mid=203607654&idx=1&sn=bfe71374fbca7ec5adf31bd3500ab95a&key=8ea74966bf01cfb6684dc066454e04bb5194d780db67f87b55480b52800238c2dfae323218ee8645f0c094e607ea7e6f&ascene=1&uin=MjA1MDk3Njk1&devicetype=webwx&version=70000001&pass_ticket=2ivcW%2FcENyzkz%2FGjIaPDdMzzf%2Bberd36%2FR3FYecikmo%3D
+
+https://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=403582309&idx=1&sn=80c006f4e84a8af35dc8e9654f018ace&scene=1&srcid=0119gtt2MOru0Jz4DHA3Rzqy&key=710a5d99946419d927f6d5cd845dc9a72ff3d652a8e66f0ddf87d91262fd262f61f63660690d2d5da76a44a29e155610&ascene=0&uin=MjA1MDk3Njk1&devicetype=iMac+MacBookPro11%2C4+OSX+OSX+10.11.1+build(15B42)&version=11020201&pass_ticket=bhstP11nRHvorVXvQ4pt9fzB9Vdzj5sSRBe84783gsg%3D
+
+https://github.com/hedengcheng/tech/blob/master/distributed/PaxosRaft%20%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%80%E8%87%B4%E6%80%A7%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90%E5%8F%8A%E5%85%B6%E5%9C%A8%E5%AE%9E%E6%88%98%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8.pdf
+
+https://github.com/oldratlee/translations/tree/master/paxoslease
+
+https://github.com/oldratlee/translations/tree/master/paxos-made-simple

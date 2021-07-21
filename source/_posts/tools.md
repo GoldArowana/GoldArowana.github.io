@@ -14,3 +14,5 @@ https://coolors.co/palettes/trending
 https://draveness.me/sketch-and-sketch/
 
 youtube开启双语字幕: https://github.com/ADengrc/youtube-captions
+
+https://blog.sky03.cn/posts/4873.html#toc-heading-6

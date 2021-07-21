@@ -29,3 +29,4 @@ http://blog.csdn.net/linzhaolover/article/details/9771329
 
 ## 参考文章
 https://lrita.github.io/2020/04/24/michael-lockfree-queue/
+http://oceanbase.org.cn/?p=183
