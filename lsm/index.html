@@ -1,0 +1,1215 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="LSM-Tree, java,golang,database,mq,algorithm">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>LSM-Tree | 金龙的博客</title>
+    <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/favicon3.jpg">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 7.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/bg/bg1.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    <div>
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/common/loading2.gif" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/favicon3.jpg" class="logo-img" alt="LOGO">
+                        
+                        <span class="logo-span">金龙的博客</span>
+                    </div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/common/loading2.gif" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/favicon3.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">金龙的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/GoldArowana/" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/GoldArowana/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co97-m.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">LSM-Tree</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-12-02
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-11-12
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    6 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><p>适合写多读少</p>
+<ol>
+<li>日志系统</li>
+<li>推荐系统</li>
+<li>海量数据存储</li>
+<li>数据分析</li>
+</ol>
+<h2 id="三大问题"><a href="#三大问题" class="headerlink" title="三大问题"></a>三大问题</h2><h3 id="读放大"><a href="#读放大" class="headerlink" title="读放大"></a>读放大</h3><p>读操作需要从新值到旧值依次读取, 在此过程中会涉及不止依次IO。尤其是范围查询时, 导致影响很明显 </p>
+<h3 id="空间放大"><a href="#空间放大" class="headerlink" title="空间放大"></a>空间放大</h3><p>LSM通过append方式在末尾追击记录, 过期或者删除的数据不会立即清理, 所以会导致空间放大。</p>
+<p>就是指存储引擎中的数据实际占用的磁盘空间比数据的真正大小偏多的情况。例如，数据的真正大小是10MB，但实际存储时耗掉了25MB空间，那么空间放大因子（space amplification factor）就是2.5</p>
+<p>为什么会出现空间放大呢？很显然，LSM-based存储引擎中数据的增删改都不是in-place的，而是需要等待compaction执行到对应的key才算完。也就是说，一个key可能会同时对应多个value（删除标记算作特殊的value），而只有一个value是真正有效的，其余那些就算做空间放大。另外，在compaction过程中，原始数据在执行完成之前是不能删除的（防止出现意外无法恢复），所以同一份被compaction的数据最多可能膨胀成原来的两倍，这也算作空间放大的范畴。</p>
+<h3 id="写放大"><a href="#写放大" class="headerlink" title="写放大"></a>写放大</h3><p>为了减少读放大和空间放大, 会进行压缩合并。压缩合并的过程中对一条数据会涉及多次写, 导致写放大。</p>
+<h2 id="Tiering"><a href="#Tiering" class="headerlink" title="Tiering"></a>Tiering</h2><p>写优化, 空间放大。Cassandra。</p>
+<h2 id="leveling"><a href="#leveling" class="headerlink" title="leveling"></a>leveling</h2><p>读优化, 写放大。RocksDB。</p>
+<h2 id="Monkey-Optimal-Navigable-Key-Value-Store"><a href="#Monkey-Optimal-Navigable-Key-Value-Store" class="headerlink" title="Monkey: Optimal Navigable Key-Value Store"></a>Monkey: Optimal Navigable Key-Value Store</h2><p>调整布隆过滤器的容错率</p>
+<h2 id="Dostoevsky"><a href="#Dostoevsky" class="headerlink" title="Dostoevsky"></a>Dostoevsky</h2><h3 id="Lazy-Leveling"><a href="#Lazy-Leveling" class="headerlink" title="Lazy Leveling"></a>Lazy Leveling</h3><p>写优化、点查优化。原理非常简单，也就是混合了 Tiered 以及 Leveled，在最大层使用 Leveled，而其它层使用 Tiered。</p>
+<h3 id="Fluid-LSM-Tree"><a href="#Fluid-LSM-Tree" class="headerlink" title="Fluid LSM-Tree"></a>Fluid LSM-Tree</h3><p>Fluid 使用了一个可调解的方式，在最大层使用最多 Z runs，而其它层最多使用 K runs。</p>
+<p>可以发现：</p>
+<ol>
+<li>Z = 1， K = 1，就是 Leveled Compaction</li>
+<li>Z = T - 1， K = T - 1，就是 Tiered Compaction</li>
+<li>Z = 1， K = T - 1，就是 Lazy Leveling</li>
+</ol>
+<h2 id="Wacky"><a href="#Wacky" class="headerlink" title="Wacky"></a>Wacky</h2><p>适合大量写入、点读。缺点是范围读</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="lsm-hash"><a href="#lsm-hash" class="headerlink" title="lsm hash"></a>lsm hash</h3><h4 id="bitcask-riak"><a href="#bitcask-riak" class="headerlink" title="bitcask(riak)"></a>bitcask(riak)</h4><h4 id="rosedb"><a href="#rosedb" class="headerlink" title="rosedb"></a>rosedb</h4><h4 id="nutsdb"><a href="#nutsdb" class="headerlink" title="nutsdb"></a>nutsdb</h4><h3 id="lsm-array"><a href="#lsm-array" class="headerlink" title="lsm array"></a>lsm array</h3><h4 id="moss"><a href="#moss" class="headerlink" title="moss"></a>moss</h4><h3 id="lsm-tree"><a href="#lsm-tree" class="headerlink" title="lsm tree"></a>lsm tree</h3><h4 id="pebble"><a href="#pebble" class="headerlink" title="pebble"></a>pebble</h4><h4 id="leveldb"><a href="#leveldb" class="headerlink" title="leveldb"></a>leveldb</h4><h4 id="rocksdb"><a href="#rocksdb" class="headerlink" title="rocksdb"></a>rocksdb</h4><h5 id="TTL实现"><a href="#TTL实现" class="headerlink" title="TTL实现"></a>TTL实现</h5><h3 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a>HBase</h3><h5 id="TTL实现-1"><a href="#TTL实现-1" class="headerlink" title="TTL实现"></a>TTL实现</h5><h3 id="BigTable"><a href="#BigTable" class="headerlink" title="BigTable"></a>BigTable</h3><h3 id="DynamoDB"><a href="#DynamoDB" class="headerlink" title="DynamoDB"></a>DynamoDB</h3><h3 id="cassandra"><a href="#cassandra" class="headerlink" title="cassandra"></a>cassandra</h3><h5 id="TTL实现-2"><a href="#TTL实现-2" class="headerlink" title="TTL实现"></a>TTL实现</h5><h3 id="accumulo"><a href="#accumulo" class="headerlink" title="accumulo"></a>accumulo</h3><h3 id="couchbase"><a href="#couchbase" class="headerlink" title="couchbase"></a>couchbase</h3><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/baichoufei90/article/details/84841289">论文阅读-The Log-Structured Merge-Tree (LSM-Tree)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.dazhuanlan.com/mongolzhang/topics/1102894">Monkey: Optimal Navigable Key-Value Store (中文翻译)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8fb8f2458253">Dostoevsky: 一种更好的平衡 LSM 空间和性能的方式</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Log-structured_merge-tree">Log-structured merge-tree</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.scylladb.com/2018/01/17/compaction-series-space-amplification/">Scylla’s Compaction Strategies Series: Space Amplification in Size-Tiered Compaction</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/nazeniwaresakini/article/details/104220140">LSM Tree-Based存储引擎的compaction策略（feat. RocksDB）</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1399365">深入 LevelDB 数据文件 SSTable 的结构</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/141186118">深入探讨LSM Compaction机制</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.toberoot.com/news/2020/12/19/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E4%BB%80%E4%B9%88%E6%98%AFLSM-Tree/">深入理解什么是LSM-Tree</a></li>
+<li><a target="_blank" rel="noopener" href="https://niceaz.com/2018/11/27/sstable">SSTable 原理</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.benstopford.com/2015/02/14/log-structured-merge-trees/">Log Structured Merge Trees</a></li>
+<li><a target="_blank" rel="noopener" href="https://nan01ab.github.io/2019/06/LSM-Bush.html">The Log-Structured Merge-Bush &amp; the Wacky Continuum 中文</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/380013595">REMIX: Efficient Range Query for LSM-trees</a></li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_32496547/article/details/114098111">https://blog.csdn.net/weixin_32496547/article/details/114098111</a></p>
+<p><a target="_blank" rel="noopener" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.44.2782&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.44.2782&amp;rep=rep1&amp;type=pdf</a></p>
+<p><a target="_blank" rel="noopener" href="http://blog.fatedier.com/2016/06/15/learn-lsm-tree/">http://blog.fatedier.com/2016/06/15/learn-lsm-tree/</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.blogjava.net/DLevin/archive/2015/09/25/427481.html">http://www.blogjava.net/DLevin/archive/2015/09/25/427481.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://izualzhy.cn/leveldb-sstable">https://izualzhy.cn/leveldb-sstable</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fxjwind/archive/2012/08/14/2638371.html">https://www.cnblogs.com/fxjwind/archive/2012/08/14/2638371.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103968892">https://zhuanlan.zhihu.com/p/103968892</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103855686">https://zhuanlan.zhihu.com/p/103855686</a></p>
+<p><a target="_blank" rel="noopener" href="https://xiaozhuanlan.com/topic/7130689425">WiscKey —— SSD 介质下的 LSM-tree 优化</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/181498475">https://zhuanlan.zhihu.com/p/181498475</a></p>
+<p><a target="_blank" rel="noopener" href="https://rocksdb.org.cn/doc/Leveled-Compaction.html">https://rocksdb.org.cn/doc/Leveled-Compaction.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://rocksdb.org.cn/doc/Universal-Compaction.html">https://rocksdb.org.cn/doc/Universal-Compaction.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.open-open.com/lib/view/open1424916275249.html">https://www.open-open.com/lib/view/open1424916275249.html</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.petermao.com/leveldb/leveldb-0-start.html">http://www.petermao.com/leveldb/leveldb-0-start.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/google/leveldb/blob/master/doc/impl.md">https://github.com/google/leveldb/blob/master/doc/impl.md</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/haippy/archive/2011/12/04/2276064.html">https://www.cnblogs.com/haippy/archive/2011/12/04/2276064.html</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.petermao.com/leveldb/leveldb-1-overview.html">http://www.petermao.com/leveldb/leveldb-1-overview.html</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.benstopford.com/2015/02/14/log-structured-merge-trees/">http://www.benstopford.com/2015/02/14/log-structured-merge-trees/</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.benstopford.com/2015/02/14/log-structured-merge-trees/">http://www.benstopford.com/2015/02/14/log-structured-merge-trees/</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/facebook/rocksdb/wiki/Leveled-Compaction">https://github.com/facebook/rocksdb/wiki/Leveled-Compaction</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhenghe-md.github.io/blog/2020/02/26/Log-Structured-Merge-LSM-Tree-Usages-in-KV-Stores/">https://zhenghe-md.github.io/blog/2020/02/26/Log-Structured-Merge-LSM-Tree-Usages-in-KV-Stores/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.igvita.com/2012/02/06/sstable-and-log-structured-storage-leveldb/">https://www.igvita.com/2012/02/06/sstable-and-log-structured-storage-leveldb/</a></p>
+<p><a target="_blank" rel="noopener" href="http://daslab.seas.harvard.edu/classes/cs265/project.html">http://daslab.seas.harvard.edu/classes/cs265/project.html</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.youtube.com/watch?v=b6SI8VbcT4w">http://www.youtube.com/watch?v=b6SI8VbcT4w</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.youtube.com/watch?v=ttebJcN5bgQ">http://www.youtube.com/watch?v=ttebJcN5bgQ</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/research/uploads/prod/2019/05/Scaling-Write-Intensive-Key-Value-Stores-slides.pdf">https://www.microsoft.com/en-us/research/uploads/prod/2019/05/Scaling-Write-Intensive-Key-Value-Stores-slides.pdf</a></p>
+<p><a target="_blank" rel="noopener" href="https://speakerdeck.com/mschoch/value-store-in-go?slide=3">https://speakerdeck.com/mschoch/value-store-in-go?slide=3</a></p>
+<p><a target="_blank" rel="noopener" href="https://izualzhy.cn/leveldb-table">https://izualzhy.cn/leveldb-table</a></p>
+<p><a target="_blank" rel="noopener" href="https://izualzhy.cn/leveldb-sstable">https://izualzhy.cn/leveldb-sstable</a></p>
+<p><a target="_blank" rel="noopener" href="https://scholar.harvard.edu/files/stratos/files/dostoevskykv.pdf">https://scholar.harvard.edu/files/stratos/files/dostoevskykv.pdf</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8fb8f2458253">https://www.jianshu.com/p/8fb8f2458253</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/elithnever/paperreading/blob/master/lsm-tree-1.md">https://github.com/elithnever/paperreading/blob/master/lsm-tree-1.md</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/elithnever/paperreading/blob/master/lsm-tree-2.md">https://github.com/elithnever/paperreading/blob/master/lsm-tree-2.md</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/elithnever/paperreading/blob/master/lsm-tree-3.md">https://github.com/elithnever/paperreading/blob/master/lsm-tree-3.md</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3fb899684392">https://www.jianshu.com/p/3fb899684392</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=oUNjDHYFES8">LSM trees (Log Structured Merge Trees) - Detailed video, 印度口音, 而且没字幕</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ttebJcN5bgQ">GopherCon 2017: Marty Schoch - Building a High-Performance Key/Value Store in Go</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/80523835">https://zhuanlan.zhihu.com/p/80523835</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.iteblog.com/archives/2548.html">Apache Cassandra SSTable 存储格式详解</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_21125183/article/details/103915326">https://blog.csdn.net/qq_21125183/article/details/103915326</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/SweeNeil/article/details/86482781">https://blog.csdn.net/SweeNeil/article/details/86482781</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/qwj-sysu/p/5640256.html">https://www.cnblogs.com/qwj-sysu/p/5640256.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://daemondshu.github.io/2019/03/21/Programming/Data%20Structure/LevelDB_RocksDB/">https://daemondshu.github.io/2019/03/21/Programming/Data%20Structure/LevelDB_RocksDB/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.shuzhiduo.com/A/amd0LMe1dg/">https://www.shuzhiduo.com/A/amd0LMe1dg/</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zxpoiu/article/details/116190330">https://blog.csdn.net/zxpoiu/article/details/116190330</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/65557081">https://zhuanlan.zhihu.com/p/65557081</a></p>
+<p><a target="_blank" rel="noopener" href="https://yetanotherdevblog.com/lsm/">https://yetanotherdevblog.com/lsm/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cs.umb.edu/~poneil/lsmtree.pdf">https://www.cs.umb.edu/~poneil/lsmtree.pdf</a></p>
+<p><a target="_blank" rel="noopener" href="https://tikv.org/deep-dive/key-value-engine/b-tree-vs-lsm/">https://tikv.org/deep-dive/key-value-engine/b-tree-vs-lsm/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.usenix.org/conference/atc15/technical-session/presentation/wu">https://www.usenix.org/conference/atc15/technical-session/presentation/wu</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/129355502">https://zhuanlan.zhihu.com/p/129355502</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=auI8BTws-f8">https://www.youtube.com/watch?v=auI8BTws-f8</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=_cGtupq0Ts4https://www.youtube.com/watch?v=_cGtupq0Ts4">https://www.youtube.com/watch?v=_cGtupq0Ts4https://www.youtube.com/watch?v=_cGtupq0Ts4</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=rnZmdmlR-2M">https://www.youtube.com/watch?v=rnZmdmlR-2M</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16X4y1A7TV">https://www.bilibili.com/video/BV16X4y1A7TV</a></p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1812.07527.pdf">https://arxiv.org/pdf/1812.07527.pdf</a></p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://hardcore.feishu.cn/docs/doccnKTUS5I0qkqYMg4mhfIVpOd#">LSM-论文导读与Leveldb源码解读</a></li>
+<li><a target="_blank" rel="noopener" href="https://riak.com/assets/bitcask-intro.pdf">Bitcask: A Log-Structured Hash Table for Fast Key/Value Data</a></li>
+<li><a target="_blank" rel="noopener" href="https://old-panda.com/2020/08/23/bitcask/">Bitcask 学习笔记</a></li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://pingcap.com/blog-cn/titan-design-and-implementation">https://pingcap.com/blog-cn/titan-design-and-implementation</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.usenix.org/system/files/conference/fast16/fast16-papers-lu.pdf">https://www.usenix.org/system/files/conference/fast16/fast16-papers-lu.pdf</a></p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1441835">深入理解什么是LSM-Tree</a></li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8fb8f2458253">https://www.jianshu.com/p/8fb8f2458253</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://goldarowana.github.io" rel="external nofollow noreferrer">金龙</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://goldarowana.github.io/lsm/">https://goldarowana.github.io/lsm/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://goldarowana.github.io" target="_blank">金龙</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/java-memory-model/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/common/loading2.gif" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co82.jpg" class="responsive-img" alt="java memory model(java内存模型)">
+                        
+                        <span class="card-title">java memory model(java内存模型)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            java内存模型
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category">
+                                    java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/os/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/common/loading2.gif" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co94.jpg" class="responsive-img" alt="操作系统">
+                        
+                        <span class="card-title">操作系统</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            操作系统
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            金龙
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('10')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 金龙的博客<br />'
+            + '文章作者: 金龙<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2023</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">金龙</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">38.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "12";
+                    var startDate = "20";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/GoldArowana/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:arowana.java@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@main/live2d_models/live2d-widget-model-shizuku/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"log":false});</script></body>
+
+</html>
