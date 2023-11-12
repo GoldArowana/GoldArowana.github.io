@@ -359,21 +359,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">45</a></span>
+    <span class="count"><a href="/">17</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">15</a></span>
+    <span class="count"><a href="/categories">11</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">38</a></span>
+    <span class="count"><a href="/tags">19</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -389,21 +389,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">45</a></span>
+    <span class="count"><a href="/">17</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">15</a></span>
+    <span class="count"><a href="/categories">11</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">38</a></span>
+    <span class="count"><a href="/tags">19</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -539,7 +539,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                data: [0,0,0,0,0,0,0,0,0,0,0,0,1],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -581,7 +581,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"gc","value":1},{"name":"golang","value":7},{"name":"big data","value":1},{"name":"data structure","value":1},{"name":"gc","value":1},{"name":"internet","value":4},{"name":"design patterns","value":1},{"name":"java","value":2},{"name":"MQ","value":1},{"name":"leaning-plan","value":1},{"name":"plan","value":1},{"name":"lock free","value":1},{"name":"distribute","value":4},{"name":"redis","value":1},{"name":"tools","value":1}],
+                data: [{"name":"data-structure","value":1},{"name":"distribute","value":1},{"name":"big data","value":1},{"name":"database","value":2},{"name":"golang","value":7},{"name":"gc","value":1},{"name":"internet","value":2},{"name":"java","value":1},{"name":"MQ","value":1},{"name":"redis","value":1},{"name":"database","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -605,7 +605,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["golang","internet","consistency","distribute","gc","database","并发","atomic","cas","big data"]
+                data: ["golang","database","internet","data-structure","consistency","distribute","big data","gc","coroutine","http"]
             }
         ],
         yAxis: [
@@ -618,7 +618,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [6,5,3,3,2,2,2,2,2,1],
+                data: [7,4,2,1,1,1,1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -736,14 +736,26 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/gc/">
-                <span class="chip center-align waves-effect waves-light chip-default">gc</span>
+            <a href="/tags/database/">
+                <span class="chip center-align waves-effect waves-light chip-default">database</span>
             </a>
             
             
             
-            <a href="/tags/golang/">
-                <span class="chip center-align waves-effect waves-light chip-default">golang</span>
+            <a href="/tags/data-structure/">
+                <span class="chip center-align waves-effect waves-light chip-default">data-structure</span>
+            </a>
+            
+            
+            
+            <a href="/tags/consistency/">
+                <span class="chip center-align waves-effect waves-light chip-default">consistency</span>
+            </a>
+            
+            
+            
+            <a href="/tags/distribute/">
+                <span class="chip center-align waves-effect waves-light chip-default">distribute</span>
             </a>
             
             
@@ -754,44 +766,14 @@
             
             
             
-            <a href="/tags/algorithm/">
-                <span class="chip center-align waves-effect waves-light chip-default">algorithm</span>
+            <a href="/tags/golang/">
+                <span class="chip center-align waves-effect waves-light chip-default">golang</span>
             </a>
             
             
             
-            <a href="/tags/data-structure/">
-                <span class="chip center-align waves-effect waves-light chip-default">data structure</span>
-            </a>
-            
-            
-            
-            <a href="/tags/database/">
-                <span class="chip center-align waves-effect waves-light chip-default">database</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E5%B9%B6%E5%8F%91/">
-                <span class="chip center-align waves-effect waves-light chip-default">并发</span>
-            </a>
-            
-            
-            
-            <a href="/tags/atomic/">
-                <span class="chip center-align waves-effect waves-light chip-default">atomic</span>
-            </a>
-            
-            
-            
-            <a href="/tags/cas/">
-                <span class="chip center-align waves-effect waves-light chip-default">cas</span>
-            </a>
-            
-            
-            
-            <a href="/tags/map/">
-                <span class="chip center-align waves-effect waves-light chip-default">map</span>
+            <a href="/tags/gc/">
+                <span class="chip center-align waves-effect waves-light chip-default">gc</span>
             </a>
             
             
@@ -820,18 +802,6 @@
             
             
             
-            <a href="/tags/design-patterns/">
-                <span class="chip center-align waves-effect waves-light chip-default">design patterns</span>
-            </a>
-            
-            
-            
-            <a href="/tags/os/">
-                <span class="chip center-align waves-effect waves-light chip-default">os</span>
-            </a>
-            
-            
-            
             <a href="/tags/java/">
                 <span class="chip center-align waves-effect waves-light chip-default">java</span>
             </a>
@@ -846,72 +816,6 @@
             
             <a href="/tags/MQ/">
                 <span class="chip center-align waves-effect waves-light chip-default">MQ</span>
-            </a>
-            
-            
-            
-            <a href="/tags/leaning-plan/">
-                <span class="chip center-align waves-effect waves-light chip-default">leaning-plan</span>
-            </a>
-            
-            
-            
-            <a href="/tags/plan/">
-                <span class="chip center-align waves-effect waves-light chip-default">plan</span>
-            </a>
-            
-            
-            
-            <a href="/tags/2022/">
-                <span class="chip center-align waves-effect waves-light chip-default">2022</span>
-            </a>
-            
-            
-            
-            <a href="/tags/lock-free/">
-                <span class="chip center-align waves-effect waves-light chip-default">lock free</span>
-            </a>
-            
-            
-            
-            <a href="/tags/paxos/">
-                <span class="chip center-align waves-effect waves-light chip-default">paxos</span>
-            </a>
-            
-            
-            
-            <a href="/tags/consistency/">
-                <span class="chip center-align waves-effect waves-light chip-default">consistency</span>
-            </a>
-            
-            
-            
-            <a href="/tags/distribute/">
-                <span class="chip center-align waves-effect waves-light chip-default">distribute</span>
-            </a>
-            
-            
-            
-            <a href="/tags/protobuf/">
-                <span class="chip center-align waves-effect waves-light chip-default">protobuf</span>
-            </a>
-            
-            
-            
-            <a href="/tags/rpc/">
-                <span class="chip center-align waves-effect waves-light chip-default">rpc</span>
-            </a>
-            
-            
-            
-            <a href="/tags/grpc/">
-                <span class="chip center-align waves-effect waves-light chip-default">grpc</span>
-            </a>
-            
-            
-            
-            <a href="/tags/raft/">
-                <span class="chip center-align waves-effect waves-light chip-default">raft</span>
             </a>
             
             
@@ -942,24 +846,6 @@
             
             <a href="/tags/tcp/">
                 <span class="chip center-align waves-effect waves-light chip-default">tcp</span>
-            </a>
-            
-            
-            
-            <a href="/tags/tools/">
-                <span class="chip center-align waves-effect waves-light chip-default">tools</span>
-            </a>
-            
-            
-            
-            <a href="/tags/udp/">
-                <span class="chip center-align waves-effect waves-light chip-default">udp</span>
-            </a>
-            
-            
-            
-            <a href="/tags/zab/">
-                <span class="chip center-align waves-effect waves-light chip-default">zab</span>
             </a>
             
             
@@ -996,7 +882,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">38.1k</span>&nbsp;字
+                class="white-color">25.8k</span>&nbsp;字
             
             
             
@@ -1243,7 +1129,7 @@ $(function () {
     <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/instantpage/instantpage.js" type="module"></script>
     
 
-
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@main/live2d_models/live2d-widget-model-shizuku/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1256,6 +1142,6 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@main/live2d_models/live2d-widget-model-shizuku/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"log":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 
 </html>
