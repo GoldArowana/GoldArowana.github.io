@@ -17,4 +17,8 @@ https://www.luozhiyun.com/archives/273
 
 https://www.luozhiyun.com/archives/280
 
+CMU 15721 课程笔记  https://www.zhihu.com/column/c_1624789464953364480
+
+PAX：一个 Cache 友好高效的行列混存方案    https://blog.csdn.net/weixin_42241611/article/details/130050128
+
 [Latch-crabbing/Latch-couping](https://zhuanlan.zhihu.com/p/158622349)
