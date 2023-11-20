@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.0.0">
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
@@ -462,7 +462,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    873
+                    872
                 </div>
                 
 
@@ -493,7 +493,11 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="线程栈"><a href="#线程栈" class="headerlink" title="线程栈"></a>线程栈</h2><p>不同架构下, 默认线程栈的大小不同。在x86_64架构下, 默认栈大小为2MB</p>
-<h2 id="逃逸分析"><a href="#逃逸分析" class="headerlink" title="逃逸分析"></a>逃逸分析</h2><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 悬挂指针示例</span></span><br><span class="line"><span class="type">int</span> *<span class="title function_">dangling_pointer</span><span class="params">()</span> {</span><br><span class="line">    <span class="type">int</span> i = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> &amp;i;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="逃逸分析"><a href="#逃逸分析" class="headerlink" title="逃逸分析"></a>逃逸分析</h2><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// 悬挂指针示例</span>
+<span class="token keyword">int</span> <span class="token operator">*</span><span class="token function">dangling_pointer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token operator">&amp;</span>i<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>当 dangling_pointer 函数返回后，它的本地变量会被编译器回收，调用方获取的是危险的悬挂指针，我们不确定当前指针指向的值是否合法时，这种问题在大型项目中是比较难以发现和定位的。</p>
 </blockquote>

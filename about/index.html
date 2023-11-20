@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.0.0">
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
@@ -581,7 +581,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"gc","value":1},{"name":"distribute","value":1},{"name":"big data","value":1},{"name":"data-structure","value":1},{"name":"golang","value":7},{"name":"database","value":2},{"name":"java","value":2},{"name":"internet","value":2},{"name":"MQ","value":1},{"name":"redis","value":1},{"name":"gc","value":1},{"name":"database","value":1}],
+                data: [{"name":"golang","value":7},{"name":"big data","value":1},{"name":"distribute","value":1},{"name":"internet","value":2},{"name":"java","value":2},{"name":"MQ","value":1},{"name":"data-structure","value":1},{"name":"gc","value":1},{"name":"gc","value":1},{"name":"database","value":2},{"name":"redis","value":1},{"name":"database","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -605,7 +605,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["golang","database","gc","java","internet","consistency","distribute","big data","data-structure","coroutine"]
+                data: ["golang","database","internet","java","gc","big data","cache","distribute","tcp","consistency"]
             }
         ],
         yAxis: [
@@ -736,6 +736,54 @@
         <div class="tag-chips center-align">
             
             
+            <a href="/tags/golang/">
+                <span class="chip center-align waves-effect waves-light chip-default">golang</span>
+            </a>
+            
+            
+            
+            <a href="/tags/database/">
+                <span class="chip center-align waves-effect waves-light chip-default">database</span>
+            </a>
+            
+            
+            
+            <a href="/tags/big-data/">
+                <span class="chip center-align waves-effect waves-light chip-default">big data</span>
+            </a>
+            
+            
+            
+            <a href="/tags/cache/">
+                <span class="chip center-align waves-effect waves-light chip-default">cache</span>
+            </a>
+            
+            
+            
+            <a href="/tags/distribute/">
+                <span class="chip center-align waves-effect waves-light chip-default">distribute</span>
+            </a>
+            
+            
+            
+            <a href="/tags/internet/">
+                <span class="chip center-align waves-effect waves-light chip-default">internet</span>
+            </a>
+            
+            
+            
+            <a href="/tags/tcp/">
+                <span class="chip center-align waves-effect waves-light chip-default">tcp</span>
+            </a>
+            
+            
+            
+            <a href="/tags/java/">
+                <span class="chip center-align waves-effect waves-light chip-default">java</span>
+            </a>
+            
+            
+            
             <a href="/tags/gc/">
                 <span class="chip center-align waves-effect waves-light chip-default">gc</span>
             </a>
@@ -748,20 +796,8 @@
             
             
             
-            <a href="/tags/distribute/">
-                <span class="chip center-align waves-effect waves-light chip-default">distribute</span>
-            </a>
-            
-            
-            
-            <a href="/tags/big-data/">
-                <span class="chip center-align waves-effect waves-light chip-default">big data</span>
-            </a>
-            
-            
-            
-            <a href="/tags/database/">
-                <span class="chip center-align waves-effect waves-light chip-default">database</span>
+            <a href="/tags/MQ/">
+                <span class="chip center-align waves-effect waves-light chip-default">MQ</span>
             </a>
             
             
@@ -772,26 +808,8 @@
             
             
             
-            <a href="/tags/golang/">
-                <span class="chip center-align waves-effect waves-light chip-default">golang</span>
-            </a>
-            
-            
-            
             <a href="/tags/coroutine/">
                 <span class="chip center-align waves-effect waves-light chip-default">coroutine</span>
-            </a>
-            
-            
-            
-            <a href="/tags/java/">
-                <span class="chip center-align waves-effect waves-light chip-default">java</span>
-            </a>
-            
-            
-            
-            <a href="/tags/internet/">
-                <span class="chip center-align waves-effect waves-light chip-default">internet</span>
             </a>
             
             
@@ -814,30 +832,6 @@
             
             
             
-            <a href="/tags/MQ/">
-                <span class="chip center-align waves-effect waves-light chip-default">MQ</span>
-            </a>
-            
-            
-            
-            <a href="/tags/redis/">
-                <span class="chip center-align waves-effect waves-light chip-default">redis</span>
-            </a>
-            
-            
-            
-            <a href="/tags/cache/">
-                <span class="chip center-align waves-effect waves-light chip-default">cache</span>
-            </a>
-            
-            
-            
-            <a href="/tags/tcp/">
-                <span class="chip center-align waves-effect waves-light chip-default">tcp</span>
-            </a>
-            
-            
-            
             <a href="/tags/mysql/">
                 <span class="chip center-align waves-effect waves-light chip-default">mysql</span>
             </a>
@@ -846,6 +840,12 @@
             
             <a href="/tags/innodb/">
                 <span class="chip center-align waves-effect waves-light chip-default">innodb</span>
+            </a>
+            
+            
+            
+            <a href="/tags/redis/">
+                <span class="chip center-align waves-effect waves-light chip-default">redis</span>
             </a>
             
             

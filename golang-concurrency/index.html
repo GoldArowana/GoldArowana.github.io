@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.0.0">
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
@@ -492,7 +492,42 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="互斥锁Mutex"><a href="#互斥锁Mutex" class="headerlink" title="互斥锁Mutex"></a>互斥锁Mutex</h2><h3 id="示例-用mutex解决并发计数问题"><a href="#示例-用mutex解决并发计数问题" class="headerlink" title="示例: 用mutex解决并发计数问题"></a>示例: 用mutex解决并发计数问题</h3><figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"sync"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Counter <span class="keyword">struct</span> {</span><br><span class="line">	sync.Mutex</span><br><span class="line">	Count <span class="type">int64</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Counter)</span></span> Incr() {</span><br><span class="line">	c.Lock()</span><br><span class="line">	c.Count++</span><br><span class="line">	c.Unlock()</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Incr10k = <span class="function"><span class="keyword">func</span><span class="params">(counter *Counter, wg *sync.WaitGroup)</span></span> {</span><br><span class="line">	<span class="keyword">defer</span> wg.Done()</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> j := <span class="number">0</span>; j &lt; <span class="number">100000</span>; j++ {</span><br><span class="line">		counter.Incr()</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> {</span><br><span class="line">	<span class="keyword">var</span> counter Counter</span><br><span class="line">	<span class="keyword">var</span> wg sync.WaitGroup</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ {</span><br><span class="line">		wg.Add(<span class="number">1</span>)</span><br><span class="line">		<span class="keyword">go</span> Incr10k(&amp;counter, &amp;wg)</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	wg.Wait()</span><br><span class="line">	fmt.Println(counter.Count)</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+                <h2 id="互斥锁Mutex"><a href="#互斥锁Mutex" class="headerlink" title="互斥锁Mutex"></a>互斥锁Mutex</h2><h3 id="示例-用mutex解决并发计数问题"><a href="#示例-用mutex解决并发计数问题" class="headerlink" title="示例: 用mutex解决并发计数问题"></a>示例: 用mutex解决并发计数问题</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"fmt"</span>
+	<span class="token string">"sync"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">type</span> Counter <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	sync<span class="token punctuation">.</span>Mutex
+	Count <span class="token builtin">int64</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>Counter<span class="token punctuation">)</span> <span class="token function">Incr</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	c<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	c<span class="token punctuation">.</span>Count<span class="token operator">++</span>
+	c<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> Incr10k <span class="token operator">=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>counter <span class="token operator">*</span>Counter<span class="token punctuation">,</span> wg <span class="token operator">*</span>sync<span class="token punctuation">.</span>WaitGroup<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token keyword">for</span> j <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">100000</span><span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">{</span>
+		counter<span class="token punctuation">.</span><span class="token function">Incr</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> counter Counter
+	<span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+		<span class="token keyword">go</span> <span class="token function">Incr10k</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>counter<span class="token punctuation">,</span> <span class="token operator">&amp;</span>wg<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>counter<span class="token punctuation">.</span>Count<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="Mutex实现"><a href="#Mutex实现" class="headerlink" title="Mutex实现"></a>Mutex实现</h3><h4 id="go最早期的Mutex实现-最简单的实现"><a href="#go最早期的Mutex实现-最简单的实现" class="headerlink" title="go最早期的Mutex实现: 最简单的实现"></a>go最早期的Mutex实现: 最简单的实现</h4><p>key: 0表示锁未被持有。1表示锁被持有, 没有等待者。值为n表示锁被持有, 还有n-1个等待着。<br>sema: 等待着队列使用的信号量。当锁被占用的时候, 抢锁失败的线程会调用semacquire(), 使用信号量将自己休眠。等锁释放的时候, 信号量将会唤醒队列的头部等待着。</p>
 <ol>
@@ -501,7 +536,10 @@
 <li>其他协程可以释放锁</li>
 </ol>
 <h4 id="go-0-x版本-新增乐观抢锁"><a href="#go-0-x版本-新增乐观抢锁" class="headerlink" title="go 0.x版本: 新增乐观抢锁"></a>go 0.x版本: 新增乐观抢锁</h4><p>非公平: 新协程可能会抢, 而不是每次都在FIFO的队列头部获取</p>
-<figure class="highlight golang"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Mutex <span class="keyword">struct</span> {</span><br><span class="line">    state <span class="type">int32</span></span><br><span class="line">    sema <span class="type">uint32</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-golang" data-language="golang"><code class="language-golang">type Mutex struct {
+    state int32
+    sema uint32
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>state这一个字段包含多个意义:</p>
 <ul>
@@ -510,15 +548,102 @@
 <li>最低1位表示这个锁是否被持有</li>
 </ul>
 <p>获取锁的过程:</p>
-<figure class="highlight golang"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *Mutex)</span></span> Lock() {</span><br><span class="line">    <span class="comment">// Fast path: 幸运case，能够直接获取到锁</span></span><br><span class="line">    <span class="keyword">if</span> atomic.CompareAndSwapInt32(&amp;m.state, <span class="number">0</span>, mutexLocked) {</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    awoke := <span class="literal">false</span></span><br><span class="line">    <span class="keyword">for</span> {</span><br><span class="line">        old := m.state</span><br><span class="line">        <span class="built_in">new</span> := old | mutexLocked <span class="comment">// 新状态加锁</span></span><br><span class="line">        <span class="keyword">if</span> old&amp;mutexLocked != <span class="number">0</span> {</span><br><span class="line">            <span class="built_in">new</span> = old + <span class="number">1</span>&lt;&lt;mutexWaiterShift <span class="comment">//等待者数量加一</span></span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> awoke {</span><br><span class="line">            <span class="comment">// goroutine是被唤醒的，</span></span><br><span class="line">            <span class="comment">// 新状态清除唤醒标志</span></span><br><span class="line">            <span class="built_in">new</span> &amp;^= mutexWoken</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> atomic.CompareAndSwapInt32(&amp;m.state, old, <span class="built_in">new</span>) {<span class="comment">//设置新状态</span></span><br><span class="line">            <span class="keyword">if</span> old&amp;mutexLocked == <span class="number">0</span> { <span class="comment">// 锁原状态未加锁</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            }</span><br><span class="line">            runtime.Semacquire(&amp;m.sema) <span class="comment">// 请求信号量</span></span><br><span class="line">            awoke = <span class="literal">true</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-golang" data-language="golang"><code class="language-golang">func (m *Mutex) Lock() {
+    // Fast path: 幸运case，能够直接获取到锁
+    if atomic.CompareAndSwapInt32(&amp;m.state, 0, mutexLocked) {
+        return
+    }
+
+    awoke := false
+    for {
+        old := m.state
+        new := old | mutexLocked // 新状态加锁
+        if old&amp;mutexLocked != 0 {
+            new = old + 1&lt;&lt;mutexWaiterShift //等待者数量加一
+        }
+        if awoke {
+            // goroutine是被唤醒的，
+            // 新状态清除唤醒标志
+            new &amp;^= mutexWoken
+        }
+        if atomic.CompareAndSwapInt32(&amp;m.state, old, new) {//设置新状态
+            if old&amp;mutexLocked == 0 { // 锁原状态未加锁
+                break
+            }
+            runtime.Semacquire(&amp;m.sema) // 请求信号量
+            awoke = true
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 <p>释放锁的过程:</p>
-<figure class="highlight golang"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *Mutex)</span></span> Unlock() {</span><br><span class="line">    <span class="comment">// Fast path: drop lock bit.</span></span><br><span class="line">    <span class="built_in">new</span> := atomic.AddInt32(&amp;m.state, -mutexLocked) <span class="comment">//去掉锁标志</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">new</span>+mutexLocked)&amp;mutexLocked == <span class="number">0</span> { <span class="comment">//本来就没有加锁</span></span><br><span class="line">        <span class="built_in">panic</span>(<span class="string">"sync: unlock of unlocked mutex"</span>)</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    old := <span class="built_in">new</span></span><br><span class="line">    <span class="keyword">for</span> {</span><br><span class="line">        <span class="keyword">if</span> old&gt;&gt;mutexWaiterShift == <span class="number">0</span> || old&amp;(mutexLocked|mutexWoken) != <span class="number">0</span> { <span class="comment">// 没有等待者，或者有唤醒的waiter，或者锁原来已加锁</span></span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        }</span><br><span class="line">        <span class="built_in">new</span> = (old - <span class="number">1</span>&lt;&lt;mutexWaiterShift) | mutexWoken <span class="comment">// 新状态，准备唤醒goroutine，并设置唤醒标志</span></span><br><span class="line">        <span class="keyword">if</span> atomic.CompareAndSwapInt32(&amp;m.state, old, <span class="built_in">new</span>) {</span><br><span class="line">            runtime.Semrelease(&amp;m.sema)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        }</span><br><span class="line">        old = m.state</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="go-1-5版本-新增自旋抢锁"><a href="#go-1-5版本-新增自旋抢锁" class="headerlink" title="go 1.5版本: 新增自旋抢锁"></a>go 1.5版本: 新增自旋抢锁</h4><p>非公平: 新协程可能会抢, 而不是每次都在FIFO的队列头部获取。而且相比于之前的版本, 对比新来请求锁的goroutine和被唤醒的goroutine, 都会自旋地多尝试几次</p>
-<figure class="highlight golang"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *Mutex)</span></span> Lock() {</span><br><span class="line">    <span class="comment">// Fast path: 幸运之路，正好获取到锁</span></span><br><span class="line">    <span class="keyword">if</span> atomic.CompareAndSwapInt32(&amp;m.state, <span class="number">0</span>, mutexLocked) {</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    awoke := <span class="literal">false</span></span><br><span class="line">    iter := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> { <span class="comment">// 不管是新来的请求锁的goroutine, 还是被唤醒的goroutine，都不断尝试请求锁</span></span><br><span class="line">        old := m.state <span class="comment">// 先保存当前锁的状态</span></span><br><span class="line">        <span class="built_in">new</span> := old | mutexLocked <span class="comment">// 新状态设置加锁标志</span></span><br><span class="line">        <span class="keyword">if</span> old&amp;mutexLocked != <span class="number">0</span> { <span class="comment">// 锁还没被释放</span></span><br><span class="line">            <span class="keyword">if</span> runtime_canSpin(iter) { <span class="comment">// 还可以自旋</span></span><br><span class="line">                <span class="keyword">if</span> !awoke &amp;&amp; old&amp;mutexWoken == <span class="number">0</span> &amp;&amp; old&gt;&gt;mutexWaiterShift != <span class="number">0</span> &amp;&amp;</span><br><span class="line">                    atomic.CompareAndSwapInt32(&amp;m.state, old, old|mutexWoken) {</span><br><span class="line">                    <span class="comment">// 将锁的唤醒标记置为1，表示已经有醒着的线程正在获取锁，Unlock的时候便无需唤醒新的线程                    </span></span><br><span class="line">                    awoke = <span class="literal">true</span></span><br><span class="line">                }</span><br><span class="line">                runtime_doSpin()</span><br><span class="line">                iter++</span><br><span class="line">                <span class="keyword">continue</span> <span class="comment">// 自旋，再次尝试请求锁</span></span><br><span class="line">            }</span><br><span class="line">            <span class="built_in">new</span> = old + <span class="number">1</span>&lt;&lt;mutexWaiterShift</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> awoke { <span class="comment">// 唤醒状态</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">new</span>&amp;mutexWoken == <span class="number">0</span> {</span><br><span class="line">                <span class="built_in">panic</span>(<span class="string">"sync: inconsistent mutex state"</span>)</span><br><span class="line">            }</span><br><span class="line">            <span class="built_in">new</span> &amp;^= mutexWoken <span class="comment">// 新状态清除唤醒标记</span></span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> atomic.CompareAndSwapInt32(&amp;m.state, old, <span class="built_in">new</span>) {</span><br><span class="line">            <span class="keyword">if</span> old&amp;mutexLocked == <span class="number">0</span> { <span class="comment">// 旧状态锁已释放，新状态成功持有了锁，直接返回</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            }</span><br><span class="line">            runtime_Semacquire(&amp;m.sema) <span class="comment">// 阻塞等待</span></span><br><span class="line">            awoke = <span class="literal">true</span> <span class="comment">// 被唤醒</span></span><br><span class="line">            iter = <span class="number">0</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-golang" data-language="golang"><code class="language-golang">func (m *Mutex) Unlock() {
+    // Fast path: drop lock bit.
+    new := atomic.AddInt32(&amp;m.state, -mutexLocked) //去掉锁标志
+    if (new+mutexLocked)&amp;mutexLocked == 0 { //本来就没有加锁
+        panic("sync: unlock of unlocked mutex")
+    }
 
-<h4 id="go-1-9版本-新增饥饿模式"><a href="#go-1-9版本-新增饥饿模式" class="headerlink" title="go 1.9版本: 新增饥饿模式"></a>go 1.9版本: 新增饥饿模式</h4><figure class="highlight golang"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Mutex <span class="keyword">struct</span> {</span><br><span class="line">    state <span class="type">int32</span></span><br><span class="line">    sema <span class="type">uint32</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+    old := new
+    for {
+        if old&gt;&gt;mutexWaiterShift == 0 || old&amp;(mutexLocked|mutexWoken) != 0 { // 没有等待者，或者有唤醒的waiter，或者锁原来已加锁
+            return
+        }
+        new = (old - 1&lt;&lt;mutexWaiterShift) | mutexWoken // 新状态，准备唤醒goroutine，并设置唤醒标志
+        if atomic.CompareAndSwapInt32(&amp;m.state, old, new) {
+            runtime.Semrelease(&amp;m.sema)
+            return
+        }
+        old = m.state
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="go-1-5版本-新增自旋抢锁"><a href="#go-1-5版本-新增自旋抢锁" class="headerlink" title="go 1.5版本: 新增自旋抢锁"></a>go 1.5版本: 新增自旋抢锁</h4><p>非公平: 新协程可能会抢, 而不是每次都在FIFO的队列头部获取。而且相比于之前的版本, 对比新来请求锁的goroutine和被唤醒的goroutine, 都会自旋地多尝试几次</p>
+<pre class="line-numbers language-golang" data-language="golang"><code class="language-golang">func (m *Mutex) Lock() {
+    // Fast path: 幸运之路，正好获取到锁
+    if atomic.CompareAndSwapInt32(&amp;m.state, 0, mutexLocked) {
+        return
+    }
+
+    awoke := false
+    iter := 0
+    for { // 不管是新来的请求锁的goroutine, 还是被唤醒的goroutine，都不断尝试请求锁
+        old := m.state // 先保存当前锁的状态
+        new := old | mutexLocked // 新状态设置加锁标志
+        if old&amp;mutexLocked != 0 { // 锁还没被释放
+            if runtime_canSpin(iter) { // 还可以自旋
+                if !awoke &amp;&amp; old&amp;mutexWoken == 0 &amp;&amp; old&gt;&gt;mutexWaiterShift != 0 &amp;&amp;
+                    atomic.CompareAndSwapInt32(&amp;m.state, old, old|mutexWoken) {
+                    // 将锁的唤醒标记置为1，表示已经有醒着的线程正在获取锁，Unlock的时候便无需唤醒新的线程                    
+                    awoke = true
+                }
+                runtime_doSpin()
+                iter++
+                continue // 自旋，再次尝试请求锁
+            }
+            new = old + 1&lt;&lt;mutexWaiterShift
+        }
+        if awoke { // 唤醒状态
+            if new&amp;mutexWoken == 0 {
+                panic("sync: inconsistent mutex state")
+            }
+            new &amp;^= mutexWoken // 新状态清除唤醒标记
+        }
+        if atomic.CompareAndSwapInt32(&amp;m.state, old, new) {
+            if old&amp;mutexLocked == 0 { // 旧状态锁已释放，新状态成功持有了锁，直接返回
+                break
+            }
+            runtime_Semacquire(&amp;m.sema) // 阻塞等待
+            awoke = true // 被唤醒
+            iter = 0
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="go-1-9版本-新增饥饿模式"><a href="#go-1-9版本-新增饥饿模式" class="headerlink" title="go 1.9版本: 新增饥饿模式"></a>go 1.9版本: 新增饥饿模式</h4><pre class="line-numbers language-golang" data-language="golang"><code class="language-golang">type Mutex struct {
+    state int32
+    sema uint32
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>state这一个字段包含多个意义:</p>
 <ul>
@@ -527,28 +652,251 @@
 <li>再接下来的1位表示是否有唤醒的goroutine</li>
 <li>最低1位表示这个锁是否被持有</li>
 </ul>
-<figure class="highlight golang"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *Mutex)</span></span> Lock() {</span><br><span class="line">    <span class="comment">// Fast path: 幸运之路，一下就获取到了锁</span></span><br><span class="line">    <span class="keyword">if</span> atomic.CompareAndSwapInt32(&amp;m.state, <span class="number">0</span>, mutexLocked) {</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// Slow path：缓慢之路，尝试自旋竞争或饥饿状态下饥饿goroutine竞争</span></span><br><span class="line">    m.lockSlow()</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *Mutex)</span></span> lockSlow() {</span><br><span class="line">    <span class="keyword">var</span> waitStartTime <span class="type">int64</span></span><br><span class="line">    starving := <span class="literal">false</span> <span class="comment">// 此goroutine的饥饿标记</span></span><br><span class="line">    awoke := <span class="literal">false</span> <span class="comment">// 唤醒标记</span></span><br><span class="line">    iter := <span class="number">0</span> <span class="comment">// 自旋次数</span></span><br><span class="line">    old := m.state <span class="comment">// 当前的锁的状态</span></span><br><span class="line">    <span class="keyword">for</span> {</span><br><span class="line">        <span class="comment">// 锁是非饥饿状态，锁还没被释放，尝试自旋</span></span><br><span class="line">        <span class="keyword">if</span> old&amp;(mutexLocked|mutexStarving) == mutexLocked &amp;&amp; runtime_canSpin(iter) {</span><br><span class="line">            <span class="keyword">if</span> !awoke &amp;&amp; old&amp;mutexWoken == <span class="number">0</span> &amp;&amp; old&gt;&gt;mutexWaiterShift != <span class="number">0</span> &amp;&amp;</span><br><span class="line">                atomic.CompareAndSwapInt32(&amp;m.state, old, old|mutexWoken) {</span><br><span class="line">                awoke = <span class="literal">true</span></span><br><span class="line">            }</span><br><span class="line">            runtime_doSpin()</span><br><span class="line">            iter++</span><br><span class="line">            old = m.state <span class="comment">// 再次获取锁的状态，之后会检查是否锁被释放了</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        }</span><br><span class="line">        <span class="built_in">new</span> := old</span><br><span class="line">        <span class="keyword">if</span> old&amp;mutexStarving == <span class="number">0</span> {</span><br><span class="line">            <span class="built_in">new</span> |= mutexLocked <span class="comment">// 非饥饿状态，加锁</span></span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> old&amp;(mutexLocked|mutexStarving) != <span class="number">0</span> {</span><br><span class="line">            <span class="built_in">new</span> += <span class="number">1</span> &lt;&lt; mutexWaiterShift <span class="comment">// waiter数量加1</span></span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> starving &amp;&amp; old&amp;mutexLocked != <span class="number">0</span> {</span><br><span class="line">            <span class="built_in">new</span> |= mutexStarving <span class="comment">// 设置饥饿状态</span></span><br><span class="line">        }</span><br><span class="line">        <span class="comment">// 不管是获得了锁还是进入休眠，我们都需要清除 mutexWoken 标记</span></span><br><span class="line">        <span class="keyword">if</span> awoke {</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">new</span>&amp;mutexWoken == <span class="number">0</span> {</span><br><span class="line">                throw(<span class="string">"sync: inconsistent mutex state"</span>)</span><br><span class="line">            }</span><br><span class="line">            <span class="built_in">new</span> &amp;^= mutexWoken <span class="comment">// 新状态清除唤醒标记</span></span><br><span class="line">        }</span><br><span class="line">        <span class="comment">// 成功设置新状态</span></span><br><span class="line">        <span class="keyword">if</span> atomic.CompareAndSwapInt32(&amp;m.state, old, <span class="built_in">new</span>) {</span><br><span class="line">            <span class="comment">// 原来锁的状态已释放，并且不是饥饿状态，正常请求到了锁，返回</span></span><br><span class="line">            <span class="keyword">if</span> old&amp;(mutexLocked|mutexStarving) == <span class="number">0</span> {</span><br><span class="line">                <span class="keyword">break</span> <span class="comment">// locked the mutex with CAS</span></span><br><span class="line">            }</span><br><span class="line">            <span class="comment">// 处理饥饿状态</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 如果以前就在队列里面，加入到队列头</span></span><br><span class="line">            queueLifo := waitStartTime != <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span> waitStartTime == <span class="number">0</span> {</span><br><span class="line">                waitStartTime = runtime_nanotime()</span><br><span class="line">            }</span><br><span class="line">            <span class="comment">// 阻塞等待</span></span><br><span class="line">            runtime_SemacquireMutex(&amp;m.sema, queueLifo, <span class="number">1</span>)</span><br><span class="line">            <span class="comment">// 唤醒之后检查锁是否应该处于饥饿状态</span></span><br><span class="line">            starving = starving || runtime_nanotime()-waitStartTime &gt; starvationThresholdNs</span><br><span class="line">            old = m.state</span><br><span class="line">            <span class="comment">// 如果锁已经处于饥饿状态，直接抢到锁，返回</span></span><br><span class="line">            <span class="keyword">if</span> old&amp;mutexStarving != <span class="number">0</span> {</span><br><span class="line">                <span class="keyword">if</span> old&amp;(mutexLocked|mutexWoken) != <span class="number">0</span> || old&gt;&gt;mutexWaiterShift == <span class="number">0</span> {</span><br><span class="line">                    throw(<span class="string">"sync: inconsistent mutex state"</span>)</span><br><span class="line">                }</span><br><span class="line">                <span class="comment">// 加锁并且将waiter数减1（加mutexLocked是加锁，减1&lt;&lt;mutexWaiterShift是减少waiter）</span></span><br><span class="line">                delta := <span class="type">int32</span>(mutexLocked - <span class="number">1</span>&lt;&lt;mutexWaiterShift)</span><br><span class="line">                <span class="keyword">if</span> !starving || old&gt;&gt;mutexWaiterShift == <span class="number">1</span> { <span class="comment">// 当前goroutine等待还没超过1毫秒, 且没有其他的waiter </span></span><br><span class="line">                    delta -= mutexStarving <span class="comment">// 最后一个waiter或者已经不饥饿了，清除饥饿标记</span></span><br><span class="line">                    <span class="comment">// （同理，减mutexStarving是清楚饥饿标记）</span></span><br><span class="line">                }</span><br><span class="line">                atomic.AddInt32(&amp;m.state, delta)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            }</span><br><span class="line">            awoke = <span class="literal">true</span></span><br><span class="line">            iter = <span class="number">0</span></span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            old = m.state</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *Mutex)</span></span> Unlock() {</span><br><span class="line">    <span class="comment">// Fast path: drop lock bit.</span></span><br><span class="line">    <span class="built_in">new</span> := atomic.AddInt32(&amp;m.state, -mutexLocked)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">new</span> != <span class="number">0</span> {</span><br><span class="line">        m.unlockSlow(<span class="built_in">new</span>)</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *Mutex)</span></span> unlockSlow(<span class="built_in">new</span> <span class="type">int32</span>) {</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">new</span>+mutexLocked)&amp;mutexLocked == <span class="number">0</span> {</span><br><span class="line">        throw(<span class="string">"sync: unlock of unlocked mutex"</span>)</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">new</span>&amp;mutexStarving == <span class="number">0</span> {</span><br><span class="line">        old := <span class="built_in">new</span></span><br><span class="line">        <span class="keyword">for</span> {</span><br><span class="line">            <span class="keyword">if</span> old&gt;&gt;mutexWaiterShift == <span class="number">0</span> || old&amp;(mutexLocked|mutexWoken|mutexStarving) != <span class="number">0</span> {</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            }</span><br><span class="line">            <span class="built_in">new</span> = (old - <span class="number">1</span>&lt;&lt;mutexWaiterShift) | mutexWoken</span><br><span class="line">            <span class="keyword">if</span> atomic.CompareAndSwapInt32(&amp;m.state, old, <span class="built_in">new</span>) {</span><br><span class="line">                runtime_Semrelease(&amp;m.sema, <span class="literal">false</span>, <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            }</span><br><span class="line">            old = m.state</span><br><span class="line">        }</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        runtime_Semrelease(&amp;m.sema, <span class="literal">true</span>, <span class="number">1</span>)</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-golang" data-language="golang"><code class="language-golang">func (m *Mutex) Lock() {
+    // Fast path: 幸运之路，一下就获取到了锁
+    if atomic.CompareAndSwapInt32(&amp;m.state, 0, mutexLocked) {
+        return
+    }
+    // Slow path：缓慢之路，尝试自旋竞争或饥饿状态下饥饿goroutine竞争
+    m.lockSlow()
+}
 
-<h2 id="读写锁RWMutex"><a href="#读写锁RWMutex" class="headerlink" title="读写锁RWMutex"></a>读写锁RWMutex</h2><figure class="highlight golang"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> RWMutex <span class="keyword">struct</span> {</span><br><span class="line">  w           Mutex   <span class="comment">// 互斥锁解决多个writer的竞争。为 writer 的竞争锁而设计。</span></span><br><span class="line">  writerSem   <span class="type">uint32</span>  <span class="comment">// writer信号量</span></span><br><span class="line">  readerSem   <span class="type">uint32</span>  <span class="comment">// reader信号量</span></span><br><span class="line">  readerCount <span class="type">int32</span>   <span class="comment">// reader的数量。记录当前 reader 的数量（以及是否有 writer 竞争锁）, rw.readerCount是负值的时候，意味着此时有writer等待请求锁</span></span><br><span class="line">  readerWait  <span class="type">int32</span>   <span class="comment">// writer等待完成的reader的数量。记录 writer 请求锁时需要等待 read 完成的 reader 的数量；</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> rwmutexMaxReaders = <span class="number">1</span> &lt;&lt; <span class="number">30</span> <span class="comment">// 最大的 reader 数量</span></span><br></pre></td></tr></tbody></table></figure>
+func (m *Mutex) lockSlow() {
+    var waitStartTime int64
+    starving := false // 此goroutine的饥饿标记
+    awoke := false // 唤醒标记
+    iter := 0 // 自旋次数
+    old := m.state // 当前的锁的状态
+    for {
+        // 锁是非饥饿状态，锁还没被释放，尝试自旋
+        if old&amp;(mutexLocked|mutexStarving) == mutexLocked &amp;&amp; runtime_canSpin(iter) {
+            if !awoke &amp;&amp; old&amp;mutexWoken == 0 &amp;&amp; old&gt;&gt;mutexWaiterShift != 0 &amp;&amp;
+                atomic.CompareAndSwapInt32(&amp;m.state, old, old|mutexWoken) {
+                awoke = true
+            }
+            runtime_doSpin()
+            iter++
+            old = m.state // 再次获取锁的状态，之后会检查是否锁被释放了
+            continue
+        }
+        new := old
+        if old&amp;mutexStarving == 0 {
+            new |= mutexLocked // 非饥饿状态，加锁
+        }
+        if old&amp;(mutexLocked|mutexStarving) != 0 {
+            new += 1 &lt;&lt; mutexWaiterShift // waiter数量加1
+        }
+        if starving &amp;&amp; old&amp;mutexLocked != 0 {
+            new |= mutexStarving // 设置饥饿状态
+        }
+        // 不管是获得了锁还是进入休眠，我们都需要清除 mutexWoken 标记
+        if awoke {
+            if new&amp;mutexWoken == 0 {
+                throw("sync: inconsistent mutex state")
+            }
+            new &amp;^= mutexWoken // 新状态清除唤醒标记
+        }
+        // 成功设置新状态
+        if atomic.CompareAndSwapInt32(&amp;m.state, old, new) {
+            // 原来锁的状态已释放，并且不是饥饿状态，正常请求到了锁，返回
+            if old&amp;(mutexLocked|mutexStarving) == 0 {
+                break // locked the mutex with CAS
+            }
+            // 处理饥饿状态
+
+            // 如果以前就在队列里面，加入到队列头
+            queueLifo := waitStartTime != 0
+            if waitStartTime == 0 {
+                waitStartTime = runtime_nanotime()
+            }
+            // 阻塞等待
+            runtime_SemacquireMutex(&amp;m.sema, queueLifo, 1)
+            // 唤醒之后检查锁是否应该处于饥饿状态
+            starving = starving || runtime_nanotime()-waitStartTime &gt; starvationThresholdNs
+            old = m.state
+            // 如果锁已经处于饥饿状态，直接抢到锁，返回
+            if old&amp;mutexStarving != 0 {
+                if old&amp;(mutexLocked|mutexWoken) != 0 || old&gt;&gt;mutexWaiterShift == 0 {
+                    throw("sync: inconsistent mutex state")
+                }
+                // 加锁并且将waiter数减1（加mutexLocked是加锁，减1&lt;&lt;mutexWaiterShift是减少waiter）
+                delta := int32(mutexLocked - 1&lt;&lt;mutexWaiterShift)
+                if !starving || old&gt;&gt;mutexWaiterShift == 1 { // 当前goroutine等待还没超过1毫秒, 且没有其他的waiter 
+                    delta -= mutexStarving // 最后一个waiter或者已经不饥饿了，清除饥饿标记
+                    // （同理，减mutexStarving是清楚饥饿标记）
+                }
+                atomic.AddInt32(&amp;m.state, delta)
+                break
+            }
+            awoke = true
+            iter = 0
+        } else {
+            old = m.state
+        }
+    }
+}
+
+func (m *Mutex) Unlock() {
+    // Fast path: drop lock bit.
+    new := atomic.AddInt32(&amp;m.state, -mutexLocked)
+    if new != 0 {
+        m.unlockSlow(new)
+    }
+}
+
+func (m *Mutex) unlockSlow(new int32) {
+    if (new+mutexLocked)&amp;mutexLocked == 0 {
+        throw("sync: unlock of unlocked mutex")
+    }
+    if new&amp;mutexStarving == 0 {
+        old := new
+        for {
+            if old&gt;&gt;mutexWaiterShift == 0 || old&amp;(mutexLocked|mutexWoken|mutexStarving) != 0 {
+                return
+            }
+            new = (old - 1&lt;&lt;mutexWaiterShift) | mutexWoken
+            if atomic.CompareAndSwapInt32(&amp;m.state, old, new) {
+                runtime_Semrelease(&amp;m.sema, false, 1)
+                return
+            }
+            old = m.state
+        }
+    } else {
+        runtime_Semrelease(&amp;m.sema, true, 1)
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="读写锁RWMutex"><a href="#读写锁RWMutex" class="headerlink" title="读写锁RWMutex"></a>读写锁RWMutex</h2><pre class="line-numbers language-golang" data-language="golang"><code class="language-golang">type RWMutex struct {
+  w           Mutex   // 互斥锁解决多个writer的竞争。为 writer 的竞争锁而设计。
+  writerSem   uint32  // writer信号量
+  readerSem   uint32  // reader信号量
+  readerCount int32   // reader的数量。记录当前 reader 的数量（以及是否有 writer 竞争锁）, rw.readerCount是负值的时候，意味着此时有writer等待请求锁
+  readerWait  int32   // writer等待完成的reader的数量。记录 writer 请求锁时需要等待 read 完成的 reader 的数量；
+}
+
+const rwmutexMaxReaders = 1 &lt;&lt; 30 // 最大的 reader 数量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>读读相关操作</p>
-<figure class="highlight golang"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(rw *RWMutex)</span></span> RLock() {</span><br><span class="line">    <span class="keyword">if</span> atomic.AddInt32(&amp;rw.readerCount, <span class="number">1</span>) &lt; <span class="number">0</span> {</span><br><span class="line">            <span class="comment">// rw.readerCount是负值的时候，意味着此时有writer等待请求锁，因为writer优先级高，所以把后来的reader阻塞休眠</span></span><br><span class="line">        runtime_SemacquireMutex(&amp;rw.readerSem, <span class="literal">false</span>, <span class="number">0</span>)</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(rw *RWMutex)</span></span> RUnlock() {</span><br><span class="line">    <span class="keyword">if</span> r := atomic.AddInt32(&amp;rw.readerCount, <span class="number">-1</span>); r &lt; <span class="number">0</span> {</span><br><span class="line">        rw.rUnlockSlow(r) <span class="comment">// 有等待的writer</span></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(rw *RWMutex)</span></span> rUnlockSlow(r <span class="type">int32</span>) {</span><br><span class="line">    <span class="keyword">if</span> atomic.AddInt32(&amp;rw.readerWait, <span class="number">-1</span>) == <span class="number">0</span> {</span><br><span class="line">        <span class="comment">// 最后一个reader了，writer终于有机会获得锁了</span></span><br><span class="line">        runtime_Semrelease(&amp;rw.writerSem, <span class="literal">false</span>, <span class="number">1</span>)</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-golang" data-language="golang"><code class="language-golang">func (rw *RWMutex) RLock() {
+    if atomic.AddInt32(&amp;rw.readerCount, 1) &lt; 0 {
+            // rw.readerCount是负值的时候，意味着此时有writer等待请求锁，因为writer优先级高，所以把后来的reader阻塞休眠
+        runtime_SemacquireMutex(&amp;rw.readerSem, false, 0)
+    }
+}
+func (rw *RWMutex) RUnlock() {
+    if r := atomic.AddInt32(&amp;rw.readerCount, -1); r &lt; 0 {
+        rw.rUnlockSlow(r) // 有等待的writer
+    }
+}
+func (rw *RWMutex) rUnlockSlow(r int32) {
+    if atomic.AddInt32(&amp;rw.readerWait, -1) == 0 {
+        // 最后一个reader了，writer终于有机会获得锁了
+        runtime_Semrelease(&amp;rw.writerSem, false, 1)
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 <p>写锁相关操作</p>
-<figure class="highlight golang"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(rw *RWMutex)</span></span> Lock() {</span><br><span class="line">    <span class="comment">// 首先解决其他writer竞争问题</span></span><br><span class="line">    rw.w.Lock()</span><br><span class="line">    <span class="comment">// 反转readerCount，告诉reader有writer竞争锁</span></span><br><span class="line">    r := atomic.AddInt32(&amp;rw.readerCount, -rwmutexMaxReaders) + rwmutexMaxReaders</span><br><span class="line">    <span class="comment">// 如果当前有reader持有锁，那么需要等待</span></span><br><span class="line">    <span class="keyword">if</span> r != <span class="number">0</span> &amp;&amp; atomic.AddInt32(&amp;rw.readerWait, r) != <span class="number">0</span> {</span><br><span class="line">        runtime_SemacquireMutex(&amp;rw.writerSem, <span class="literal">false</span>, <span class="number">0</span>)</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(rw *RWMutex)</span></span> Unlock() {</span><br><span class="line">    <span class="comment">// 告诉reader没有活跃的writer了</span></span><br><span class="line">    r := atomic.AddInt32(&amp;rw.readerCount, rwmutexMaxReaders)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 唤醒阻塞的reader们</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="type">int</span>(r); i++ {</span><br><span class="line">        runtime_Semrelease(&amp;rw.readerSem, <span class="literal">false</span>, <span class="number">0</span>)</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 释放内部的互斥锁</span></span><br><span class="line">    rw.w.Unlock()</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-golang" data-language="golang"><code class="language-golang">func (rw *RWMutex) Lock() {
+    // 首先解决其他writer竞争问题
+    rw.w.Lock()
+    // 反转readerCount，告诉reader有writer竞争锁
+    r := atomic.AddInt32(&amp;rw.readerCount, -rwmutexMaxReaders) + rwmutexMaxReaders
+    // 如果当前有reader持有锁，那么需要等待
+    if r != 0 &amp;&amp; atomic.AddInt32(&amp;rw.readerWait, r) != 0 {
+        runtime_SemacquireMutex(&amp;rw.writerSem, false, 0)
+    }
+}
+
+func (rw *RWMutex) Unlock() {
+    // 告诉reader没有活跃的writer了
+    r := atomic.AddInt32(&amp;rw.readerCount, rwmutexMaxReaders)
+    
+    // 唤醒阻塞的reader们
+    for i := 0; i &lt; int(r); i++ {
+        runtime_Semrelease(&amp;rw.readerSem, false, 0)
+    }
+    // 释放内部的互斥锁
+    rw.w.Unlock()
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="WaitGroup"><a href="#WaitGroup" class="headerlink" title="WaitGroup"></a>WaitGroup</h2><p>结构体定义:</p>
-<figure class="highlight golang"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> WaitGroup <span class="keyword">struct</span> {</span><br><span class="line">    <span class="comment">// 避免复制使用的一个技巧，可以告诉vet工具违反了复制使用的规则</span></span><br><span class="line">    noCopy noCopy</span><br><span class="line">    <span class="comment">// 64bit(8bytes)的值分成两段，高32bit是计数值，低32bit是waiter的计数</span></span><br><span class="line">    <span class="comment">// 另外32bit是用作信号量的</span></span><br><span class="line">    <span class="comment">// 因为64bit值的原子操作需要64bit对齐，但是32bit编译器不支持，所以数组中的元素在不同的架构中不一样，具体处理看下面的方法</span></span><br><span class="line">    <span class="comment">// 总之，会找到对齐的那64bit作为state，其余的32bit做信号量</span></span><br><span class="line">    state1 [<span class="number">3</span>]<span class="type">uint32</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 得到state的地址和信号量的地址</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(wg *WaitGroup)</span></span> state() (statep *<span class="type">uint64</span>, semap *<span class="type">uint32</span>) {</span><br><span class="line">    <span class="keyword">if</span> <span class="type">uintptr</span>(unsafe.Pointer(&amp;wg.state1))%<span class="number">8</span> == <span class="number">0</span> {</span><br><span class="line">        <span class="comment">// 如果地址是64bit对齐的，数组前两个元素做state，后一个元素做信号量</span></span><br><span class="line">        <span class="keyword">return</span> (*<span class="type">uint64</span>)(unsafe.Pointer(&amp;wg.state1)), &amp;wg.state1[<span class="number">2</span>]</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="comment">// 如果地址是32bit对齐的，数组后两个元素用来做state，它可以用来做64bit的原子操作，第一个元素32bit用来做信号量</span></span><br><span class="line">        <span class="keyword">return</span> (*<span class="type">uint64</span>)(unsafe.Pointer(&amp;wg.state1[<span class="number">1</span>])), &amp;wg.state1[<span class="number">0</span>]</span><br><span class="line">    }</span><br><span class="line">}    </span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-golang" data-language="golang"><code class="language-golang">type WaitGroup struct {
+    // 避免复制使用的一个技巧，可以告诉vet工具违反了复制使用的规则
+    noCopy noCopy
+    // 64bit(8bytes)的值分成两段，高32bit是计数值，低32bit是waiter的计数
+    // 另外32bit是用作信号量的
+    // 因为64bit值的原子操作需要64bit对齐，但是32bit编译器不支持，所以数组中的元素在不同的架构中不一样，具体处理看下面的方法
+    // 总之，会找到对齐的那64bit作为state，其余的32bit做信号量
+    state1 [3]uint32
+}
+
+
+// 得到state的地址和信号量的地址
+func (wg *WaitGroup) state() (statep *uint64, semap *uint32) {
+    if uintptr(unsafe.Pointer(&amp;wg.state1))%8 == 0 {
+        // 如果地址是64bit对齐的，数组前两个元素做state，后一个元素做信号量
+        return (*uint64)(unsafe.Pointer(&amp;wg.state1)), &amp;wg.state1[2]
+    } else {
+        // 如果地址是32bit对齐的，数组后两个元素用来做state，它可以用来做64bit的原子操作，第一个元素32bit用来做信号量
+        return (*uint64)(unsafe.Pointer(&amp;wg.state1[1])), &amp;wg.state1[0]
+    }
+}    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>Add操作:</p>
-<figure class="highlight golang"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(wg *WaitGroup)</span></span> Add(delta <span class="type">int</span>) {</span><br><span class="line">  <span class="comment">// statep表示wait数和计数值</span></span><br><span class="line">  <span class="comment">// 低32位表示wait数，高32位表示计数值</span></span><br><span class="line">   statep, semap := wg.state()</span><br><span class="line">   <span class="comment">// uint64(delta)&lt;&lt;32 将delta左移32位</span></span><br><span class="line">    <span class="comment">// 因为高32位表示计数值，所以将delta左移32，增加到技术上</span></span><br><span class="line">   state := atomic.AddUint64(statep, <span class="type">uint64</span>(delta)&lt;&lt;<span class="number">32</span>)</span><br><span class="line">   <span class="comment">// 当前计数值</span></span><br><span class="line">   v := <span class="type">int32</span>(state &gt;&gt; <span class="number">32</span>)</span><br><span class="line">   <span class="comment">// 阻塞在检查点的wait数</span></span><br><span class="line">   w := <span class="type">uint32</span>(state)</span><br><span class="line">   <span class="keyword">if</span> v &gt; <span class="number">0</span> || w == <span class="number">0</span> {</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">   }</span><br><span class="line">   </span><br><span class="line">   <span class="comment">// 如果计数值v为0并且waiter的数量w不为0，那么state的值就是waiter的数量</span></span><br><span class="line">    <span class="comment">// 将waiter的数量设置为0，因为计数值v也是0,所以它们俩的组合*statep直接设置为0即可。此时需要并唤醒所有的waiter</span></span><br><span class="line">   *statep = <span class="number">0</span></span><br><span class="line">   <span class="keyword">for</span> ; w != <span class="number">0</span>; w-- {</span><br><span class="line">      runtime_Semrelease(semap, <span class="literal">false</span>, <span class="number">0</span>)</span><br><span class="line">   }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-golang" data-language="golang"><code class="language-golang">func (wg *WaitGroup) Add(delta int) {
+  // statep表示wait数和计数值
+  // 低32位表示wait数，高32位表示计数值
+   statep, semap := wg.state()
+   // uint64(delta)&lt;&lt;32 将delta左移32位
+    // 因为高32位表示计数值，所以将delta左移32，增加到技术上
+   state := atomic.AddUint64(statep, uint64(delta)&lt;&lt;32)
+   // 当前计数值
+   v := int32(state &gt;&gt; 32)
+   // 阻塞在检查点的wait数
+   w := uint32(state)
+   if v &gt; 0 || w == 0 {
+      return
+   }
+   
+   // 如果计数值v为0并且waiter的数量w不为0，那么state的值就是waiter的数量
+    // 将waiter的数量设置为0，因为计数值v也是0,所以它们俩的组合*statep直接设置为0即可。此时需要并唤醒所有的waiter
+   *statep = 0
+   for ; w != 0; w-- {
+      runtime_Semrelease(semap, false, 0)
+   }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>Done操作:</p>
-<figure class="highlight golang"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Done方法实际就是计数器减1</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(wg *WaitGroup)</span></span> Done() { </span><br><span class="line">  wg.Add(<span class="number">-1</span>)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-golang" data-language="golang"><code class="language-golang">// Done方法实际就是计数器减1
+func (wg *WaitGroup) Done() { 
+  wg.Add(-1)
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>Wait操作:</p>
-<figure class="highlight golang"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(wg *WaitGroup)</span></span> Wait() {</span><br><span class="line">   <span class="comment">// statep表示wait数和计数值</span></span><br><span class="line">   <span class="comment">// 低32位表示wait数，高32位表示计数值</span></span><br><span class="line">   statep, semap := wg.state()</span><br><span class="line">   <span class="keyword">for</span> {</span><br><span class="line">      state := atomic.LoadUint64(statep)</span><br><span class="line">      <span class="comment">// 将state右移32位，表示当前计数值</span></span><br><span class="line">      v := <span class="type">int32</span>(state &gt;&gt; <span class="number">32</span>)</span><br><span class="line">      <span class="comment">// w表示waiter等待值</span></span><br><span class="line">      w := <span class="type">uint32</span>(state)</span><br><span class="line">      <span class="keyword">if</span> v == <span class="number">0</span> {</span><br><span class="line">         <span class="comment">// 如果当前计数值为零，表示当前子goroutine已全部执行完毕，则直接返回</span></span><br><span class="line">         <span class="keyword">return</span></span><br><span class="line">      }</span><br><span class="line">      <span class="comment">// 否则使用原子操作将state值加一。</span></span><br><span class="line">      <span class="keyword">if</span> atomic.CompareAndSwapUint64(statep, state, state+<span class="number">1</span>) {</span><br><span class="line">         <span class="comment">// 阻塞休眠等待</span></span><br><span class="line">         runtime_Semacquire(semap)</span><br><span class="line">         <span class="comment">// 被唤醒，不再阻塞，返回</span></span><br><span class="line">         <span class="keyword">return</span></span><br><span class="line">      }</span><br><span class="line">   }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-golang" data-language="golang"><code class="language-golang">func (wg *WaitGroup) Wait() {
+   // statep表示wait数和计数值
+   // 低32位表示wait数，高32位表示计数值
+   statep, semap := wg.state()
+   for {
+      state := atomic.LoadUint64(statep)
+      // 将state右移32位，表示当前计数值
+      v := int32(state &gt;&gt; 32)
+      // w表示waiter等待值
+      w := uint32(state)
+      if v == 0 {
+         // 如果当前计数值为零，表示当前子goroutine已全部执行完毕，则直接返回
+         return
+      }
+      // 否则使用原子操作将state值加一。
+      if atomic.CompareAndSwapUint64(statep, state, state+1) {
+         // 阻塞休眠等待
+         runtime_Semacquire(semap)
+         // 被唤醒，不再阻塞，返回
+         return
+      }
+   }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
 <li>《极客时间-Go并发编程实战课》</li>

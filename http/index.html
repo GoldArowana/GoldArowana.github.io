@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.0.0">
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
@@ -508,12 +508,14 @@
 <h3 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h3><blockquote>
 <p>最早版本是1991年发布的0.9版。该版本极其简单，只有一个命令GET。</p>
 </blockquote>
-<figure class="highlight http"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /index.html</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-http" data-language="http"><code class="language-http">GET /index.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h3><blockquote>
 <p>协议规定，服务器只能回应HTML格式的字符串，不能回应别的格式。</p>
 </blockquote>
-<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>Hello World<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>服务器发送完毕，就关闭TCP连接。</p>
 </blockquote>
@@ -521,14 +523,25 @@
 <p>引入了POST命令和HEAD命令</p>
 </blockquote>
 <h3 id="请求-1"><a href="#请求-1" class="headerlink" title="请求"></a>请求</h3><p>每次通信都必须包括头信息（HTTP header），用来描述一些元数据。</p>
-<figure class="highlight http"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/</span> <span class="meta">HTTP/1.0</span></span><br><span class="line"><span class="attribute">User-Agent</span><span class="punctuation">: </span>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5)</span><br><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>*/*</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token request-line"><span class="token method property">GET</span> <span class="token request-target url">/</span> <span class="token http-version property">HTTP/1.0</span></span>
+<span class="token header"><span class="token header-name keyword">User-Agent</span><span class="token punctuation">:</span> <span class="token header-value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5)</span></span>
+<span class="token header"><span class="token header-name keyword">Accept</span><span class="token punctuation">:</span> <span class="token header-value">*/*</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="响应-1"><a href="#响应-1" class="headerlink" title="响应"></a>响应</h3><ol>
 <li>响应第一行是”协议版本 + 状态码（status code） + 状态描述”。</li>
 <li>接下来是”头信息 + 以一个空行结尾表示”头信息部分结束”（\r\n）</li>
 <li>最后是”数据”部分</li>
 </ol>
-<figure class="highlight http"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">HTTP/1.0</span> <span class="number">200</span> OK </span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>text/plain</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>137582</span><br><span class="line"><span class="attribute">Expires</span><span class="punctuation">: </span>Thu, 05 Dec 1997 16:00:00 GMT</span><br><span class="line"><span class="attribute">Last-Modified</span><span class="punctuation">: </span>Wed, 5 August 1996 15:55:28 GMT</span><br><span class="line"><span class="attribute">Server</span><span class="punctuation">: </span>Apache 0.84</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">body</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token response-status"><span class="token http-version property">HTTP/1.0</span> <span class="token status-code number">200</span> <span class="token reason-phrase string">OK </span></span>
+<span class="token header"><span class="token header-name keyword">Content-Type</span><span class="token punctuation">:</span> <span class="token header-value">text/plain</span></span>
+<span class="token header"><span class="token header-name keyword">Content-Length</span><span class="token punctuation">:</span> <span class="token header-value">137582</span></span>
+<span class="token header"><span class="token header-name keyword">Expires</span><span class="token punctuation">:</span> <span class="token header-value">Thu, 05 Dec 1997 16:00:00 GMT</span></span>
+<span class="token header"><span class="token header-name keyword">Last-Modified</span><span class="token punctuation">:</span> <span class="token header-value">Wed, 5 August 1996 15:55:28 GMT</span></span>
+<span class="token header"><span class="token header-name keyword">Server</span><span class="token punctuation">:</span> <span class="token header-value">Apache 0.84</span></span>
+<span class="token text-plain">
+&lt;html&gt;
+  &lt;body&gt;Hello World&lt;/body&gt;
+&lt;/html&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><blockquote>
 <p>HTTP/1.0 版的主要缺点是，每个TCP连接只能发送一个请求。发送数据完毕，连接就关闭，如果还要请求其他资源，就必须再新建一个连接。</p>
 </blockquote>
@@ -546,7 +559,7 @@
 <blockquote>
 <p>客户端和服务器发现对方一段时间没有活动，就可以主动关闭连接。不过，规范的做法是，客户端在最后一个请求时，发送Connection: close，明确要求服务器关闭TCP连接。</p>
 </blockquote>
-<figure class="highlight http"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>close</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token header"><span class="token header-name keyword">Connection</span><span class="token punctuation">:</span> <span class="token header-value">close</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>目前，对于同一个域名，大多数浏览器允许同时建立6个持久连接。</p>
@@ -560,14 +573,14 @@
 <h3 id="Content-Length字段"><a href="#Content-Length字段" class="headerlink" title="Content-Length字段"></a>Content-Length字段</h3><blockquote>
 <p>一个TCP连接现在可以传送多个回应，势必就要有一种机制，区分数据包是属于哪一个回应的。这就是Content-length字段的作用，声明本次回应的数据长度。</p>
 </blockquote>
-<figure class="highlight http"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>3495</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token header"><span class="token header-name keyword">Content-Length</span><span class="token punctuation">:</span> <span class="token header-value">3495</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
 <p>上面代码告诉浏览器，本次回应的长度是3495个字节，后面的字节就属于下一个回应了。</p>
 </blockquote>
 <blockquote>
 <p>在1.0版中，Content-Length字段不是必需的，因为浏览器发现服务器关闭了TCP连接，就表明收到的数据包已经全了。</p>
 </blockquote>
-<h3 id="分块传输编码"><a href="#分块传输编码" class="headerlink" title="分块传输编码"></a>分块传输编码</h3><figure class="highlight http"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Transfer-Encoding</span><span class="punctuation">: </span>chunked</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="分块传输编码"><a href="#分块传输编码" class="headerlink" title="分块传输编码"></a>分块传输编码</h3><pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token header"><span class="token header-name keyword">Transfer-Encoding</span><span class="token punctuation">:</span> <span class="token header-value">chunked</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><blockquote>
 <p>虽然1.1版允许复用TCP连接，但是同一个TCP连接里面，所有的数据通信是按次序进行的。服务器只有处理完一个回应，才会进行下一个回应。要是前面的回应特别慢，后面就会有许多请求排队等着。这称为”队头堵塞”（Head-of-line blocking）。</p>

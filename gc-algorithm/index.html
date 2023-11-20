@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.0.0">
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -508,14 +508,52 @@
 <li>更新指针</li>
 </ul>
 <p>mutator在进行这些操作时，会同时为应用程序的用户进行一些处理（数值计算、浏览网页、编辑文章等）。随着这些处理的逐步推进，对象间的引用关系也会“改变”。伴随这些变化会产生垃圾，而负责回收这些垃圾的机制就是GC。</p>
-<h2 id="朴素的标记清除"><a href="#朴素的标记清除" class="headerlink" title="朴素的标记清除"></a>朴素的标记清除</h2><h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">01</span>   mark_phase(){</span><br><span class="line"><span class="number">02</span>     <span class="keyword">for</span>(r : $roots)</span><br><span class="line"><span class="number">03</span>        mark(*r)</span><br><span class="line"><span class="number">04</span>   }</span><br><span class="line"><span class="number">05</span></span><br><span class="line"><span class="number">06</span></span><br><span class="line"><span class="number">07</span>   mark(obj){</span><br><span class="line">08     <span class="keyword">if</span>(obj.mark == FALSE)</span><br><span class="line">09        obj.mark = TRUE</span><br><span class="line"><span class="number">10</span>        <span class="keyword">for</span>(child : children(obj))</span><br><span class="line"><span class="number">11</span>          mark(*child)</span><br><span class="line"><span class="number">12</span>   }</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="朴素的标记清除"><a href="#朴素的标记清除" class="headerlink" title="朴素的标记清除"></a>朴素的标记清除</h2><h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token number">01</span>   <span class="token function">mark_phase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token number">02</span>     <span class="token keyword">for</span><span class="token punctuation">(</span>r <span class="token operator">:</span> $roots<span class="token punctuation">)</span>
+<span class="token number">03</span>        <span class="token function">mark</span><span class="token punctuation">(</span><span class="token operator">*</span>r<span class="token punctuation">)</span>
+<span class="token number">04</span>   <span class="token punctuation">}</span>
+<span class="token number">05</span>
+<span class="token number">06</span>
+<span class="token number">07</span>   <span class="token function">mark</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token number">08</span>     <span class="token keyword">if</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>mark <span class="token operator">==</span> <span class="token constant">FALSE</span><span class="token punctuation">)</span>
+<span class="token number">09</span>        obj<span class="token punctuation">.</span>mark <span class="token operator">=</span> <span class="token constant">TRUE</span>
+<span class="token number">10</span>        <span class="token keyword">for</span><span class="token punctuation">(</span>child <span class="token operator">:</span> <span class="token function">children</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">11</span>          <span class="token function">mark</span><span class="token punctuation">(</span><span class="token operator">*</span>child<span class="token punctuation">)</span>
+<span class="token number">12</span>   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>深搜？广搜？<br>两者性能差不多, 但是深搜比广搜更节省内存。</p>
-<h3 id="清除"><a href="#清除" class="headerlink" title="清除"></a>清除</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>   sweep_phase(){</span><br><span class="line"><span class="number">2</span>     sweeping = $heap_start</span><br><span class="line"><span class="number">3</span>     <span class="keyword">while</span>(sweeping &lt; $heap_end)</span><br><span class="line"><span class="number">4</span>        <span class="keyword">if</span>(sweeping.mark == TRUE)</span><br><span class="line"><span class="number">5</span>          sweeping.mark = FALSE</span><br><span class="line"><span class="number">6</span>        <span class="keyword">else</span></span><br><span class="line"><span class="number">7</span>          sweeping.next = $free_list</span><br><span class="line"><span class="number">8</span>          $free_list = sweeping</span><br><span class="line"><span class="number">9</span>        sweeping += sweeping.size</span><br><span class="line"> <span class="number">10</span>   }</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="分配"><a href="#分配" class="headerlink" title="分配"></a>分配</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>   new_obj(size){</span><br><span class="line"><span class="number">2</span>     chunk = pickup_chunk(size, $free_list)</span><br><span class="line"><span class="number">3</span>     <span class="keyword">if</span>(chunk ! = NULL)</span><br><span class="line"><span class="number">4</span>        <span class="keyword">return</span> chunk</span><br><span class="line"><span class="number">5</span>     <span class="keyword">else</span></span><br><span class="line"><span class="number">6</span>        allocation_fail()</span><br><span class="line"><span class="number">7</span>   }</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="清除"><a href="#清除" class="headerlink" title="清除"></a>清除</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token number">1</span>   <span class="token function">sweep_phase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token number">2</span>     sweeping <span class="token operator">=</span> $heap_start
+<span class="token number">3</span>     <span class="token keyword">while</span><span class="token punctuation">(</span>sweeping <span class="token operator">&lt;</span> $heap_end<span class="token punctuation">)</span>
+<span class="token number">4</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>sweeping<span class="token punctuation">.</span>mark <span class="token operator">==</span> <span class="token constant">TRUE</span><span class="token punctuation">)</span>
+<span class="token number">5</span>          sweeping<span class="token punctuation">.</span>mark <span class="token operator">=</span> <span class="token constant">FALSE</span>
+<span class="token number">6</span>        <span class="token keyword">else</span>
+<span class="token number">7</span>          sweeping<span class="token punctuation">.</span>next <span class="token operator">=</span> $free_list
+<span class="token number">8</span>          $free_list <span class="token operator">=</span> sweeping
+<span class="token number">9</span>        sweeping <span class="token operator">+=</span> sweeping<span class="token punctuation">.</span>size
+ <span class="token number">10</span>   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="分配"><a href="#分配" class="headerlink" title="分配"></a>分配</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token number">1</span>   <span class="token function">new_obj</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token number">2</span>     chunk <span class="token operator">=</span> <span class="token function">pickup_chunk</span><span class="token punctuation">(</span>size<span class="token punctuation">,</span> $free_list<span class="token punctuation">)</span>
+<span class="token number">3</span>     <span class="token keyword">if</span><span class="token punctuation">(</span>chunk <span class="token operator">!</span> <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+<span class="token number">4</span>        <span class="token keyword">return</span> chunk
+<span class="token number">5</span>     <span class="token keyword">else</span>
+<span class="token number">6</span>        <span class="token function">allocation_fail</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token number">7</span>   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="First-fit、Best-fit、Worst-fit的不同"><a href="#First-fit、Best-fit、Worst-fit的不同" class="headerlink" title="First-fit、Best-fit、Worst-fit的不同"></a>First-fit、Best-fit、Worst-fit的不同</h4><p>之前我们讲的分配策略叫作First-fit。因为在pickup_chunk()函数中，最初发现大于等于size的分块时就会立即返回该分块。然而，分配策略不止这些。还有遍历空闲链表，返回大于等于size的最小分块，这种策略叫作Best-fit。还有一种策略叫作Worst-fit，即找出空闲链表中最大的分块，将其分割成mutator申请的大小和分割后剩余的大小，目的是将分割后剩余的分块最大化。但因为Worst-fit很容易生成大量小的分块，所以不推荐大家使用此方法。除去Worst-fit，剩下的还有Best-fit和First-fit这两种。当我们使用单纯的空闲链表时，考虑到分配所需的时间，选择使用First-fit更为明智。</p>
 <h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><p>改造sweep_phase, 在清楚阶段进行合并</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">01</span>   sweep_phase(){</span><br><span class="line"><span class="number">02</span>     sweeping = $heap_start</span><br><span class="line"><span class="number">03</span>     <span class="keyword">while</span>(sweeping &lt; $heap_end)</span><br><span class="line"><span class="number">04</span>        <span class="keyword">if</span>(sweeping.mark == TRUE)</span><br><span class="line"><span class="number">05</span>          sweeping.mark = FALSE</span><br><span class="line"><span class="number">06</span>        <span class="keyword">else</span></span><br><span class="line"><span class="number">07</span>          <span class="keyword">if</span>(sweeping == $free_list + $free_list.size)</span><br><span class="line">08             $free_list.size += sweeping.size</span><br><span class="line">09          <span class="keyword">else</span></span><br><span class="line"><span class="number">10</span>             sweeping.next = $free_list</span><br><span class="line"><span class="number">11</span>             $free_list = sweeping</span><br><span class="line"><span class="number">12</span>        sweeping += sweeping.size</span><br><span class="line"><span class="number">13</span>   }</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token number">01</span>   <span class="token function">sweep_phase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token number">02</span>     sweeping <span class="token operator">=</span> $heap_start
+<span class="token number">03</span>     <span class="token keyword">while</span><span class="token punctuation">(</span>sweeping <span class="token operator">&lt;</span> $heap_end<span class="token punctuation">)</span>
+<span class="token number">04</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>sweeping<span class="token punctuation">.</span>mark <span class="token operator">==</span> <span class="token constant">TRUE</span><span class="token punctuation">)</span>
+<span class="token number">05</span>          sweeping<span class="token punctuation">.</span>mark <span class="token operator">=</span> <span class="token constant">FALSE</span>
+<span class="token number">06</span>        <span class="token keyword">else</span>
+<span class="token number">07</span>          <span class="token keyword">if</span><span class="token punctuation">(</span>sweeping <span class="token operator">==</span> $free_list <span class="token operator">+</span> $free_list<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+<span class="token number">08</span>             $free_list<span class="token punctuation">.</span>size <span class="token operator">+=</span> sweeping<span class="token punctuation">.</span>size
+<span class="token number">09</span>          <span class="token keyword">else</span>
+<span class="token number">10</span>             sweeping<span class="token punctuation">.</span>next <span class="token operator">=</span> $free_list
+<span class="token number">11</span>             $free_list <span class="token operator">=</span> sweeping
+<span class="token number">12</span>        sweeping <span class="token operator">+=</span> sweeping<span class="token punctuation">.</span>size
+<span class="token number">13</span>   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
 <li>实现简单: 说到GC标记-清除算法的优点，那当然要数算法简单，实现容易了。打个比方，接下来我们将在第3章中提到引用计数法，在引用计数法中就很难切实管理计数器的增减，实现也很困难。另外，如果算法实现简单，那么它与其他算法的组合也就相应地简单。在第3章和第4章中，我们会为大家介绍把GC标记-清除算法与其他GC算法相结合的方法。</li>
@@ -680,12 +718,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/gc/">
-                        <span class="chip bg-color">gc</span>
-                    </a>
-                    
                     <a href="/tags/golang/">
                         <span class="chip bg-color">golang</span>
+                    </a>
+                    
+                    <a href="/tags/gc/">
+                        <span class="chip bg-color">gc</span>
                     </a>
                     
                 </div>
@@ -740,12 +778,12 @@
                         <span class="chip bg-color">database</span>
                     </a>
                     
-                    <a href="/tags/redis/">
-                        <span class="chip bg-color">redis</span>
-                    </a>
-                    
                     <a href="/tags/cache/">
                         <span class="chip bg-color">cache</span>
+                    </a>
+                    
+                    <a href="/tags/redis/">
+                        <span class="chip bg-color">redis</span>
                     </a>
                     
                 </div>

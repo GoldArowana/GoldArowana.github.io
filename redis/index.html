@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.0.0">
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
@@ -427,12 +427,12 @@
                                 <span class="chip bg-color">database</span>
                             </a>
                         
-                            <a href="/tags/redis/">
-                                <span class="chip bg-color">redis</span>
-                            </a>
-                        
                             <a href="/tags/cache/">
                                 <span class="chip bg-color">cache</span>
+                            </a>
+                        
+                            <a href="/tags/redis/">
+                                <span class="chip bg-color">redis</span>
                             </a>
                         
                     </div>
@@ -532,7 +532,7 @@
 <h3 id="RDB"><a href="#RDB" class="headerlink" title="RDB"></a>RDB</h3><p>可以使用save命令让主进程执行全量快照备份, 也可以使用bgsave命令fork出子进程进行快照备份。<br>在快照过程中如果有写操作, 那么会触发fork的copy on write机制。</p>
 <h3 id="混合快照"><a href="#混合快照" class="headerlink" title="混合快照"></a>混合快照</h3><p>混合RDB和AOF</p>
 <h2 id="主从"><a href="#主从" class="headerlink" title="主从"></a>主从</h2><p>可以通过replicaof命令(Redis5.0之前是slaveof), 设置主从关系。<br>比如在B实例上执行如下命令：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">replicaof &lt;A实例的IP地址&gt; &lt;A实例的Redis端口&gt;</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">replicaof <span class="token operator">&lt;</span>A实例的IP地址<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>A实例的Redis端口<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>就可以让B作为A的从库, 并从A上复制数据。</p>
 <h3 id="主从间同步数据"><a href="#主从间同步数据" class="headerlink" title="主从间同步数据"></a>主从间同步数据</h3><h4 id="第一阶段-建立连接-协商同步"><a href="#第一阶段-建立连接-协商同步" class="headerlink" title="第一阶段: 建立连接, 协商同步"></a>第一阶段: 建立连接, 协商同步</h4><p>从实例会给主实例发送 psync {runID} {offset} 。<br>第一次建立主从关系的话, 从实例是不知道主实例的runID的, 所以runID部分会是’?’。<br>之前没有同步过数据, 所以offset部分是-1。</p>
 <p>主实例收到建立的请求后, 会向从实例发送<code>FULLRESYNC</code> {runID} {offset}。<br><code>FULLRESYNC</code> 表示第一次复制采用的全量复制, 也就是说, 主库会把当前所有的数据都复制给从库。</p>
@@ -603,13 +603,13 @@
 </tr>
 </tbody></table>
 <p>客户端可以订阅这些消息来获取相信的信息。比如订阅所有所实例的客观下线状态的事件：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SUBSCRIBE +odown</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">SUBSCRIBE +odown<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>或者订阅所有的事件：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PSUBSCRIBE *</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">PSUBSCRIBE *<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>当哨兵把新主库选择出来后, 客户端就会看到下面的switch-master事件, 这样就会知道新主库的地址和端口了。</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch-master &lt;master name&gt; &lt;oldip&gt; &lt;oldport&gt; &lt;newip&gt; &lt;newport&gt;</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">switch-master <span class="token operator">&lt;</span>master name<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>oldip<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>oldport<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>newip<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>newport<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>leader哨兵才可以执行主从切换的过程。哨兵leader选举需要满足2个条件：<br>    1. 拿到半数以上的票<br>    1. 拿到的票数大于等于哨兵配置文件中的quorum值</p>
 <h2 id="Redis-Cluster"><a href="#Redis-Cluster" class="headerlink" title="Redis Cluster"></a>Redis Cluster</h2><h3 id="横向扩容？纵向扩容？"><a href="#横向扩容？纵向扩容？" class="headerlink" title="横向扩容？纵向扩容？"></a>横向扩容？纵向扩容？</h3><p>纵向机器成本高, 也会导致单实例存储的数据过多, RDB有压力</p>
@@ -620,10 +620,12 @@
 <h3 id="客户端怎么知道哪个key在哪个实例上？"><a href="#客户端怎么知道哪个key在哪个实例上？" class="headerlink" title="客户端怎么知道哪个key在哪个实例上？"></a>客户端怎么知道哪个key在哪个实例上？</h3><p>Redis会把自己的槽信息发送给和它相连的其他信息, 这样每个实例就有所有的槽信息了。</p>
 <p>当客户端访问任意一个实例时, 便可以把槽的信息缓存在本地, 这样就知道对应的key应该发给哪个实例了。</p>
 <h3 id="在集群中-实例和哈希槽的对应关系发生变化了怎么办？"><a href="#在集群中-实例和哈希槽的对应关系发生变化了怎么办？" class="headerlink" title="在集群中, 实例和哈希槽的对应关系发生变化了怎么办？"></a>在集群中, 实例和哈希槽的对应关系发生变化了怎么办？</h3><p>Redis Cluster提供了一种重定向机制: 当客户端给一个Redis实例发送数据读写操作时, 如果这个实力上并没有对应的数据,<br>这个实例就会给客户端返回MOVED重定向命令, 其中就带着对应实例的IP和端口</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET hello:key</span><br><span class="line">(error) MOVED 13320 172.16.19.5:5379</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">GET hello:key
+<span class="token punctuation">(</span>error<span class="token punctuation">)</span> MOVED <span class="token number">13320</span> <span class="token number">172.16</span>.19.5:5379<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>如果slot正好再迁移中, 那么可能会返回ASK命令</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET hello:key</span><br><span class="line">(error) ASK 13320 172.16.19.5:5379</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">GET hello:key
+<span class="token punctuation">(</span>error<span class="token punctuation">)</span> ASK <span class="token number">13320</span> <span class="token number">172.16</span>.19.5:5379<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h3 id="为什么对key做CRC计算？直接key的slot的对应关系存下来可以吗？"><a href="#为什么对key做CRC计算？直接key的slot的对应关系存下来可以吗？" class="headerlink" title="为什么对key做CRC计算？直接key的slot的对应关系存下来可以吗？"></a>为什么对key做CRC计算？直接key的slot的对应关系存下来可以吗？</h3><p>不行。</p>
 <ol>
@@ -744,12 +746,12 @@
                                     <span class="chip bg-color">database</span>
                                 </a>
                             
-                                <a href="/tags/redis/">
-                                    <span class="chip bg-color">redis</span>
-                                </a>
-                            
                                 <a href="/tags/cache/">
                                     <span class="chip bg-color">cache</span>
+                                </a>
+                            
+                                <a href="/tags/redis/">
+                                    <span class="chip bg-color">redis</span>
                                 </a>
                             
                         </div>

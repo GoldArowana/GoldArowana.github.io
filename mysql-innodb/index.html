@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.0.0">
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
@@ -539,7 +539,28 @@
 <li>每个控制块大约占用缓存页大小的5%,innodb_buffer_pool_size设置的大小并不包含控制块的大小，也就是说InnoDB在为Buffer Pool向操作系统申请连续的内存空间时，这片连续的内存空间一般会比innodb_buffer_pool_size的值大5%左右</li>
 </ol>
 <p><a target="_blank" rel="noopener" href="https://gist.github.com/jboner/2841832">时延参考数据</a> :</p>
-<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Latency Comparison Numbers (~2012)</span><br><span class="line">----------------------------------</span><br><span class="line">L1 cache reference                           0.5 ns</span><br><span class="line">Branch mispredict                            5   ns</span><br><span class="line">L2 cache reference                           7   ns                      14x L1 cache</span><br><span class="line">Mutex lock/unlock                           25   ns</span><br><span class="line">Main memory reference                      100   ns                      20x L2 cache, 200x L1 cache</span><br><span class="line">Compress 1K bytes with Zippy             3,000   ns        3 us</span><br><span class="line">Send 1K bytes over 1 Gbps network       10,000   ns       10 us</span><br><span class="line">Read 4K randomly from SSD*             150,000   ns      150 us          ~1GB/sec SSD</span><br><span class="line">Read 1 MB sequentially from memory     250,000   ns      250 us</span><br><span class="line">Round trip within same datacenter      500,000   ns      500 us</span><br><span class="line">Read 1 MB sequentially from SSD*     1,000,000   ns    1,000 us    1 ms  ~1GB/sec SSD, 4X memory</span><br><span class="line">Disk seek                           10,000,000   ns   10,000 us   10 ms  20x datacenter roundtrip</span><br><span class="line">Read 1 MB sequentially from disk    20,000,000   ns   20,000 us   20 ms  80x memory, 20X SSD</span><br><span class="line">Send packet CA-&gt;Netherlands-&gt;CA    150,000,000   ns  150,000 us  150 ms</span><br><span class="line"></span><br><span class="line">Notes</span><br><span class="line">-----</span><br><span class="line">1 ns = 10^-9 seconds</span><br><span class="line">1 us = 10^-6 seconds = 1,000 ns</span><br><span class="line">1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Latency Comparison Numbers (~2012)
+----------------------------------
+L1 cache reference                           0.5 ns
+Branch mispredict                            5   ns
+L2 cache reference                           7   ns                      14x L1 cache
+Mutex lock/unlock                           25   ns
+Main memory reference                      100   ns                      20x L2 cache, 200x L1 cache
+Compress 1K bytes with Zippy             3,000   ns        3 us
+Send 1K bytes over 1 Gbps network       10,000   ns       10 us
+Read 4K randomly from SSD*             150,000   ns      150 us          ~1GB/sec SSD
+Read 1 MB sequentially from memory     250,000   ns      250 us
+Round trip within same datacenter      500,000   ns      500 us
+Read 1 MB sequentially from SSD*     1,000,000   ns    1,000 us    1 ms  ~1GB/sec SSD, 4X memory
+Disk seek                           10,000,000   ns   10,000 us   10 ms  20x datacenter roundtrip
+Read 1 MB sequentially from disk    20,000,000   ns   20,000 us   20 ms  80x memory, 20X SSD
+Send packet CA-&gt;Netherlands-&gt;CA    150,000,000   ns  150,000 us  150 ms
+
+Notes
+-----
+1 ns = 10^-9 seconds
+1 us = 10^-6 seconds = 1,000 ns
+1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="缓冲池对读写操作的关系"><a href="#缓冲池对读写操作的关系" class="headerlink" title="缓冲池对读写操作的关系"></a>缓冲池对读写操作的关系</h4><ul>
 <li>读: 判断要读取的页是否在缓冲池中, 如果不在则会将页加载到缓冲池中, 然后再从缓冲池中读取。</li>
