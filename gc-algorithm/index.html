@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="数据库设计, java,golang,database,mq,algorithm">
+    <meta name="keywords" content="GC算法, java,golang,database,mq,algorithm">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数据库设计 | 金龙的博客</title>
+    <title>GC算法 | 金龙的博客</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/favicon3.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GoldArowana/GoldArowana.github.io@gh-pages/libs/awesome/css/all.css">
@@ -302,12 +302,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co89-m.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/cover/co148-m.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数据库设计</h1>
+                    <h1 class="description center-align post-title">GC算法</h1>
                 </div>
             </div>
         </div>
@@ -423,8 +423,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/database/">
-                                <span class="chip bg-color">database</span>
+                            <a href="/tags/gc/">
+                                <span class="chip bg-color">gc</span>
                             </a>
                         
                     </div>
@@ -435,8 +435,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/database/" class="post-category">
-                                database
+                            <a href="/categories/gc/" class="post-category">
+                                gc
                             </a>
                         
                     </div>
@@ -448,28 +448,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-12
+                    2021-04-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-14
+                    2023-11-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    62
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -492,12 +492,44 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O">https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.luozhiyun.com/archives/273">https://www.luozhiyun.com/archives/273</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.luozhiyun.com/archives/280">https://www.luozhiyun.com/archives/280</a></p>
-<p>CMU 15721 课程笔记  <a target="_blank" rel="noopener" href="https://www.zhihu.com/column/c_1624789464953364480">https://www.zhihu.com/column/c_1624789464953364480</a></p>
-<p>PAX：一个 Cache 友好高效的行列混存方案    <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42241611/article/details/130050128">https://blog.csdn.net/weixin_42241611/article/details/130050128</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/158622349">Latch-crabbing/Latch-couping</a></p>
+                <p>评价GC算法的性能时，我们采用以下4个标准。</p>
+<ul>
+<li>吞吐量</li>
+<li>最大暂停时间</li>
+<li>堆使用效率</li>
+<li>访问的局部性</li>
+</ul>
+<p class="note note-primary">标签</p>
+
+
+<h3 id="mutator"><a href="#mutator" class="headerlink" title="mutator"></a>mutator</h3><p>mutator是Dijkstra琢磨出来的词，有“改变某物”的意思。说到要改变什么，那就是GC对象间的引用关系。不过光这么说可能大家还是不能理解，其实用一句话概括的话，它的实体就是“应用程序”。这样说就容易理解了吧。GC就是在这个mutator内部精神饱满地工作着。<br>mutator实际进行的操作有以下2种：</p>
+<ul>
+<li>生成对象</li>
+<li>更新指针</li>
+</ul>
+<p>mutator在进行这些操作时，会同时为应用程序的用户进行一些处理（数值计算、浏览网页、编辑文章等）。随着这些处理的逐步推进，对象间的引用关系也会“改变”。伴随这些变化会产生垃圾，而负责回收这些垃圾的机制就是GC。</p>
+<h2 id="朴素的标记清除"><a href="#朴素的标记清除" class="headerlink" title="朴素的标记清除"></a>朴素的标记清除</h2><h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">01</span>   mark_phase(){</span><br><span class="line"><span class="number">02</span>     <span class="keyword">for</span>(r : $roots)</span><br><span class="line"><span class="number">03</span>        mark(*r)</span><br><span class="line"><span class="number">04</span>   }</span><br><span class="line"><span class="number">05</span></span><br><span class="line"><span class="number">06</span></span><br><span class="line"><span class="number">07</span>   mark(obj){</span><br><span class="line">08     <span class="keyword">if</span>(obj.mark == FALSE)</span><br><span class="line">09        obj.mark = TRUE</span><br><span class="line"><span class="number">10</span>        <span class="keyword">for</span>(child : children(obj))</span><br><span class="line"><span class="number">11</span>          mark(*child)</span><br><span class="line"><span class="number">12</span>   }</span><br></pre></td></tr></tbody></table></figure>
+
+<p>深搜？广搜？<br>两者性能差不多, 但是深搜比广搜更节省内存。</p>
+<h3 id="清除"><a href="#清除" class="headerlink" title="清除"></a>清除</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>   sweep_phase(){</span><br><span class="line"><span class="number">2</span>     sweeping = $heap_start</span><br><span class="line"><span class="number">3</span>     <span class="keyword">while</span>(sweeping &lt; $heap_end)</span><br><span class="line"><span class="number">4</span>        <span class="keyword">if</span>(sweeping.mark == TRUE)</span><br><span class="line"><span class="number">5</span>          sweeping.mark = FALSE</span><br><span class="line"><span class="number">6</span>        <span class="keyword">else</span></span><br><span class="line"><span class="number">7</span>          sweeping.next = $free_list</span><br><span class="line"><span class="number">8</span>          $free_list = sweeping</span><br><span class="line"><span class="number">9</span>        sweeping += sweeping.size</span><br><span class="line"> <span class="number">10</span>   }</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="分配"><a href="#分配" class="headerlink" title="分配"></a>分配</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>   new_obj(size){</span><br><span class="line"><span class="number">2</span>     chunk = pickup_chunk(size, $free_list)</span><br><span class="line"><span class="number">3</span>     <span class="keyword">if</span>(chunk ! = NULL)</span><br><span class="line"><span class="number">4</span>        <span class="keyword">return</span> chunk</span><br><span class="line"><span class="number">5</span>     <span class="keyword">else</span></span><br><span class="line"><span class="number">6</span>        allocation_fail()</span><br><span class="line"><span class="number">7</span>   }</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="First-fit、Best-fit、Worst-fit的不同"><a href="#First-fit、Best-fit、Worst-fit的不同" class="headerlink" title="First-fit、Best-fit、Worst-fit的不同"></a>First-fit、Best-fit、Worst-fit的不同</h4><p>之前我们讲的分配策略叫作First-fit。因为在pickup_chunk()函数中，最初发现大于等于size的分块时就会立即返回该分块。然而，分配策略不止这些。还有遍历空闲链表，返回大于等于size的最小分块，这种策略叫作Best-fit。还有一种策略叫作Worst-fit，即找出空闲链表中最大的分块，将其分割成mutator申请的大小和分割后剩余的大小，目的是将分割后剩余的分块最大化。但因为Worst-fit很容易生成大量小的分块，所以不推荐大家使用此方法。除去Worst-fit，剩下的还有Best-fit和First-fit这两种。当我们使用单纯的空闲链表时，考虑到分配所需的时间，选择使用First-fit更为明智。</p>
+<h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><p>改造sweep_phase, 在清楚阶段进行合并</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">01</span>   sweep_phase(){</span><br><span class="line"><span class="number">02</span>     sweeping = $heap_start</span><br><span class="line"><span class="number">03</span>     <span class="keyword">while</span>(sweeping &lt; $heap_end)</span><br><span class="line"><span class="number">04</span>        <span class="keyword">if</span>(sweeping.mark == TRUE)</span><br><span class="line"><span class="number">05</span>          sweeping.mark = FALSE</span><br><span class="line"><span class="number">06</span>        <span class="keyword">else</span></span><br><span class="line"><span class="number">07</span>          <span class="keyword">if</span>(sweeping == $free_list + $free_list.size)</span><br><span class="line">08             $free_list.size += sweeping.size</span><br><span class="line">09          <span class="keyword">else</span></span><br><span class="line"><span class="number">10</span>             sweeping.next = $free_list</span><br><span class="line"><span class="number">11</span>             $free_list = sweeping</span><br><span class="line"><span class="number">12</span>        sweeping += sweeping.size</span><br><span class="line"><span class="number">13</span>   }</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>实现简单: 说到GC标记-清除算法的优点，那当然要数算法简单，实现容易了。打个比方，接下来我们将在第3章中提到引用计数法，在引用计数法中就很难切实管理计数器的增减，实现也很困难。另外，如果算法实现简单，那么它与其他算法的组合也就相应地简单。在第3章和第4章中，我们会为大家介绍把GC标记-清除算法与其他GC算法相结合的方法。</li>
+<li>与保守式GC算法兼容：在第6章中介绍的保守式GC算法中，对象是不能被移动的。因此保守式GC算法跟把对象从现在的场所复制到其他场所的GC复制算法（第4章）与标记-压缩算法（第5章）不兼容。而GC标记-清除算法因为不会移动对象，所以非常适合搭配保守式GC算法。事实上，在很多采用保守式GC算法的处理程序中也用到了GC标记-清除算法。</li>
+</ul>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>碎片化</li>
+<li>分配速度慢</li>
+<li>与写时复制技术不兼容</li>
+</ul>
+<h3 id="可以考虑使用多个空闲链表优化"><a href="#可以考虑使用多个空闲链表优化" class="headerlink" title="可以考虑使用多个空闲链表优化"></a>可以考虑使用多个空闲链表优化</h3><h3 id="BiBOP法"><a href="#BiBOP法" class="headerlink" title="BiBOP法"></a>BiBOP法</h3><h3 id="位图标记"><a href="#位图标记" class="headerlink" title="位图标记"></a>位图标记</h3><h3 id="延迟清除法"><a href="#延迟清除法" class="headerlink" title="延迟清除法"></a>延迟清除法</h3><h3 id="三色标记法"><a href="#三色标记法" class="headerlink" title="三色标记法"></a>三色标记法</h3><h2 id="引用计数法"><a href="#引用计数法" class="headerlink" title="引用计数法"></a>引用计数法</h2><h3 id="普通实现"><a href="#普通实现" class="headerlink" title="普通实现"></a>普通实现</h3><h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><h3 id="延迟引用计数法"><a href="#延迟引用计数法" class="headerlink" title="延迟引用计数法"></a>延迟引用计数法</h3><h3 id="Sticky引用计数法"><a href="#Sticky引用计数法" class="headerlink" title="Sticky引用计数法"></a>Sticky引用计数法</h3><h3 id="1位引用计数法"><a href="#1位引用计数法" class="headerlink" title="1位引用计数法"></a>1位引用计数法</h3><h3 id="部分标记-清除法"><a href="#部分标记-清除法" class="headerlink" title="部分标记-清除法"></a>部分标记-清除法</h3><h4 id="四色"><a href="#四色" class="headerlink" title="四色"></a>四色</h4><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol>
+<li>《垃圾回收的算法与实现-中村成洋》</li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Tracing_garbage_collection#Tri-color_marking">Tracing garbage collection</a></li>
+</ol>
 
                 
             </div>
@@ -524,7 +556,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://goldarowana.github.io/db-design/">https://goldarowana.github.io/db-design/</a>
+                    <a href="https://goldarowana.github.io/gc-algorithm/">https://goldarowana.github.io/gc-algorithm/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -562,8 +594,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/database/">
-                                    <span class="chip bg-color">database</span>
+                                <a href="/tags/gc/">
+                                    <span class="chip bg-color">gc</span>
                                 </a>
                             
                         </div>
@@ -611,30 +643,34 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/java-memory-allocation/">
+                <a href="/golang-gc/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/common/loading2.gif" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co112.jpg" class="responsive-img" alt="java memory allocation">
+                        <img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/common/loading2.gif" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co25.jpg" class="responsive-img" alt="golang 垃圾回收">
                         
-                        <span class="card-title">java memory allocation</span>
+                        <span class="card-title">golang 垃圾回收</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            java内存分配
+                            golang的垃圾回收器的实现原理
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-07
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java/" class="post-category">
-                                    java
+                            <a href="/categories/golang/" class="post-category">
+                                    golang
+                                </a>
+                            
+                            <a href="/categories/golang/gc/" class="post-category">
+                                    gc
                                 </a>
                             
                             
@@ -644,8 +680,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/gc/">
+                        <span class="chip bg-color">gc</span>
+                    </a>
+                    
+                    <a href="/tags/golang/">
+                        <span class="chip bg-color">golang</span>
                     </a>
                     
                 </div>
@@ -659,30 +699,34 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/lsm/">
+                <a href="/redis/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/common/loading2.gif" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co97.jpg" class="responsive-img" alt="LSM-Tree">
+                        <img src="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/common/loading2.gif" data-original="https://cdn.jsdelivr.net/gh/GoldArowana/static_source@main/images/tiny/cover/co3.jpg" class="responsive-img" alt="redis基础知识">
                         
-                        <span class="card-title">LSM-Tree</span>
+                        <span class="card-title">redis基础知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SSTable结构 和 LSM树
+                            redis基础概念、实现原理
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/data-structure/" class="post-category">
-                                    data-structure
+                            <a href="/categories/redis/" class="post-category">
+                                    redis
+                                </a>
+                            
+                            <a href="/categories/redis/database/" class="post-category">
+                                    database
                                 </a>
                             
                             
@@ -696,8 +740,12 @@
                         <span class="chip bg-color">database</span>
                     </a>
                     
-                    <a href="/tags/data-structure/">
-                        <span class="chip bg-color">data-structure</span>
+                    <a href="/tags/redis/">
+                        <span class="chip bg-color">redis</span>
+                    </a>
+                    
+                    <a href="/tags/cache/">
+                        <span class="chip bg-color">cache</span>
                     </a>
                     
                 </div>

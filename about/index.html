@@ -359,14 +359,14 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">17</a></span>
+    <span class="count"><a href="/">19</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">11</a></span>
+    <span class="count"><a href="/categories">12</a></span>
     <span class="name">分类</span>
 </div>
 
@@ -389,14 +389,14 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">17</a></span>
+    <span class="count"><a href="/">19</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">11</a></span>
+    <span class="count"><a href="/categories">12</a></span>
     <span class="name">分类</span>
 </div>
 
@@ -539,7 +539,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,1],
+                data: [0,0,0,0,0,0,0,0,0,0,0,0,2],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -581,7 +581,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"data-structure","value":1},{"name":"distribute","value":1},{"name":"big data","value":1},{"name":"database","value":2},{"name":"golang","value":7},{"name":"gc","value":1},{"name":"internet","value":2},{"name":"java","value":1},{"name":"MQ","value":1},{"name":"redis","value":1},{"name":"database","value":1}],
+                data: [{"name":"gc","value":1},{"name":"distribute","value":1},{"name":"big data","value":1},{"name":"data-structure","value":1},{"name":"golang","value":7},{"name":"database","value":2},{"name":"java","value":2},{"name":"internet","value":2},{"name":"MQ","value":1},{"name":"redis","value":1},{"name":"gc","value":1},{"name":"database","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -605,7 +605,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["golang","database","internet","data-structure","consistency","distribute","big data","gc","coroutine","http"]
+                data: ["golang","database","gc","java","internet","consistency","distribute","big data","data-structure","coroutine"]
             }
         ],
         yAxis: [
@@ -618,7 +618,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [7,4,2,1,1,1,1,1,1,1],
+                data: [7,4,2,2,2,1,1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -736,14 +736,8 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/database/">
-                <span class="chip center-align waves-effect waves-light chip-default">database</span>
-            </a>
-            
-            
-            
-            <a href="/tags/data-structure/">
-                <span class="chip center-align waves-effect waves-light chip-default">data-structure</span>
+            <a href="/tags/gc/">
+                <span class="chip center-align waves-effect waves-light chip-default">gc</span>
             </a>
             
             
@@ -766,20 +760,32 @@
             
             
             
+            <a href="/tags/database/">
+                <span class="chip center-align waves-effect waves-light chip-default">database</span>
+            </a>
+            
+            
+            
+            <a href="/tags/data-structure/">
+                <span class="chip center-align waves-effect waves-light chip-default">data-structure</span>
+            </a>
+            
+            
+            
             <a href="/tags/golang/">
                 <span class="chip center-align waves-effect waves-light chip-default">golang</span>
             </a>
             
             
             
-            <a href="/tags/gc/">
-                <span class="chip center-align waves-effect waves-light chip-default">gc</span>
+            <a href="/tags/coroutine/">
+                <span class="chip center-align waves-effect waves-light chip-default">coroutine</span>
             </a>
             
             
             
-            <a href="/tags/coroutine/">
-                <span class="chip center-align waves-effect waves-light chip-default">coroutine</span>
+            <a href="/tags/java/">
+                <span class="chip center-align waves-effect waves-light chip-default">java</span>
             </a>
             
             
@@ -802,12 +808,6 @@
             
             
             
-            <a href="/tags/java/">
-                <span class="chip center-align waves-effect waves-light chip-default">java</span>
-            </a>
-            
-            
-            
             <a href="/tags/kafka/">
                 <span class="chip center-align waves-effect waves-light chip-default">kafka</span>
             </a>
@@ -816,18 +816,6 @@
             
             <a href="/tags/MQ/">
                 <span class="chip center-align waves-effect waves-light chip-default">MQ</span>
-            </a>
-            
-            
-            
-            <a href="/tags/mysql/">
-                <span class="chip center-align waves-effect waves-light chip-default">mysql</span>
-            </a>
-            
-            
-            
-            <a href="/tags/innodb/">
-                <span class="chip center-align waves-effect waves-light chip-default">innodb</span>
             </a>
             
             
@@ -846,6 +834,18 @@
             
             <a href="/tags/tcp/">
                 <span class="chip center-align waves-effect waves-light chip-default">tcp</span>
+            </a>
+            
+            
+            
+            <a href="/tags/mysql/">
+                <span class="chip center-align waves-effect waves-light chip-default">mysql</span>
+            </a>
+            
+            
+            
+            <a href="/tags/innodb/">
+                <span class="chip center-align waves-effect waves-light chip-default">innodb</span>
             </a>
             
             
@@ -882,7 +882,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">25.8k</span>&nbsp;字
+                class="white-color">27k</span>&nbsp;字
             
             
             

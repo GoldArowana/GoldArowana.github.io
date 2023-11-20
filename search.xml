@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>java memory allocation</title>
+      <link href="/java-memory-allocation/"/>
+      <url>/java-memory-allocation/</url>
+      
+        <content type="html"><![CDATA[<p>逃逸分析</p><p>标量替换</p><p>TLAB</p><p>指针碰撞</p><p>空闲列表</p><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol><li><a href="http://learn.lianglianglee.com/%E4%B8%93%E6%A0%8F/Netty%20%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90%E4%B8%8E%20RPC%20%E5%AE%9E%E8%B7%B5-%E5%AE%8C/12%20%20%E4%BB%96%E5%B1%B1%E4%B9%8B%E7%9F%B3%EF%BC%9A%E9%AB%98%E6%80%A7%E8%83%BD%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%99%A8%20jemalloc%20%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.md">他山之石：高性能内存分配器 jemalloc 基本原理</a></li></ol><p>聊聊jvm中的标量替换   <a href="https://juejin.cn/post/6877004782130151438">https://juejin.cn/post/6877004782130151438</a></p><p>【【Java面试】说说对象的内存分配流程】<a href="https://www.bilibili.com/video/BV1114y1r7V3?vd_source=d5ca709fc65e24989c7d73f89369b6a5">https://www.bilibili.com/video/BV1114y1r7V3?vd_source=d5ca709fc65e24989c7d73f89369b6a5</a></p><p>TLAB  <a href="https://blog.csdn.net/fclwd/article/details/114080986">https://blog.csdn.net/fclwd/article/details/114080986</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据库设计</title>
       <link href="/db-design/"/>
       <url>/db-design/</url>
       
-        <content type="html"><![CDATA[<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O">https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O</a></p><p><a href="https://www.luozhiyun.com/archives/273">https://www.luozhiyun.com/archives/273</a></p><p><a href="https://www.luozhiyun.com/archives/280">https://www.luozhiyun.com/archives/280</a></p><p><a href="https://zhuanlan.zhihu.com/p/158622349">Latch-crabbing/Latch-couping</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O">https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O</a></p><p><a href="https://www.luozhiyun.com/archives/273">https://www.luozhiyun.com/archives/273</a></p><p><a href="https://www.luozhiyun.com/archives/280">https://www.luozhiyun.com/archives/280</a></p><p>CMU 15721 课程笔记  <a href="https://www.zhihu.com/column/c_1624789464953364480">https://www.zhihu.com/column/c_1624789464953364480</a></p><p>PAX：一个 Cache 友好高效的行列混存方案    <a href="https://blog.csdn.net/weixin_42241611/article/details/130050128">https://blog.csdn.net/weixin_42241611/article/details/130050128</a></p><p><a href="https://zhuanlan.zhihu.com/p/158622349">Latch-crabbing/Latch-couping</a></p>]]></content>
       
       
       <categories>
@@ -155,7 +180,32 @@
       
         <tags>
             
+            <tag> gc </tag>
+            
             <tag> golang </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GC算法</title>
+      <link href="/gc-algorithm/"/>
+      <url>/gc-algorithm/</url>
+      
+        <content type="html"><![CDATA[<p>评价GC算法的性能时，我们采用以下4个标准。</p><ul><li>吞吐量</li><li>最大暂停时间</li><li>堆使用效率</li><li>访问的局部性</li></ul><p class="note note-primary">标签</p><h3 id="mutator"><a href="#mutator" class="headerlink" title="mutator"></a>mutator</h3><p>mutator是Dijkstra琢磨出来的词，有“改变某物”的意思。说到要改变什么，那就是GC对象间的引用关系。不过光这么说可能大家还是不能理解，其实用一句话概括的话，它的实体就是“应用程序”。这样说就容易理解了吧。GC就是在这个mutator内部精神饱满地工作着。<br>mutator实际进行的操作有以下2种：</p><ul><li>生成对象</li><li>更新指针</li></ul><p>mutator在进行这些操作时，会同时为应用程序的用户进行一些处理（数值计算、浏览网页、编辑文章等）。随着这些处理的逐步推进，对象间的引用关系也会“改变”。伴随这些变化会产生垃圾，而负责回收这些垃圾的机制就是GC。</p><h2 id="朴素的标记清除"><a href="#朴素的标记清除" class="headerlink" title="朴素的标记清除"></a>朴素的标记清除</h2><h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">01</span>   mark_phase(){</span><br><span class="line"><span class="number">02</span>     <span class="keyword">for</span>(r : $roots)</span><br><span class="line"><span class="number">03</span>        mark(*r)</span><br><span class="line"><span class="number">04</span>   }</span><br><span class="line"><span class="number">05</span></span><br><span class="line"><span class="number">06</span></span><br><span class="line"><span class="number">07</span>   mark(obj){</span><br><span class="line">08     <span class="keyword">if</span>(obj.mark == FALSE)</span><br><span class="line">09        obj.mark = TRUE</span><br><span class="line"><span class="number">10</span>        <span class="keyword">for</span>(child : children(obj))</span><br><span class="line"><span class="number">11</span>          mark(*child)</span><br><span class="line"><span class="number">12</span>   }</span><br></pre></td></tr></tbody></table></figure><p>深搜？广搜？<br>两者性能差不多, 但是深搜比广搜更节省内存。</p><h3 id="清除"><a href="#清除" class="headerlink" title="清除"></a>清除</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>   sweep_phase(){</span><br><span class="line"><span class="number">2</span>     sweeping = $heap_start</span><br><span class="line"><span class="number">3</span>     <span class="keyword">while</span>(sweeping &lt; $heap_end)</span><br><span class="line"><span class="number">4</span>        <span class="keyword">if</span>(sweeping.mark == TRUE)</span><br><span class="line"><span class="number">5</span>          sweeping.mark = FALSE</span><br><span class="line"><span class="number">6</span>        <span class="keyword">else</span></span><br><span class="line"><span class="number">7</span>          sweeping.next = $free_list</span><br><span class="line"><span class="number">8</span>          $free_list = sweeping</span><br><span class="line"><span class="number">9</span>        sweeping += sweeping.size</span><br><span class="line"> <span class="number">10</span>   }</span><br></pre></td></tr></tbody></table></figure><h3 id="分配"><a href="#分配" class="headerlink" title="分配"></a>分配</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>   new_obj(size){</span><br><span class="line"><span class="number">2</span>     chunk = pickup_chunk(size, $free_list)</span><br><span class="line"><span class="number">3</span>     <span class="keyword">if</span>(chunk ! = NULL)</span><br><span class="line"><span class="number">4</span>        <span class="keyword">return</span> chunk</span><br><span class="line"><span class="number">5</span>     <span class="keyword">else</span></span><br><span class="line"><span class="number">6</span>        allocation_fail()</span><br><span class="line"><span class="number">7</span>   }</span><br></pre></td></tr></tbody></table></figure><h4 id="First-fit、Best-fit、Worst-fit的不同"><a href="#First-fit、Best-fit、Worst-fit的不同" class="headerlink" title="First-fit、Best-fit、Worst-fit的不同"></a>First-fit、Best-fit、Worst-fit的不同</h4><p>之前我们讲的分配策略叫作First-fit。因为在pickup_chunk()函数中，最初发现大于等于size的分块时就会立即返回该分块。然而，分配策略不止这些。还有遍历空闲链表，返回大于等于size的最小分块，这种策略叫作Best-fit。还有一种策略叫作Worst-fit，即找出空闲链表中最大的分块，将其分割成mutator申请的大小和分割后剩余的大小，目的是将分割后剩余的分块最大化。但因为Worst-fit很容易生成大量小的分块，所以不推荐大家使用此方法。除去Worst-fit，剩下的还有Best-fit和First-fit这两种。当我们使用单纯的空闲链表时，考虑到分配所需的时间，选择使用First-fit更为明智。</p><h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><p>改造sweep_phase, 在清楚阶段进行合并</p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">01</span>   sweep_phase(){</span><br><span class="line"><span class="number">02</span>     sweeping = $heap_start</span><br><span class="line"><span class="number">03</span>     <span class="keyword">while</span>(sweeping &lt; $heap_end)</span><br><span class="line"><span class="number">04</span>        <span class="keyword">if</span>(sweeping.mark == TRUE)</span><br><span class="line"><span class="number">05</span>          sweeping.mark = FALSE</span><br><span class="line"><span class="number">06</span>        <span class="keyword">else</span></span><br><span class="line"><span class="number">07</span>          <span class="keyword">if</span>(sweeping == $free_list + $free_list.size)</span><br><span class="line">08             $free_list.size += sweeping.size</span><br><span class="line">09          <span class="keyword">else</span></span><br><span class="line"><span class="number">10</span>             sweeping.next = $free_list</span><br><span class="line"><span class="number">11</span>             $free_list = sweeping</span><br><span class="line"><span class="number">12</span>        sweeping += sweeping.size</span><br><span class="line"><span class="number">13</span>   }</span><br></pre></td></tr></tbody></table></figure><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul><li>实现简单: 说到GC标记-清除算法的优点，那当然要数算法简单，实现容易了。打个比方，接下来我们将在第3章中提到引用计数法，在引用计数法中就很难切实管理计数器的增减，实现也很困难。另外，如果算法实现简单，那么它与其他算法的组合也就相应地简单。在第3章和第4章中，我们会为大家介绍把GC标记-清除算法与其他GC算法相结合的方法。</li><li>与保守式GC算法兼容：在第6章中介绍的保守式GC算法中，对象是不能被移动的。因此保守式GC算法跟把对象从现在的场所复制到其他场所的GC复制算法（第4章）与标记-压缩算法（第5章）不兼容。而GC标记-清除算法因为不会移动对象，所以非常适合搭配保守式GC算法。事实上，在很多采用保守式GC算法的处理程序中也用到了GC标记-清除算法。</li></ul><h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul><li>碎片化</li><li>分配速度慢</li><li>与写时复制技术不兼容</li></ul><h3 id="可以考虑使用多个空闲链表优化"><a href="#可以考虑使用多个空闲链表优化" class="headerlink" title="可以考虑使用多个空闲链表优化"></a>可以考虑使用多个空闲链表优化</h3><h3 id="BiBOP法"><a href="#BiBOP法" class="headerlink" title="BiBOP法"></a>BiBOP法</h3><h3 id="位图标记"><a href="#位图标记" class="headerlink" title="位图标记"></a>位图标记</h3><h3 id="延迟清除法"><a href="#延迟清除法" class="headerlink" title="延迟清除法"></a>延迟清除法</h3><h3 id="三色标记法"><a href="#三色标记法" class="headerlink" title="三色标记法"></a>三色标记法</h3><h2 id="引用计数法"><a href="#引用计数法" class="headerlink" title="引用计数法"></a>引用计数法</h2><h3 id="普通实现"><a href="#普通实现" class="headerlink" title="普通实现"></a>普通实现</h3><h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><h3 id="延迟引用计数法"><a href="#延迟引用计数法" class="headerlink" title="延迟引用计数法"></a>延迟引用计数法</h3><h3 id="Sticky引用计数法"><a href="#Sticky引用计数法" class="headerlink" title="Sticky引用计数法"></a>Sticky引用计数法</h3><h3 id="1位引用计数法"><a href="#1位引用计数法" class="headerlink" title="1位引用计数法"></a>1位引用计数法</h3><h3 id="部分标记-清除法"><a href="#部分标记-清除法" class="headerlink" title="部分标记-清除法"></a>部分标记-清除法</h3><h4 id="四色"><a href="#四色" class="headerlink" title="四色"></a>四色</h4><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol><li>《垃圾回收的算法与实现-中村成洋》</li><li><a href="https://en.wikipedia.org/wiki/Tracing_garbage_collection#Tri-color_marking">Tracing garbage collection</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> gc </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> gc </tag>
             
